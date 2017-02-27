@@ -29,7 +29,7 @@ public class Test {
 //		System.out.print(content);
 		
 //下载页面图片main方法
-//		URL url=new URL("http://lym25942608.lofter.com/");
+//		URL url=new URL("https://www.baidu.com/img/bd_logo1.png");
 //		HttpURLConnection con=(HttpURLConnection)url.openConnection(); //构造连接
 //		InputStream inputStream=con.getInputStream();//通过输入流获取图片数据，再调用toByteArray()即可获取数据到byte数组
 //		byte[] getData=FileOperations.readInputStream(inputStream);//获取图片到二进制数据
@@ -40,10 +40,9 @@ public class Test {
 //		ops.close();
 //		System.out.println("Ok");
 		
-	
-		String content = "<img src=\"http://imglf1.nosdn.127.net/img/cEpMODErOUtmemlwSlgrQkVGV1c4TEd5WGF5cTh1ZnRlSUdQUFJPWkx2allxOG9Ed1RPRHBBPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg\">";
-		
-		System.out.println(content.split("<img src=\"")[1]);
+	//
+	//	String content = "<img src=\"http://imglf1.nosdn.127.net/img/cEpMODErOUtmemlwSlgrQkVGV1c4TEd5WGF5cTh1ZnRlSUdQUFJPWkx2allxOG9Ed1RPRHBBPT0.jpg?imageView&amp;thumbnail=1680x0&amp;quality=96&amp;stripmeta=0&amp;type=jpg\">";
+	//	System.out.println(content.split("<img src=\"")[1]);
 	}
 
 	

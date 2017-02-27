@@ -27,7 +27,7 @@ public class FileOperations {
 	 * @throws IOException
 	 */
 	//将输出结果存到本地方法
-	public static void storeIntoFile(String content, String filePath) throws IOException {
+	public static void outputFile(String content, String filePath) throws IOException {
 
 		FileOutputStream fos = new FileOutputStream(filePath);
 		fos.write(content.getBytes());
@@ -35,7 +35,7 @@ public class FileOperations {
 		fos.close();
 	}
     //读入指定文件方法
-	public static String readTxtFile(String filePath) throws IOException {
+	public static String inputFile(String filePath) throws IOException {
 
 		File file = new File(filePath);
 		if (file.isFile() && file.exists()) {
