@@ -1,6 +1,10 @@
+
 package com.lily.test;
 
 import java.io.IOException;
+/*
+ * 输出流测试类
+ */
 
 import com.lily.util.FileOperations;
 import com.lily.util.Multiply;

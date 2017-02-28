@@ -1,6 +1,9 @@
 package com.lily.test;
 
 import java.io.IOException;
+/**
+ * 输入流测试类
+ */
 
 import com.lily.util.FileOperations;
 
