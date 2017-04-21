@@ -1,0 +1,26 @@
+package com.lily.testing;
+
+public class Puppy {
+	 int Puppyage;
+	public Puppy(String name){
+		System.out.println("dog's name is "+ name);
+	}
+	public void setAge(int age){
+     Puppyage=age;
+	}
+	public int getAge(){
+		System.out.println("dog's age is "+ Puppyage);
+		return Puppyage;
+	}
+	
+	
+
+	public static void main(String[] args) {
+		// @SuppressWarnings("unused")
+		Puppy myPuppy=new Puppy("niuniu");
+        myPuppy.setAge(2);
+        myPuppy.getAge();
+        System.out.println("return value:"+ myPuppy.Puppyage);
+	}
+
+}
