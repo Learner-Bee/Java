@@ -108,5 +108,7 @@ byte,short,char->int->long->float->double
 * 把容量大的类型转为容量小的类型时必须使用强制类型转换
 * 浮点数到整数的转换是通过舍弃小数得到，而不是四舍五入
 * 转换过程可能导致溢出或损失精度：int i=8;byte b =(byte)i;
+##Java变量类型
+
 
 
