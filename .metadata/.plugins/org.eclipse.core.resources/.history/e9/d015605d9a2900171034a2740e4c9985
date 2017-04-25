@@ -1,0 +1,19 @@
+package com.lily.testing;
+
+public class StaticTest {
+    private static int staticint=2;
+    private int random=2;
+    public StaticTest(){
+    	staticint++;
+    	random++;
+    	System.out.println("staticint="+staticint+" random="+random);
+    }
+	public static void main(String[] args) {
+		@SuppressWarnings("unused")
+		StaticTest st1=new StaticTest();
+		@SuppressWarnings("unused")
+		StaticTest st2=new StaticTest();
+
+	}
+
+}

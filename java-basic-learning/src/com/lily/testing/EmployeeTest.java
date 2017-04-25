@@ -1,6 +1,8 @@
 package com.lily.testing;
 //import java.io.*;
 
+import com.lily.util.Employee;
+
 public class EmployeeTest {
 
 	public static void main(String[] args) {
