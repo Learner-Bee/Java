@@ -1,0 +1,12 @@
+package com.lily.testing;
+
+public class CharAtDemo {
+
+	public static void main(String[] args) {
+		String name="lily boo";
+		char s=name.charAt(2);
+		System.out.println(s);
+
+	}
+
+}

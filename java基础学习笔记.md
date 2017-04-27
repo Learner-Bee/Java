@@ -282,4 +282,63 @@ default：//可选
 所有包装类（Integer、Long、Byte、Double、Float、Short）都是抽象类Number的子类  
 Math的方法都被定义为static形式，通过Math类可以在主函数中直接调
 ###Number & Math类方法
-* xxxValue() ：
+* xxxValue() ：将Number对象转换为xxx数据类型的值并返回
+* compareTo（）：将number对象与参数比较
+* equals（）：判断number对象是否与参数相等
+* valueOf（）：返回一个number对象指定的内置数据类型
+* toString（）：以字符串形式返回值
+* abs（）：返回参数的绝对值
+* min()：返回两个参数最小
+* max()：返回两个参数最大的
+* pow（）：返回第一个参数的第二个参数次方
+* sqrt（）：求参数的算术平方根
+* random（）：返回一个随机数
+##Java Character类
+Character类用于对单个字符进行操作  
+Character类在对象中包装一个基本类型char的值
+###转义序列
+前面有反斜杠\的字符代表转译字符。
+
+* \t：插入tab键
+* \b:插入退格键
+* \n：该处换行
+* \r：该处插入回车
+* \'：该处插入单引号
+* \\：该处插入\
+###Character方法
+
+* isLetter（）：是否是一个字母
+* isDigit（）：是否是一个数字字符
+* isWhitespace（）：是否是空格
+* isUpperCase()：是否是大写字母
+* isLowerCase（）：是否小写字母
+* toUpperCase（）：指定字母的大写形式
+* toLowerCase（）
+* toString()：返回字符的字符串形式，字符串长度仅为1
+##Java String类
+###创建字符串
+在java中字符串属于对象 ，Java提供了String类来创建和操作字符串 
+String  name = "lily";  
+String类有11中构造方法。这些方法提供不同的参数来初始化字符串。  
+**注意：String类是不可改变的，一但创建了String对象，那它的值就无法改变了**
+###字符串长度
+用于获取有关对象的信息的方法称为访问器方法  
+length（）：返回字符串对象包含的字符数
+###连接字符串
+
+* string1.concat（string2）；  返回string2连接string1的新字符串  
+* “myname is”.concat("lily"); 也可以对字符串常量使用  
+* "hello"+" world" 更常用的是用+连接
+###String 方法
+
+* char charAt（int index）：返回指定索引处的char值
+* compareTo()方法
+ * int compareTo（Object o）：字符串与对象比较。o是要比较的对象
+ * int compareTo（String anotherString）：按字典顺序比较字符串  
+返回值：  
+  * 如果参数字符串等于次字符串，返回0
+  * 如果此字符串小于字符串参数，则返回小于0的值
+  * 如果此字符串大于字符串参数，则返回大于0的值
+* boolean endWith（ String suffix）suffix指定的后缀
+
+

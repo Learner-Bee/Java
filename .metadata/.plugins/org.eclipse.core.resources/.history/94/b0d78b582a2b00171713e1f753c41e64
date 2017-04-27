@@ -1,0 +1,17 @@
+package com.lily.testing;
+
+public class StringDemo {
+
+	public static void main(String[] args) {
+		//创建String类型数组
+		//提供一个字符数组参数
+		char [] helloString={'l','l','i','y'};
+		String str=new String(helloString);
+		System.out.println(str);
+		System.out.printf("浮点型变量的的值为 " +
+                "%f, 整型变量的值为 " +
+                " %d, 字符串变量的值为 " );
+
+	}
+
+}
