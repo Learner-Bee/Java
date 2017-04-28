@@ -339,6 +339,12 @@ length（）：返回字符串对象包含的字符数
   * 如果参数字符串等于次字符串，返回0
   * 如果此字符串小于字符串参数，则返回小于0的值
   * 如果此字符串大于字符串参数，则返回大于0的值
-* boolean endWith（ String suffix）suffix指定的后缀
-
+* boolean endWith（ String suffix）suffix指定的后缀：   
+   String  str=new String("www.baidu.com");   
+   boolean  ret=str.endsWith("com");
+* boolean startsWith()
+* boolean equals（Object anObject）：将次字符串与指定对象比较
+* indexOf（）：返回指定字符在字符串中第一次出现的位置 。str.indexOf('a')
+* lastIndexOf（）：返回指定字符在此字符串中最后一次出现处的索引。
+* trim()：删除字符串的头尾空白。用法：str.trim()
 
