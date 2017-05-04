@@ -348,3 +348,63 @@ length（）：返回字符串对象包含的字符数
 * lastIndexOf（）：返回指定字符在此字符串中最后一次出现处的索引。
 * trim()：删除字符串的头尾空白。用法：str.trim()
 
+##Java StringBuffer类和StringBuilder类
+当对字符串进行修改时，会使用以上两个类  
+和String类不同，以上两个类的对象可以被多次修改，并且不产生新的未使用对象。  
+两个不同在于StringBulider的方法不是线程安全的（不能同步访问）  
+由于StringBuilder比StringBuffer有速度优势，所以大多数情况下建议使用StringBuilder类。  
+但是在程序要求线程安全的情况下，则必须使用StringBuilder类  
+###StringBuffer方法 
+
+* public StringBuffer append(String s) ：将指定的字符追加到此字符序列
+* public StringBuffer reverse（）：将此字符序列用其反转形式取代
+* public delete（int start ，int end）：移除此序列的子字符串的字符
+* public insert（int offset，int i）：将int参数的字符串表式形式插入此序列中
+* replace （int start ，int end ，String str）：使用给定的String中的字符替换此序列的子字符串中的字符  
+
+下面方法和String类的方法类似  
+
+* int capacity()：返回当前容量
+*  char charAT（int index）：返回此序列中指定索引处的char值
+* int indexOf（String str）：返回第一次出现指定字符串在此字符串中的索引
+* int indexOf（String str，int fromIndex）：从指定索引开始，返回指定字符串第一次出现的索引
+* ing lastIndexOf（String str）：返回最后出现指定字符串位置
+* int length（）：返回长度（字符数）
+* String toString（）：返回此序列中数据的字符串表达式
+##Java数组
+###声明数组变量
+必须先声明数组变量，才能在程序中使用数组
+  
+dataType[] 数组名；首选方法  
+例：double[] myList;
+###创建数组
+变量名 = new dataType[arraySize]; 
+
+* 使用dataType[arraySize]创建数组
+* 把新创建的数组的引用赋值给变量  
+
+数组变量声明和创建可以一起写：  
+dataType[] 数组名= new dataType[arraySize];
+###foreach循环
+JDK5.1引用了一种新循环类型，被称为foreach循环或者加强循环，他能在不适用下标的情况下遍历数组  
+###多维数组
+多维数组可以看成是数组的数组。  
+String str[] []=new String [3] [4];  //3行4列数组  
+多维数组的动态初始化
+
+* 直接为每一堆分配空间，格式如下：
+type arrayName=new type[arraylength1] [arraylength2];  
+* 从最高维开始，分别为每一维分配空间  
+###Array类
+java.util.Arrays类能方便操作数组，他提供的所有方法都是静态的  
+具有以下功能：  
+
+* 给数组赋值：通过fill方法  
+  public static void fill()（int[] a,int val）  
+* 对数组排序：通过sort方法。按升序  
+  public static void sort(object[] a)
+* 比较数组：通过equals  
+  public static boolean equals(long[] a,long[] b)
+* 查找数组元素：通过binarySearch方法能对排序好的数组进行二分查找排序
+
+
