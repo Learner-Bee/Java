@@ -4,4 +4,7 @@
 <fullyQualifiedTypeName name="com.lily.testing.PrimitiveTypeTest"/>
 <fullyQualifiedTypeName name="com.lily.testing.StaticTest"/>
 <fullyQualifiedTypeName name="com.lily.testing.InstanceCounter"/>
+<fullyQualifiedTypeName name="java.sql.Date"/>
+<fullyQualifiedTypeName name="java.text.SimpleDateFormat"/>
+<fullyQualifiedTypeName name="java.util.Date"/>
 </qualifiedTypeNameHistroy>

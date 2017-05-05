@@ -406,5 +406,47 @@ java.util.Arrays类能方便操作数组，他提供的所有方法都是静态�
 * 比较数组：通过equals  
   public static boolean equals(long[] a,long[] b)
 * 查找数组元素：通过binarySearch方法能对排序好的数组进行二分查找排序
+##Java日期时间
+java.util包提供了Date类来封装当前的日期时间。Date类提供两个构造函数类实例化Date对象。  
+
+
+* 第一个构造函数使用当前日期和时间来初始化对象：Date（）
+* 第二个构造函数接受一个参数，该参数是从1970年1月1日起的毫秒数 ：Date()
+Date对象创建后，可以调用一下方法
+
+* boolean after(Date date)：调用此方法的Date对象在指定日期之后返回true，否则false
+* boolean before(Date date)
+* Object clone()：返回此对象的副本
+* int compareTo(Date date)：比较当调用此方法的Date对象和指定日期，相等返回0。调用对象在指定日期之前返回负数，之后返回正数
+* boolean equals（Object date）：当调用此方法的Date对象和指定日期相等，返回true，不等返回false
+* long getTime（）：返回自1970年1月1日以来此Date对象表示的毫秒
+* void setTime(long time)：用毫秒数设置时间和日期
+* String toString（）：转换Date对象为String表示形式，并返回该字符串
+###获取当前日期
+使用Date对象的toString方法
+###使用SimpleDateFormat日期格式化
+SimpleDateFormat是一个以语言环境敏感的方式来格式化和分析日期的类。SimpleDateFormat允许用户选择任意自定义的日期格式  
+yyyy：完整的公元年    
+MM:月份  
+dd:日期  
+hh：时。12小时制  
+mm：分  
+ss：秒  
+HH：时。24小时制  
+w：一年中第几周  
+W：一月中第几周  
+###使用printf格式化日期  
+使用两个字母格式。以%t开头并且以下面一个字母结尾   
+
+* c：包括全部日期和时间信息
+* F："年-月-日"格式
+* D：“月/日/年”格式
+* r：12时制
+* T：24时制
+* R：“HH：mm”时分的24小时制 
+###解析字符串为时间
+SimlpeDateFormat类有一些附加方法，特别是parse（）
+###Java休眠
+sleep()使当前进程进入停滞状态（阻塞当前进程）。让出CPU的使用，目的是不让当前线程独自霸占该进程所获的CPU资源，以留一定时间给其他线程执行机会
 
 
