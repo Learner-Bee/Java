@@ -447,6 +447,77 @@ W：一月中第几周
 ###解析字符串为时间
 SimlpeDateFormat类有一些附加方法，特别是parse（）
 ###Java休眠
-sleep()使当前进程进入停滞状态（阻塞当前进程）。让出CPU的使用，目的是不让当前线程独自霸占该进程所获的CPU资源，以留一定时间给其他线程执行机会
+sleep()使当前进程进入停滞状态（阻塞当前进程）。让出CPU的使用，目的是不让当前线程独自霸占该进程所获的CPU资源，以留一定时间给其他线程执行机会  
+语法：Thread.sleep(秒数)
+###Calendar类
+Calendar类是一个抽象类，在实际使用时实现特定的子类对象，创建对象的过程对开发者是透明的，只需要使用getInsatace方法创建即可
+####创建一个代表系统当前日期的Calendar对象
+Calendar c=Calendar.getInatance();//默认是当前日期
+####创建一个指定日期的Calendar对象
+使用该类创建指定时间，需要首先创建一个Calendar对象，然后再设定该对象的年月日参数来完成  
+//创建一个代表2017年5月8号的Calendar类  
+Calendar c =Calendar.getInstance();   
+c.set(2017,5,8) 
+####Calendar类对象字段类型
 
+* Calendar.YEAR(MONTH\DATE) ：年月日
+* Calendar.HOUR：12小时制的小时
+* Calendar.HOUR_OF_DAY：24小时制的小时
+* Calendar.MINUTE(SECOND)：分钟、秒
+* Calendar.DAY_OF_WEEK：星期几
+####Calendar类对象信息设置
+
+* Set设置  
+  public final void set(int year,int month,int date)  
+  c.set(2017,5,8)
+  利用字段类型设置  
+  如果只设定某个字段：  
+  public void set（int field，int value）  
+  例：将c的日期设置成10号 ：c.set(Calendar.DATE，10);  
+* Add设置  
+  把c对象的日期加上10 ：c.add(Calendar.DATE,10);  
+  把c对象的日期减去10 ：c.add(Calendar.DATE,-10);
+##Java正则表达式
+正则表达式定义了字符串的模式  
+正则表达式可以用来搜索、编辑、处理文本  
+正则表达式并不仅限于某种语言，但是在每种语言中有细微的差距   
+###正则表达式实例
+
+* this is text：匹配字符串“this is text”
+* this\s+is\s+text\s+：\s+表示可以匹配多个空格
+* ^\d+(\.\d+)?：^表示以什么开头；\d+表示匹配一个或多个数字；\.表示匹配点；？设置括号内的选项是可选的
+java.util.regex包主要包括一下三个类：
+
+* Pattern类：pattern对象是一个正则表达式的编译表示。Pattern类没有公共构造方法。要创建一个Pattern对象，你必须首先调用其公共静态编译方法，它返回一个Pattern对象。该方法接受一个正则表达式作为一个参数
+* Matcher类：Matcher对象是对输入字符串进行解释和匹配操作的引擎。与Pattern类一样，它没有公共构造方法。需要调用Pattern对象的matcher方法来获得一个Matcher对象
+* PatternSyntaxExpection： 是一个非强制异常类，它表示一个正则表达式模式中的语法错误
+###正则表达式语法
+* \：将下一个字符标记为特殊的字符等。如\n表示匹配换行符。\ \匹配\。 \ (匹配（
+* ^：匹配以某个字符串开始的位置
+* $：匹配输入字符串结尾的位置
+* *：0次或多次匹配前面的字符或表达式
+* +：匹配一次或多次匹配前面的字符或表达式
+* ？：0次或一次匹配前面的字符或表达式。
+* {n}：n为非负整数。正好匹配n次
+* {n，}：至少匹配n次
+* {n，m}:n<=m。至少匹配n次，最多匹配m次
+* . ：匹配除\r\n之外的任何单个字符。
+* x|y：匹配x或y
+* [xyz]：字符集。匹配其中包含的任一字符
+* [^xyz]：反向字符集。匹配不包含其中的任何字符
+* [a-z]：匹配小写字母a到z
+* [^a-z]：匹配不在指定范围内的字符
+* \b：匹配一个字边界。如er\b匹配never中的er。但不匹配verb中的er
+* \B：非字边界匹配。与上一个匹配相反
+* \d：数字字符匹配。等效于[0-9]
+* \D：非数字字符匹配。等效于[^0-9]
+* \f：匹配换页符
+* \n：换行符匹配
+* \r：回车符匹配
+* \t：制表符
+* \v：垂直制表符匹配
+* \s：匹配任何空白字符。与[\f\n\r\t\v]
+* \S：匹配任何非空白字符
+* \w：匹配任何字类字符，包括下划线。等效于[A-Za-z0-9]
+* \W：与非单词字符匹配。等效于[^A-Za-z0-9]
 

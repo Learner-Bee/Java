@@ -1,0 +1,18 @@
+package com.lily.testing;
+
+import java.util.Calendar;
+
+public class CalendarTest {
+
+	public static void main(String[] args) {
+		Calendar c=Calendar.getInstance();
+		System.out.println("当前时间： " +c);
+		
+		Calendar c1=Calendar.getInstance();
+		c1.set(2017, 5,9);
+		System.err.println("设置的日期为： "+ c1);
+		
+
+	}
+
+}
