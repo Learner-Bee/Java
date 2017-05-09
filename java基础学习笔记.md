@@ -520,4 +520,47 @@ java.util.regex包主要包括一下三个类：
 * \S：匹配任何非空白字符
 * \w：匹配任何字类字符，包括下划线。等效于[A-Za-z0-9]
 * \W：与非单词字符匹配。等效于[^A-Za-z0-9]
+###Matcher类的方法
+####索引方法
+索引方法提供了有用的索引值，精确表明输入字符串中在哪能找到匹配  
 
+* public int start()：返回以前匹配的初始索引
+* pubiic int start(int group)：返回在以前的匹配操作期间。由给定组所捕获的子序列的初始索引
+* public int end()：返回最后匹配字符之后的偏移量
+* public int end(int group)：返回在以前的匹配操作期间。由给定组所捕获子序列的最后字符之后的偏移量
+####研究方法
+研究方法用来检查输入字符串并返回一个布尔值。表示是否找到该模式  
+
+* public boolean lookingAt()：尝试将从区域开头开始的输入序列与模式匹配
+* public boolean find()：尝试查找与该模式匹配的输入序列的下一个子序列
+* public boolean find(int start)：重置此匹配器。然后尝试查找匹配该模式、从指定索引开始的输入序列的下一个子序列
+* public boolean matches()：尝试将整个区域与模式匹配
+####替换方法
+替换方法是替换输入字符串里文本的方法  
+
+* public Matcher appendReplacement(StringBuffer sb,String replacement)：实现非终端添加和替换步骤
+* public StringBuffer appendTail（StringBuffer sb）：实现终端添加和替换步骤
+##Java方法
+System.out.println()  
+
+* println()是一个方法
+* System是系统类
+* out是标准输出对象
+该语句的用法为，调用系统类System的标准输出对象out的printin（）方法
+**方法命名规则**  
+* 以大小写字母、下划线和$开头
+* 可以包含数字，但是不能以数字开头
+###方法的定义
+修饰符  返回值类型  方法名 （参数类型 参数名）{  
+方法体  
+return 返回值;}
+
+* 修饰符：可选。定义方法的访问类型（public static）
+* 返回值类型：无返回值，用void
+###方法重载
+拥有相同方法名，但是参数列表不同（包括参数个数、不同参数名、不同参数类型）
+###变量作用域
+方法内定义的变量为局部变量。  
+局部变量必须声明才可使用。  
+其作用范围为声明开始，到包含的块结束
+###构造方法
