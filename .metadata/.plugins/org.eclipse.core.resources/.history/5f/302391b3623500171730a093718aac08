@@ -1,0 +1,18 @@
+package com.lily.testing;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/**
+ * 通过BufferedReader读取控制台输入的字符，直到输入"q"退出
+ * @author Administrator
+ *
+ */
+public class BFRead {
+
+	public static void main(String[] args) {
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+
+	}
+
+}

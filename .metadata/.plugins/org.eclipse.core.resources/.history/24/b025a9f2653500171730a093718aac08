@@ -1,0 +1,25 @@
+package com.lily.testing;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+
+/**
+ * 通过BufferedReader读取控制台输入的字符，直到输入"q"退出
+ * @author Administrator
+ *
+ */
+public class BFRead {
+
+	public static void main(String[] args) throws IOException {
+		char c;
+		BufferedReader bf = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("请输入字符,按q退出");
+        do{
+        		 c=(char)bf.read();   
+       }while(c!='q');
+    	   
+       
+	}
+
+}

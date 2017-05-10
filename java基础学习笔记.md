@@ -564,3 +564,27 @@ return 返回值;}
 局部变量必须声明才可使用。  
 其作用范围为声明开始，到包含的块结束
 ###构造方法
+当一个对象被创建的时候，构造方法用来初始化该对象。  
+构造方法和其所在类名相同，但构造方法没有返回值。  
+通常会使用构造方法给一个类的实例变量赋初值。  
+不管是否定义构造方法，所有类都有构造方法，因为java提供一个默认构造方法，它把所有成员初始化为0  
+###finalize()方法
+java允许定义这样的方法，它在对象被垃圾回收器回收之前调用。它用来清除回收对象
+在finalize()方法中，必须指定在对象销毁时要执行的操作   
+一般格式：  
+protected void finalize（）{//这里终结代码}  
+protected是一个限制符，它确保该方法不被该类以外的代码调用  
+##Java 流（Stream）、文件（File）、IO
+Java.io包几乎包含了所有操作输入、输出的类。所有这些流类代表了输入源和输出目标   
+一个流可以理解为一个数据序列。输入流表示从一个源读取数据，输出流表示向一个目标写数据  
+###读取控制台输入  
+Java的控制台输入由System.in完成  
+为了获得一个绑定到控制台的字符流，可以把System.in包装在一个BufferedReader对象中来创建一个字符流
+基本语法：  
+**BufferedReader br=new BufferedReader(new InputStreamReader(System.in))**
+BufferReader对象  
+创建后，我们可以用read（）方法读取控制台的一个字符，或者用readLine（）读取一个字符串
+###从控制台读取多字符输入
+从BufferReader对象读取一个字符	要使用read（）方法，它的语法如下：  
+int read（） throws IOException  
+每次调用一次read（）方法，它从输入流中读取一个字符并以整型返回该数值。当流结束时返回-1。该方法抛出IOException

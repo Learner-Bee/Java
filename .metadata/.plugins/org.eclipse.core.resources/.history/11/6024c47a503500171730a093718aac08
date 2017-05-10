@@ -1,0 +1,7 @@
+package com.lily.util;
+
+public class Cake {
+	public Cake(int c){
+		System.out.println("Cake object "+c+" is created");
+	}
+}

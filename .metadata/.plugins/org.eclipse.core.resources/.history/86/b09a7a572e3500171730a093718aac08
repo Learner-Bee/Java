@@ -1,0 +1,13 @@
+package com.lily.testing;
+
+import com.lily.util.GouzaoMethod;
+
+public class Gouzao {
+
+	public static void main(String[] args) {
+		GouzaoMethod g1=new GouzaoMethod();
+		GouzaoMethod g2=new GouzaoMethod();
+
+	}
+
+}
