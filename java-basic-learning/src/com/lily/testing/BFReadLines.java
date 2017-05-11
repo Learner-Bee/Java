@@ -17,6 +17,7 @@ public class BFReadLines {
 		System.out.println("ÊäÈë×Ö·û´®£¬ÊäÈëendÍË³ö");
 		do{
 			s=bf.readLine();
+			System.out.println(s);
 		}while(!s.equals("end"));
 
 	}

@@ -19,6 +19,7 @@ public class BFRead {
         //¶ÁÈ¡×Ö·û
         do{
         	 c=(char)bf.read();   
+        	 System.out.println(c);
         }while(c!='q');
     	   
        

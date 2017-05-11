@@ -588,3 +588,61 @@ BufferReader对象
 从BufferReader对象读取一个字符	要使用read（）方法，它的语法如下：  
 int read（） throws IOException  
 每次调用一次read（）方法，它从输入流中读取一个字符并以整型返回该数值。当流结束时返回-1。该方法抛出IOException
+###控制台输出
+控制台输出由print()和println()完成。这些方法都有类PrintStream定义，System.out是该类对象的一个引用      
+PrintStream继承了OutputStream类，并且实现了方法write（）。所以，write（）也可以用来往控制台写操作  
+最简单格式：void write(int byteval)  
+该方法将byteval的低八位字节写到流中  
+###FileInputStream
+该流用于从文件中读取数据  
+有多种构造方法可以用来创建对象：
+
+* 可以使用字符串类型的文件名来创建一个输入流对象来读取文件：  
+  InputStream f=new FileInputStream("C:/java/hello");
+* 也可以使用一个文件对象来创建一个输入流对象来读取文件。首先使用File（）方法来创建一个文件对象  
+  File f=new File("C:/java/hello");
+  InputStream s=new FileInputStream(f);  
+
+创建了InputStream对象，就可以使用下面的方法来读取流或者进行其他流操作 
+
+* public void close() throws IOException{}  
+  关闭此文件输入流，并释放与此流有关的所有系统资源。抛出异常
+* protected void finalize () throws IOException{}
+  清除与该文件的连接。确保在不再引用文件输入流时调用其close方法
+* public int read(int r) throws IOException{}
+  从InputStream对象读取指定字节的数据。返回下一字节数据。如果到末尾返回-1
+* public int read（byte[] r） throws IOException{}
+  从输入流读取r.length长度的字节
+* public int available() throws IOException{}
+  从输入流读取的字节数
+###FileOutputStream
+该类用于创建文件并向文件写数据  
+如果该流在打开文件进行输出前，目标文件不存在，那么该流会创建该文件   
+有两个构造方法可以用来创建FileOutputStream对象   
+
+* OutputStream f=new FileOutputStream("C:/java/hello");
+* File f=new File("C:/java/hello");
+  OutputStream o=new FileOutputStream(f);
+
+创建了OUtputStream对象，就可以使用下面的方法来写入流或者进行其他流操作 
+
+* public void write（）(int w) throws IOException{}
+  把指定字节写到输出流中
+* public viod write（byte[] r） 
+  把指定数组中w.length长度的字节写到OutputStream中
+###文件和I/O
+还有一些关于文件和I/O的类：
+
+* File Class
+* FileReader Class
+* FileWriter Class
+###Java中的目录
+####创建目录
+
+* mkdir():创建文件夹，成功返回true，失败返回false。失败表明File对象指定的路径已经存在，或者由于整个路径还不存在，该文件夹不能创建
+* mkdirs()：创建一个文件夹和它所有父文件夹
+####读取目录
+一个目录就是一个File对象，它包含其他文件和文件夹
+
+    
+                                  
