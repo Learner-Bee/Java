@@ -639,10 +639,26 @@ PrintStream继承了OutputStream类，并且实现了方法write（）。所以�
 ###Java中的目录
 ####创建目录
 
-* mkdir():创建文件夹，成功返回true，失败返回false。失败表明File对象指定的路径已经存在，或者由于整个路径还不存在，该文件夹不能创建
+* mkdir()：创建文件夹，成功返回true，失败返回false。失败表明File对象指定的路径已经存在，或者由于整个路径还不存在，该文件夹不能创建
 * mkdirs()：创建一个文件夹和它所有父文件夹
 ####读取目录
-一个目录就是一个File对象，它包含其他文件和文件夹
+一个目录就是一个File对象，它包含其他文件和文件夹  
+如果创建一个File对象并且它是一个目录，那么调用isDirectory()方法返回true。  
+可以通过调用该对象的list()方法，来提取它包含的文件和文件夹列表  
+###删除目录或文件
+删除文件可以使用java.io.File.delete()方法  
+##Java Scanner类 
+java.util.Scanner是Java5的新特性，可以通过Scanner类获取用户的输入  
+Scanner s=new Scanner(System.in);  
+###next()和nextLine()区别  
+next()
 
-    
+* 一定要读取到有效字符后，才可以结束输入
+* 对输入有效字符之前遇到的空白，next()会自动去掉
+* 只有输入有效字符后，才将其后面输入的空白作为分隔符或者结束符
+* next()不能得到带有空格的字符串
+nextLine()
+
+* 以Enter为结束符，也就是说nextLine返回的是输入回车之前是所有字符
+* 可以获得空白   
                                   

@@ -1,0 +1,23 @@
+package com.lily.testing;
+
+import java.io.File;
+
+public class DeleteFile {
+
+	public static void main(String[] args) {
+		File file=new File("../test3");
+		delFile(file);
+
+	}
+	public static void delFile(File file){
+		File f[]=file.listFiles();
+		if(f!=null){
+			if(file.isDirectory()){
+				deleteFolder(file);
+			}else{
+				
+			}
+		}
+	}
+
+}
