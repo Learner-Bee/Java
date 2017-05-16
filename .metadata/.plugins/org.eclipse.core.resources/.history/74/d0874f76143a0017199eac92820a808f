@@ -1,0 +1,16 @@
+package com.lily.testing;
+
+public class ExcepTest {
+
+	public static void main(String[] args) {
+		try{
+			int a[]=new int[2];
+			System.out.println("数组第三个数为："+a[2]);
+		}catch(ArrayIndexOutOfBoundsException e){
+			System.out.println("Exception throw :"+e);
+		}
+		System.out.println("Out of the block");
+		
+	}
+
+}
