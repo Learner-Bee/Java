@@ -1,0 +1,12 @@
+import com.lily.testing.Suber;
+
+public class Super2Test {
+
+	public static void main(String[] args) {
+		
+			 Suber sb=new Suber();
+			 Suber sb2=new Suber(200);
+		 
+	}
+
+}

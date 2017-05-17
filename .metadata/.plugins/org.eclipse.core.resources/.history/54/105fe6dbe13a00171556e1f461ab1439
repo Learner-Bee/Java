@@ -1,0 +1,26 @@
+package com.lily.testing;
+
+public class SuperDemo2 {
+   private int n;
+   SuperDemo2(){
+	   System.out.println("SuperDemo2()");
+   }
+   SuperDemo2(int n){
+	   System.out.println("SuperDemo2(int n)");	   
+   }
+}
+ class Suber extends SuperDemo2{
+	private int n;
+	Suber(){
+		super(300);
+		System.out.println("Suber()");
+	}
+	Suber(int n){
+		System.out.println("Suber(int n)");
+	}
+	 public static void main(String[] arg){
+		 Suber sb=new Suber();
+		 Suber sb2=new Suber(200);
+	 }
+}
+ 

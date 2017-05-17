@@ -1,0 +1,15 @@
+package com.lily.testing;
+
+public class Animal {
+
+	public static void main(String[] args) {
+		String name;
+		 int id;
+		public Animal(String myName,int myId){
+			name=myName;
+			id=myId;
+		}
+
+	}
+
+}
