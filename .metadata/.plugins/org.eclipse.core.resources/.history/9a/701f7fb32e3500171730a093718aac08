@@ -1,9 +1,0 @@
-package com.lily.util;
-
-public class GouzaoMethod {
-	int x;
-	GouzaoMethod(int i){
-		x=i;
-	}
-
-}
