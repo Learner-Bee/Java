@@ -1,0 +1,17 @@
+package com.lily.testing;
+
+public class Dogtest extends Animal {
+
+	super("dog",4);
+	public void eat(){
+		
+		System.out.println(name+" eat gouliang");
+	}
+	
+	public static void main(String[] args) {
+		
+
+	}
+	
+
+}

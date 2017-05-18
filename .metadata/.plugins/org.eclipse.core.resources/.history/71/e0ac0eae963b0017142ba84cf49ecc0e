@@ -1,10 +1,5 @@
 package com.lily.testing;
 
-/**
- * super和this 的引用比较。super引用的是父类，this指向的是当前对象
- * @author Administrator
- *
- */
 public class SuperDemo {
 
 	public static void main(String[] args) {

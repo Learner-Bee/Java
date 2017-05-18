@@ -1,0 +1,26 @@
+package com.lily.testing;
+
+/**
+ * QQ类继承Animal类，调用animal中的方法
+ * @author Administrator
+ *
+ */
+public class QQ extends Animal {
+	public QQ(String myname, int myid) {
+		super(myname, myid);
+		
+	}
+	//重写eat方法
+	public void eat(){
+		System.out.println(name +"eat something");
+	}
+
+	public static void main(String[] args){
+		//Animal的构造方法有参数，所以此处实例化变量也要传参
+		Animal a=new Animal("ll",2);//Animal对象
+		Animal b=new QQ("tt",3);//QQ对象
+		a.eat();//执行Animal类方法
+		b.eat();//执行QQ类方法
+	
+	}
+}

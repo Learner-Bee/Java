@@ -1,20 +1,5 @@
 package com.lily.testing;
 
-/**
- * 父类中的有参构造方法，在子类中的super()的引用
- * @author Administrator
- *
- */
-public class Super2Test {
-
-		public static void main(String[] args) {
-			Suber sb=new Suber();
-			Suber sb2=new Suber(200);
-			 
-		}
-
-	}
-
  class SuperClass1{
     //无参构造方法
 	 SuperClass1(){
@@ -39,6 +24,13 @@ public class Super2Test {
 	}
 	 
 }
+ public class Super2Test {
 
+		public static void main(String[] args) {
+			Suber sb=new Suber();
+			Suber sb2=new Suber(200);
+			 
+		}
 
+	}
  
