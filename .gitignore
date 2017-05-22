@@ -4,4 +4,5 @@
 /.git
 /.metadata
 /.project
-/.recomenders
+/.recommenders/
+/.gitignore
