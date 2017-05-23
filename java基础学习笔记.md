@@ -945,3 +945,89 @@ public interface A extends B,C
 ###import关键字
 为了能够使用某个包的成员，我们需要在java程序中明确导入该包。  
 在java源文件中，import语句应放在package语句之后，所有类声明之前，可以没有，可以有多个
+
+#Java高级教程
+##Java数据结构
+java中的数据结构主要包括以下几种接口和类：  
+
+* **枚举**（Enumerration）
+* 位集合（Bitset）
+* 向量（Vector）
+* 栈（Stack）
+* **Map**（Hashmap）
+* **哈希表**（Hashtable）
+* 属性（Properties）
+###枚举
+枚举接口本身虽不属于数据结构，但它在其他数据结构中应用很广。  
+枚举接口定义了一种从数据结构中取回连续元素的方式  
+枚举接口中定义了一些方法，通过这些方法可以枚举（一次获得一个）对象集合中的元素  
+一些枚举声明的方法：
+
+* boolean hasMoreElements()：测试此枚举是否包含更多元素
+* Object nextElement（）：如果此枚举对象至少还有一个可提供的元素，则返回此枚举的下一个元素
+
+###位集合（BitSet）
+位集合类实现了一组可以单独设置和清除的位或标志  
+该类在处理一组布尔值时非常有用，你只需要给每个值赋值一位，然后对位进行适当的设置或清除，就可以对布尔进行操作了
+###向量（Vector）
+向量类和传统数组非常相似，但是Vector的大小可以根据需要动态的变化  
+和数组一样，Vector对象的元素也能通过索引访问  
+使用Vector类最主要的好处是，在创建对象时不必指定对象大小，它的大小会根据需要动态变化
+###栈（Stack）
+栈实现了一个后进先出的数据结构
+###字典（Dictionary）（已过时）
+* **字典类是一个抽象类**，用来存储键/值对，它定义了键映射到值的数据结构。作用和Map类似  
+* 当想要通过特定的键而不是整数的索引来访问数据的时候，这时候应该使用Dictionary  
+* 由于Dictionary是抽象类，所以它只提供了键映射到值的数据结构，而没有提供特定的实现
+* 给出键和值，就可以将值存储在Dictionary对象中。一旦该值被存储，就可以通过它的键来获取它。所以和Map一样，Dictionary也可以作为一个键/值对列表  
+
+Dictionary定义的抽象方法：  
+
+* Enumeration elements()：返回此Dictionary中值的枚举
+* Object get(Object key)：返回此Dictionary中该键映射的值
+* boolean isEmpty()：测试此Dictionary中是否存在键到值的映射
+* Enumeration keys()：返回此Dictionary键的枚举
+* Object put(Object key,Object value)：将指定key映射到此dictionary中指定value
+* Object remove（Object key）：从dictionary中移除key（及其对应的value值）
+* int size（）：返回此dictionary中条目（不同键）的数量
+###Java Map接口
+Map接口中键和值一一映射，可以通过键来获取值  
+
+* 给定一个键和一个值，可以将该值存在Map对象中，之后，可以通过键来访问该值
+* 当访问的值不存在时，方法就会抛出NoSuchElementException异常
+* 当对象的类型和Map里元素类型不兼容时，就会抛出ClassCastException异常
+* 当在不允许使用Null对象的Map中使用Null对象，会抛出NullPointer（指针）Exception异常
+* 当尝试修改一个只读Map时，会抛出UnsupportedOperationException异常
+
+常用方法：
+
+* void clear（）：从此映射中移除所有映射关系
+* boolean containsKey（Object k）：如果此映射包含指定键的映射关系，返回true
+* boolean containsValue（Object v）：如果此映射将一个或多个键映射到指定值，返回true
+* Set entrySet（）：返回此映射中包含的映射关系的set视图
+* boolean equals（Object obj）：比较指定的对象与此映射是否相等
+* Object get（Object k）：返回指定键所映射的值；如果此映射不包含该键的映射关系，返回null
+* int hashCode（）：返回此映射的哈希码值
+* booelan isEmpty（）：如果此映射为包好键-值映射关系，返回true
+* Object put（Object k，Object v）：将指定的值与此映射中指定的键关联
+* void putAll（Map m）：从指定映射中将所有映射关系复制到此映射中
+* Object remove（Object k）：如果存在一个键的映射关系，则将其从此映射中移除
+* int size（）：返回此映射中键-值映射关系
+* Collection values（）：返回此映射中包含的值的Collection视图
+###Java Hashtable接口
+和HashMap一样，Hashtable在哈希表中存储键/值对。当使用一个哈希表，要指定用作键的对象，以及要链接到该键的值  
+然后，该键经过哈希处理，所得到的散列码备用作存储在该表中值的索引  
+Hashtable实现了Map接口。和HashMap类很相似，但是它支持同步  
+Hashtable定义了四个构造方法:
+
+1. 默认构造方法：Hashtable()
+2. 创建指定大小的哈希表：Hashtable（int size）
+3. 创建一个指定大小的哈希表，并且通过fillRatio指定填充比例
+  填充比例必须介于0.0到1.0之间，它决定了哈希表在重新调整大小之前的充满程度：  
+  Hashtable（int size ，float fillRatio）
+4. 创建一个以M中元素为初始化元素的哈希表  
+   哈希表的容量被设置为M的两倍：
+   Hashtable（Map m）
+###属性（Properties）
+Properties继承于Hashtable.Properties类，表示了一个持久的属性集，属性列表中每个键及其对应值都是一个字符串
+##Java集合框架

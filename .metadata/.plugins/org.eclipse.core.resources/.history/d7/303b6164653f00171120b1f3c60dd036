@@ -1,0 +1,21 @@
+package com.lily.senior;
+
+import java.util.Vector;
+
+public class Enumeration {
+
+	public static void main(String[] args) {
+		Enumeration days;
+		Vector day=new Vector();
+		day.addElement("Sunday");
+		day.addElement("Monday");
+		day.addElement("Tuesday");
+		day.addElement("Wednesday");
+		day.addElement("Thursday");
+		day.addElement("Friday");
+		day.addElement("Saturday");
+		days=day.elements();
+
+	}
+
+}
