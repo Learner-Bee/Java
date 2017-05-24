@@ -1,0 +1,23 @@
+package com.lily.senior;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class ArrayListTest {
+
+	public static void main(String[] args) {
+		List<String> list=new ArrayList<String>();
+		list.add("hello");
+		list.add("world");
+		list.add("lily");
+		//使用foreach方法遍历list
+		System.out.println("foreach遍历list：");
+		for(String str:list){
+			System.out.println(str);
+		}
+		
+		
+
+	}
+
+}

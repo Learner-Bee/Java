@@ -1031,3 +1031,76 @@ Hashtable定义了四个构造方法:
 ###属性（Properties）
 Properties继承于Hashtable.Properties类，表示了一个持久的属性集，属性列表中每个键及其对应值都是一个字符串
 ##Java集合框架
+集合框架被设计成要满足一下目标：
+
+* 该框架必须是高性能的。基本集合（动态数组，链表，树，哈希表）的实现也必须是高效的
+* 该框架允许不同类型的集合，以类似的方式工作，具有高度的互操作性
+* 对一个集合的扩展和适应必须是简单的  
+
+为此，整个集合框架就围绕一组标准接口而设计  
+集合框架是一个用来代表和操纵集合的统一架构。所有的集合框架都包括以下内容：  
+
+* 接口：是代表集合的抽象数据类型。接口允许集合独立操纵其代表的细节。接口通常形成一个层次。
+* 实现（类）：是集合接口的具体实现。从本质上，它们是可重复使用的数据结构
+* 算法：是实现集合接口对象里的方法执行的一些有用的计算。如，搜素和排序。这些算法被称为多态，因为相同的方法可以在相似接口上有不同的实现
+###集合接口
+集合框架定义了一些接口。
+
+* Collection接口  
+  Collection是最基本的集合接口，一个Collection代表一组Object，Java不提供直接继承自	Collection类。只提供继承于的子接口（如List和set）   
+* List接口  
+  List接口是一个有序的Collection，使用此接口可以精确的控制每个元素插入的位置，能够通过索引（元素在List中的位置，类似数组的小标）来访问List的元素，而且允许有相同元素
+* Set  
+  Set具有与Collection完全一样的接口。只是行为上不同，Set不保存重复的元素  
+* SortedSet  
+  继承于Set保存有序的集合
+* Map   
+  将唯一的键映射到值
+* Map.Entry  
+  描述在一个Map中一个元素（键/值对）。是一个Map的内部类
+* SortedMap  
+  继承于Map，使Key保持在升序排列
+* Enumeration  
+  这是一个传统的接口和定义方法。通过它可以枚举（一次获得一个）对象集合的元素。  
+
+**Set和List区别**
+
+* Set接口实例存储的是无序的，不重复的数据。List接口实例存储的是有序的，可以重复的元素
+* Set检索效率低下，删除和插入效率高，插入和删除不会引起元素位置变化（实现类有HashSet,TreeSet）
+* List和数组类似，可以动态增长，根据实际存储的数据长度自动增长List的长度。查找元素效率高，插入删除效率低，因为会引起其他元素的位置改变（实现类有ArrayList，LinkedList，Vector）
+
+###集合实现类（集合类） 
+Java提供了一套实现Collection接口的标准集合类。其中一些是具体类，可以直接拿来使用，另外一些是抽象类，提供了接口的部分实现
+标准集合类汇总表：  
+
+* AbstractCollection：实现了大部分的集合接口  
+**LIst:**
+* AbstractList：继承上一类，并且实现了大部分List接口
+* AbstractSequentialList： 继承上一类，提过了对数据元素链式访问而不是随机访问
+* LinkedList：该类实现了List接口，允许有null（空）元素，主要用于创建链表数据结构，该类没有同步方法。如果多个线程同时访问一个List，则必须自己实现访问同步，解决方法就是在创建List的时候构造一个同步的List。如:
+  Listlist=Collection.synchronizedList(newLinkedList(...))  
+  LinkedList查找效率低
+* ArrayList：该类也是实现了List接口，实现了可表大小的数组，随机访问和遍历元素时，提供更好的性能。该类也是非同步的，在多线程 的情况下不要使用。ArrayList增长当前长度的50%，插入删除效率低  
+**Set：**
+* AbstractSet：继承于第一个类。并且实现了大部分Set接口
+* HashSet：该类实现了Set接口，不允许出现重复元素，不保证集合中元素的顺序，允许包含值为null的元素，但最多只能一个。
+* LinkedHashSet：具有可预知迭代顺序的Set接口的哈希表和链接列表实现
+* TreeSet：该类实现了Set接口，可以实现排序等功能   
+**Map：**  
+* AbstractMap：实现了大部分Map接口
+* HashMap:是一个散列表。它存储的内容是键值对（key-value）映射
+  该类实现了Map接口，格局键的HashCode值存储数据，具有很快的访问速度，最多允许一条记录的键为null，不支持线程同步
+* TreeMap：继承AbstractMap，并且使用一颗树
+* WeakHashMap：使用弱秘钥的哈希表
+* LinkedHashMap:继承于HashMap，使用元素的自然顺序对元素进行排序
+* IdentityHashMap：继承于AbstractMap类，比较文档时使用引用相等  
+###集合算法
+集合框架定义了几种算法，可用于集合和映射。这些算法被定义为集合类的静态方法  
+在尝试比较不兼容的类型时，一些方法能抛出ClassCastException异常，当试图修改一个不可修改的集合时，抛出UnspportedOpertionException异常。  
+集合定义三个静态的变量：empty_set,empty_list,empty_map。这些变量都不可改变  
+
+* CollectionAlgorithms：这里是一个列表中所有算法的实现
+
+###如何使用迭代器
+迭代器：使你能够通过循环来得到或删除集合中的元素。ListIterator继承了Iterator，以允许双向遍历列表和修改元素  
+迭代器方法描述：
