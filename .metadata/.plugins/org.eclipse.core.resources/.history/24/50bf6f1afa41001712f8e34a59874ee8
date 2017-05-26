@@ -1,0 +1,14 @@
+package com.lily.string;
+
+public class Split {
+
+	public static void main(String[] args) {
+		String str="qw?|e.r/ty.u@i";
+		String[] a=str.split(".");
+		String[] b=str.split("\\/");
+		String[] c=str.split("\\|");
+		String[] d=str.split("?|/");
+		System.out.println();
+	}
+
+}

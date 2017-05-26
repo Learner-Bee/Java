@@ -1,0 +1,11 @@
+package com.lily.string;
+
+public class LastIndexOf {
+
+	public static void main(String[] args) {
+		String str="hi,my name is lily.her name is lucy";
+		System.out.println(str.lastIndexOf("is"));
+
+	}
+
+}

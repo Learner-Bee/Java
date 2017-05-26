@@ -1,0 +1,16 @@
+package com.lily.string;
+
+public class IndexOf {
+
+	public static void main(String[] args) {
+		String str ="hello my name is lily";
+		String s="is";
+		if(str.indexOf(s)==-1){
+			System.out.println(str+"字符串中没有"+s);
+		}else{
+			System.out.println(str+" 字符串中有"+s);
+		}
+
+	}
+
+}
