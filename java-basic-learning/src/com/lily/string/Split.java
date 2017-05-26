@@ -1,5 +1,11 @@
 package com.lily.string;
 
+/**
+ * 分割字符串split(String regex),参数为正则表达式
+ * 
+ * @author Lily
+ *
+ */
 public class Split {
 
 	public static void main(String[] args) {
