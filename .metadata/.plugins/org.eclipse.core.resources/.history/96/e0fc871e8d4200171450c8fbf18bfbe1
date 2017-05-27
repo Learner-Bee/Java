@@ -1,0 +1,11 @@
+package com.lily.string;
+
+public class Format {
+
+	public static void main(String[] args) {
+		System.out.printf("%f%n",32.0);
+		System.out.printf("’€ø€ «%%",100);
+
+	}
+
+}
