@@ -1,0 +1,12 @@
+package com.lily.arrays;
+
+public class Arraymerge {
+
+	public static void main(String[] args) {
+		int[] a={4,3,1};
+		int[] b={7,6,3};
+		Integer[] c=new Integer(a.length+b.length);
+
+	}
+
+}

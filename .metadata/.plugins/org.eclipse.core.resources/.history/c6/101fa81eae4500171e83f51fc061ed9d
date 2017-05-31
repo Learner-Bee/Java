@@ -1,0 +1,10 @@
+package com.lily.arrays;
+
+public class ArrayReverse {
+
+	public static void main(String[] args) {
+		String[] str={2,3,6,2,4}; 
+
+	}
+
+}

@@ -1,7 +1,7 @@
 package com.lily.string;
 
 /**
- * 字符串翻转reverse()方法是将输入流倒序输出。
+ * 字符串翻转string.reverse()方法是将输入流倒序输出。
  * 该方法是StringBuffer下的，String不能使用该方法
  * 所以在输出时，要将StringBuffer转换成String :toString()
  * @author Administrator

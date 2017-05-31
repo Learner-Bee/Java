@@ -21,10 +21,12 @@ public class Sort {
 		//对数组index0到3从小到大排序。且index为3的元素不在排序范围
 		Arrays.sort(b, 0, 3);
 		for(int i=0;i<b.length;i++){
-			System.out.println(b[i]+" ");
+			System.out.print(b[i]+" ");
 		}
+		System.out.println();
 		//利用Arrays类中的binarySearch(数组名，查询的元素)方法，查询某个元素在数组中的index
-       System.out.println("元素2在数组b中的位置为："+Arrays.binarySearch(b, 2));
+       System.out.print("元素2在数组b中的位置为："+Arrays.binarySearch(b, 2));
+       
 	}
 
 }

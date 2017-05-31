@@ -1,0 +1,24 @@
+package com.lily.arrays;
+
+import java.util.ArrayList;
+
+public class ArrayRemove {
+
+	public static void main(String[] args) {
+		ArrayList a=new ArrayList();
+		a.add("a");
+		a.add("b");
+		System.out.println("删除前数组为："+a);
+		a.remove("b");
+		System.out.println("删除后数组为："+a);
+		
+		ArrayList b=new ArrayList();
+		b.add(0, "lily");
+		b.add(1,"lucy");
+		System.out.println("删除前数组为："+b);
+		b.remove(1);
+		System.out.println("删除后数组为："+b);
+
+	}
+
+}

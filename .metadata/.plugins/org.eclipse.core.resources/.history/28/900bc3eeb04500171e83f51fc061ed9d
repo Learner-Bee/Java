@@ -1,0 +1,13 @@
+package com.lily.arrays;
+
+import java.util.Collections;
+
+public class ArrayReverse {
+
+	public static void main(String[] args) {
+		int[] i={2,3,6,2,4}; 
+		Collections.reverse(i);
+
+	}
+
+}

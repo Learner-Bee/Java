@@ -1,0 +1,16 @@
+package com.lily.date;
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateFormat {
+
+	public static void main(String[] args) {
+		Date date=new Date();
+		String dateformat="yyyy-MM-dd HH£ºmm£ºss";
+		SimpleDateFormat sdf=new SimpleDateFormat(dateformat);
+		System.out.println(sdf.format(date));
+
+	}
+
+}
