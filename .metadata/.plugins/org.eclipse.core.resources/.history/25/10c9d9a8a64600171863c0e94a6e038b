@@ -1,0 +1,21 @@
+package com.lily.method;
+
+/**
+ * 斐波那契数列。以0和1开始，后面的数是前两个数的和
+ * @author Administrator
+ *
+ */
+public class Fibonacci {
+
+	public static void main(String[] args) {
+		int[] a=new int[10];
+		a[0]=0;
+		a[1]=1;
+		System.out.print(a[0]+" "+a[1]+" ");
+		for(int i=2;i<a.length;i++){
+			a[i]=a[i-1]+a[i-2];
+			System.out.print(a[i]+" ");
+		}
+	}
+
+}

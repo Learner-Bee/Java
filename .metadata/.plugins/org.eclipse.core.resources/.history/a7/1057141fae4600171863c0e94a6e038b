@@ -1,0 +1,17 @@
+package com.lily.method;
+
+public class FibonacciDiGui {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+	public static int diGui(int number){
+		if(number<=1){
+			return number;
+		}else{
+			return number+
+		}
+	}
+
+}
