@@ -1,0 +1,22 @@
+package com.lily.method;
+
+public class Enum {
+
+	public static void main(String[] args) {
+		for(Car c:Car.values()){
+			System.out.println(c+"¹¤×ÊÎª£º"+c.getSalary());
+		}
+
+	}
+
+}
+enum Car{
+	lily(15000) , mk(25000);
+	private int salary;
+	Car(int s){
+		salary=s;
+	}
+	int getSalary(){
+		return salary;
+	}
+}

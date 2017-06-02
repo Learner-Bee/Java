@@ -1,11 +1,5 @@
 package com.lily.method;
 
-/**
- *方法的重写。
- *1.父类的有参构造函数，必须在子类创建构造函数中用super调用并传参
- * @author Administrator
- *
- */
 public class OverWrite {
 
 	public static void main(String[] args) {
@@ -13,6 +7,9 @@ public class OverWrite {
 		Square s=new Square(3,4);
 		System.out.println(f.area());
 		System.out.println(s.area());
+		
+		
+
 	}
 	
 

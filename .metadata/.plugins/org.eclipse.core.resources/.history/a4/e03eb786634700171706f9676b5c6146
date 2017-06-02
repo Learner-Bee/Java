@@ -1,0 +1,17 @@
+package com.lily.method;
+
+public class Break {
+
+	public static void main(String[] args) {
+		int [] a={1,4,3,5,7,5,4};
+		int b=2,i=0;
+		for(;i<a.length;i++){
+			if(a[i]==b){
+				break;
+			}
+		}
+		System.out.println(b+"在数组中的位置为:"+i);
+
+	}
+
+}

@@ -1,0 +1,19 @@
+package com.lily.method;
+
+import java.util.ArrayList;
+
+public class InstanceOf {
+
+	public static void main(String[] args) {
+		Object a=new ArrayList();
+		instanceTest(a);
+	}
+	public static void instanceTest(Object o){
+		if(o instanceof Object){
+			System.out.println("对象是Object的实例");
+		}else if(o instanceof ArrayList){
+			System.out.println("对象是ArrayList的实例");
+		}
+	}
+
+}
