@@ -1,0 +1,15 @@
+package com.lily.file;
+
+import java.io.*;
+
+public class CreatTempFile {
+
+	public static void main(String[] args) {
+		try{
+		File temp=File.createTempFile("tempfile",null);
+		BufferedWriter buff=new BufferedWriter(new FileWriter(temp));
+		}catch(){}
+
+	}
+
+}

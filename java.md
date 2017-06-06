@@ -14,3 +14,15 @@
    void write(byte b[])往流中写一个字节数组b  
    void write(byte b[],int off,int len)
    
+##Java输入输出流
+1. 字符流：
+  * Reader:BufferedReader/InputStreamReader
+  * Writer:BufferedWriter/OutputStreamWriter
+2. 字节流：
+  * InputStream:FileInputStream--
+  * OutputStream:FileOutputStream
+
+**要点：**
+
+* 字节流InputStream类和OutputStream类是抽象类，不能创建对象，可以通过子类来实例化
+* 

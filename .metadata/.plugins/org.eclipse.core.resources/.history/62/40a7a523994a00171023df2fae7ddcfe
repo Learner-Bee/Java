@@ -1,0 +1,16 @@
+package com.lily.file;
+import java.io.*;
+public class AddStrFile {
+
+	public static void main(String[] args) {
+		try{
+			BufferedWriter bw=new BufferedWriter(new FileWriter("test1.txt"));
+			String a="add new string";
+			bw.append(a);
+			System.out.println("ok");
+			//while(bw.){}
+		}catch(Exception e){}
+
+	}
+
+}

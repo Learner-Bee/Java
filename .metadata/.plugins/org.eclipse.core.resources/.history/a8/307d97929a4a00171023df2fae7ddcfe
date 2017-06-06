@@ -1,0 +1,20 @@
+package com.lily.file;
+import java.io.*;
+public class AddStrFile {
+
+	public static void main(String[] args) {
+		try{
+			BufferedWriter bw=new BufferedWriter(new FileWriter("test1.txt",true));
+			String a="add new string3";
+			bw.append(a);
+			bw.close();
+			System.out.println("ok");
+			
+			//BufferedReader br=new BufferedReader(new FileReader("test1.txt"));
+			//while(){}
+			
+		}catch(Exception e){}
+
+	}
+
+}
