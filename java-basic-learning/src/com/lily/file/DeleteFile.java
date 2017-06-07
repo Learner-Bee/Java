@@ -11,7 +11,7 @@ import java.io.File;
 public class DeleteFile {
 
 	public static void main(String[] args) {
-		File f=new File("test.txt");
+		File f=new File("/Users/Lily/learn/Java/java-basic-learning/src/com/lily/file/test.txt");
 		try{
 			if(f.delete()){
 				System.out.println(f.getName()+"É¾³ý³É¹¦");
