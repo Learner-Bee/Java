@@ -1,0 +1,10 @@
+package com.lily.file;
+
+public class InputStream {
+
+	public static void main(String[] args) {
+		InputStream in=new FileInputstream();
+
+	}
+
+}

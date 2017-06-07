@@ -1,0 +1,19 @@
+package com.lily.file;
+
+import java.io.*;
+
+public class InputStreamDemo {
+
+	public static void main(String[] args) {
+		try{
+		File f=new File("test1.txt");
+		InputStream in=new FileInputStream(f);
+		byte[] b=new byte[1000];
+		while((b=in.read(b))>0){
+			
+		}
+		}catch(Exception e){}
+
+	}
+
+}

@@ -1,0 +1,14 @@
+package com.lily.directory;
+
+import java.io.*;
+
+public class SearchFile {
+
+	public static void main(String[] args) {
+		String dir="E:/Learn/Java/test3/";
+		String file="test3-1.txt";
+		File f1=new File(dir,file);
+
+	}
+
+}

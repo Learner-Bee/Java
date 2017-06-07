@@ -1,0 +1,13 @@
+package com.lily.file;
+
+import java.io.*;
+
+public class CreatFile {
+
+	public static void main(String[] args) {
+		String directory="E:/Learn/Java";
+		File f=new File()
+
+	}
+
+}

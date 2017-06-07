@@ -1,0 +1,19 @@
+package com.lily.directory;
+
+import java.io.*;
+
+public class FileList {
+
+	public static void main(String[] args) {
+		String dir="E:/Learn/Java/test3/";
+		String file="test3-1.txt";
+		File f1=new File(dir,file);
+		if(f1.exists()){
+			System.out.println("该目录下存在要查找的文件");
+		}else{
+			System.out.println("该目录下不存在指定文件");
+		}
+
+	}
+
+}

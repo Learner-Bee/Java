@@ -1,0 +1,10 @@
+package com.lily.directory;
+
+public class DeleteDir {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

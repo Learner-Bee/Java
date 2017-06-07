@@ -1,0 +1,26 @@
+package com.lily.directory;
+
+import java.io.*;
+
+public class DeleteDir {
+
+	public static void main(String[] args) {
+		String dir="E:/Learn/Java/test3/";
+		File f=new File(dir);
+		if(f.isDirectory()){
+			String[] s=f.list();
+			for(int i=0;i<s.length;i++){
+				File f2=new File(s[i]);
+				f2.delete();
+			}
+			f.delete();
+		}
+		if(!f.exists()){
+			System.out.println("É¾³ýÄ¿Â¼³É¹¦");
+		}else{
+			System.out.println("É¾³ýÄ¿Â¼Ê§°Ü");
+		}
+
+	}
+
+}

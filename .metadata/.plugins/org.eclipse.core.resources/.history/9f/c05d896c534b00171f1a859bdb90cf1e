@@ -1,0 +1,12 @@
+package com.lily.file;
+
+import java.io.*;
+
+public class SetReadOnly {
+
+	public static void main(String[] args) {
+		File f=new File("test1.txt");
+
+	}
+
+}

@@ -1,0 +1,22 @@
+package com.lily.directory;
+
+import java.io.*;
+
+public class FileList {
+
+	public static void main(String[] args) {
+		
+		File f1=new File("E:/Learn/Java/test3/");
+		String[] file=f1.list();
+		if(file.length==0){
+			System.out.println("¸ÃÄ¿Â¼Îª¿Õ");
+		}else{
+			for(int i=0;i<file.length;i++){
+				System.out.println(new File(file[i]));
+			}
+			
+		}
+
+	}
+
+}
