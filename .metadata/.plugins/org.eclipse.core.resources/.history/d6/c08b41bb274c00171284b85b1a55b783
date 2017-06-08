@@ -1,0 +1,17 @@
+package com.lily.exception;
+
+public class Exceptions {
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}
+class Demo{
+	public static int method(int a,int b) throws ArithmeticException,ArrayIndexOutOfBoundsException {
+		int[] array=new int[4];
+		System.out.println(array[4]);
+		return a/b;
+	}
+}

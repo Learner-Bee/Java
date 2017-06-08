@@ -1,0 +1,22 @@
+package com.lily.exception;
+
+public class Exceptions {
+
+	public static void main(String[] args) {
+		Demo d=new Demo();
+		try{
+		    int x=d.method(4, 0);
+		    System.out.println("x= ");
+		}catch()
+		
+
+	}
+
+}
+class Demo{
+	public static int method(int a,int b) throws ArithmeticException,ArrayIndexOutOfBoundsException {
+		int[] array=new int[a];
+		System.out.println(array[a]);//制造下标越界异常
+		return a/b;//制造算术异常
+	}
+}
