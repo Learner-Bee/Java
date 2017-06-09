@@ -1,0 +1,31 @@
+package com.lily.collection;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+/**
+ * 数组转化为list集合。利用Arrays.asList(数组名)实现
+ * @author Administrator
+ *
+ */
+public class ArraysAsList {
+
+	public static void main(String[] args) {
+		//数组转化为集合
+		int[] a={2,4,3,1,2};
+		List<Integer> list=new ArrayList<>();
+		Arrays.asList(a);
+		for(int i:a){
+			System.out.print(i+" ");
+		}
+		
+		//集合转化为数组
+		List<String> list1=new ArrayList<>();
+		list1.add("lily");
+		list1.add("mk");
+		list1.add("love");
+
+	}
+
+}

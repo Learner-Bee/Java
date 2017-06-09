@@ -4,7 +4,8 @@ import java.io.*;
 
 /**
  * 在指定目录下查找以t开头的文件
- * 重点：1.以某个字符开头：string.startWith(string s) 2.文件包含：string.contains(string s)
+ * 重点：1.以某个字符开头：string.startWith(string s) 
+ * 2.文件包含：string.contains(string s)
  * @author Administrator
  *
  */

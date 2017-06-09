@@ -1,0 +1,20 @@
+package com.lily.collection;
+
+import java.util.*;
+
+public class HashMapDemo {
+
+	public static void main(String[] args) {
+		Map<String,String> hamp=new HashMap<String,String>();
+		hamp.put("1", "Saturday");
+		hamp.put("2", "Sunday");
+		
+		System.out.println("Í¨¹ıkey±éÀúmap£º");
+		for(String a:hamp.keySet()){
+			System.out.println(hamp.get(a));
+		}
+		
+
+	}
+
+}
