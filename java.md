@@ -25,4 +25,21 @@
 **要点：**
 
 * 字节流InputStream类和OutputStream类是抽象类，不能创建对象，可以通过子类来实例化
-* 
+
+
+##InetAdress类的一些方法
+### getHostName()方法
+定义：public String getHostName() 获取主机名   
+根据创建InetAdress对象的不同方式，getHostName的返回值是不同的
+
+ * 用getLocalHost()方法创建是InetAdress对象  
+   此时返回的是本机名  
+   InetAdress adress=InetAdress.getLocalHost();  
+   system.out.print(address.getHostName);//返回本机名
+ * 用域名创建InetAdress  
+   指定域名，无需访问DNS服务器，直接使用该域名 
+ * 用IP地址创建  
+   InetAddress address=InetAddress.getByName("141.146.8.66");    
+   System.out.println(address.getHostName());//需要访问DNS服务器才能得到域名  
+   InetAddress address=InetAddress.getByName("1.2.3.4");//IP地址不存在  
+   System.out.println(address.getHostName());//直接返回IP地址 
