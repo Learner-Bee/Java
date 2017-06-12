@@ -16,7 +16,7 @@ public class ArraysAsList {
 	public static void main(String[] args) {
 		//数组转化为集合
 		int[] a={2,4,3,1,2};
-		List<Integer> list=new ArrayList<>();
+		//List<Integer> list=new ArrayList<>();	
 		Arrays.asList(a);
 		System.out.print("数组转化为集合：");
 		for(int i:a){

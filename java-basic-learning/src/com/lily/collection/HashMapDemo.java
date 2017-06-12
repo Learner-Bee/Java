@@ -28,7 +28,7 @@ public class HashMapDemo {
 		
 		System.out.println("通过map.entrySet遍历map：");
 		for(Map.Entry<String, String> entry:hamp.entrySet()){
-			System.out.println("key="+entry.getKey()+"value="+entry.getValue());
+			System.out.println("key="+entry.getKey()+" value="+entry.getValue());
 		}
 		
 		System.out.println("通过map.values()遍历map：");

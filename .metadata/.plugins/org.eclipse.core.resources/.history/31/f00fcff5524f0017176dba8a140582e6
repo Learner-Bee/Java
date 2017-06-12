@@ -1,0 +1,12 @@
+package com.lily.collection;
+
+import java.util.*;
+
+public class IndexOf {
+
+	public static void main(String[] args) {
+		List l=new ArrayList();
+
+	}
+
+}

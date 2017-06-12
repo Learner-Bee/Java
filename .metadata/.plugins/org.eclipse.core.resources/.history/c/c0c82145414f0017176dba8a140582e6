@@ -1,0 +1,14 @@
+package com.lily.collection;
+
+import java.util.*;
+
+public class ListReverse {
+
+	public static void main(String[] args) {
+		int[] a={1,2,3,4,5};
+		List<Interge> l=new List<Interge>();
+		
+
+	}
+
+}

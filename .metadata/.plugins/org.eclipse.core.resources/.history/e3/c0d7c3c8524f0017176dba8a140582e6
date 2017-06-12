@@ -1,0 +1,12 @@
+package com.lily.collection;
+
+import java.util.Arrays;
+
+public class RepalceAll {
+
+	public static void main(String[] args) {
+		List l=Arrays.asList("")
+
+	}
+
+}
