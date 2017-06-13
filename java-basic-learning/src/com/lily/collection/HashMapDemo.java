@@ -3,7 +3,11 @@ package com.lily.collection;
 import java.util.*;
 
 /**
- * hashmap遍历
+ * hashmap四种遍历
+ * 1、通过map.keySet()方法遍历
+ * 2、通过迭代器遍历
+ * 3、通过map.entrySet()遍历
+ * 4、通过map.values遍历（无法遍历key）
  * @author Administrator
  *
  */
