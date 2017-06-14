@@ -14,12 +14,17 @@ import java.util.*;
 public class GetURLHeader {
 
 	public static void main(String[] args) throws Exception {
-		URL url=new URL("http://www.runoob.com");
+		URL url=new URL("http://www.baidu.com");
 		URLConnection con=url.openConnection();
-		Map<String,String> header=new HashMap(con.getHeaderFields());
+		//获得响应头日期
+		long date=con.getDate();
+		System.out.println("URL响应头的日期："+new Date(date));
+		
+		//获得响应头的信息，存在Map中，遍历输出
+		Map<String, List<String>> header=con.getHeaderFields();
 		 //Map header=con.getHeaderFields();
 		for( String key : header.keySet()){
-			System.out.print(key+" ");
+			System.out.print(key+"   ");
 			System.out.print(header.get(key));
 			System.out.println();
 		}

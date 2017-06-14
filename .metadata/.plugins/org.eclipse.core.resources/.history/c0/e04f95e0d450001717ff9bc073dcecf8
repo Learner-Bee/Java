@@ -1,0 +1,13 @@
+package com.lily.thread;
+
+public class CurrentThreadName {
+	
+	
+	
+
+	public static void main(String[] args) {
+		
+
+	}
+
+}

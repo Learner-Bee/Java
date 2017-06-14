@@ -21,6 +21,7 @@ public class URLResolve {
 		System.out.println("端口号："+url.getPort());//-1为未设置
 		System.out.println("默认端口号："+url.getDefaultPort());
 		
+		
 	}
 	
 }
