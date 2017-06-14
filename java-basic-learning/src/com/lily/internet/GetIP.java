@@ -16,7 +16,7 @@ public class GetIP {
 		InetAddress localaddress=null;
 		try{
 			 address=InetAddress.getByName("www.baidu.com");//try语句中的变量为局部变量
-			 address2=InetAddress.getByName("192.168.1.12");
+			 address2=InetAddress.getByName("111.13.100.92");
 			 localaddress=InetAddress.getLocalHost();//获取本机地址
 		}catch(UnknownHostException e){
 			System.exit(1);

@@ -6,14 +6,20 @@ package com.lily.thread;
  *
  */
 public class IsAlive extends Thread {
-
+	public void run(){
+		System.out.println(Thread.currentThread().getName() + "run() method invoked...");
+	}
+	
+	
 	public static void main(String[] args) {
 		IsAlive is=new IsAlive();
 		is.setName("Thread");
-		System.out.println("线程是否启动："+is.isAlive());
+		System.out.println(is.getName() +  "线程是否启动："+is.isAlive());
 		is.start();
-		System.out.println("启动线程后");
-		System.out.println("线程是否启动："+is.isAlive());
+		System.out.println(Thread.currentThread().getName() + "启动线程后");
+		System.out.println(is.getName() + "线程是否启动："+is.isAlive());
 	}
+	
+	
 
 }

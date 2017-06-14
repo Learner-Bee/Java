@@ -43,3 +43,14 @@
    System.out.println(address.getHostName());//需要访问DNS服务器才能得到域名  
    InetAddress address=InetAddress.getByName("1.2.3.4");//IP地址不存在  
    System.out.println(address.getHostName());//直接返回IP地址 
+   
+ 
+##Thread线程
+###线程状态
+
+* new：新建
+* runable：可执行的
+* blocked：被阻塞
+* waiting：等待
+* timed-waiting：计时等待
+* terminated：被终止
