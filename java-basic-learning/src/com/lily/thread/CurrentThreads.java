@@ -6,14 +6,19 @@ package com.lily.thread;
  * 2.获得线程组中有效的线程数
  * 3.创建数组，将线程组枚举的形式复制到该数组中 threadgroup.enumerate(数组名)
  * 4.最后遍历输出线程
- * ？？为什么debug时只检测到一个线程？？？？？
+ * 为什么debug时只检测到一个线程?
+ * 因为线程执行速度很快，debug时线程已经执行结束，所以统计不到
  * @author Administrator
  *
  */
 public class CurrentThreads extends Thread  {
-	//public void run(){
-		//为什么run()方法不重写，也能执行输出正确的结果呢？？
-	//}
+	public void run(){
+		try {
+			Thread.sleep(50000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
+	}
 
 	public static void main(String[] args) {
 		CurrentThreads cth=new CurrentThreads();
