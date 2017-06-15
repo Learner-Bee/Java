@@ -25,6 +25,7 @@ public class GetName extends Thread{
 		//Thread t=currentThread();
 		//System.out.println("name="+t.getName());
 		//g.printMsg();
+		//main线程的循环与g线程里的循环几乎同时进行
 		for(int i=0;i<10;i++){
 			g.printMsg();		
 		}

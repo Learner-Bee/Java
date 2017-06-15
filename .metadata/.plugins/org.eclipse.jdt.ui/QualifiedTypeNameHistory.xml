@@ -9,7 +9,6 @@
 <fullyQualifiedTypeName name="java.io.InputStream"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver"/>
 <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
@@ -32,6 +31,8 @@
 <fullyQualifiedTypeName name="java.util.HashMap"/>
 <fullyQualifiedTypeName name="com.lily.thread.IsAlive"/>
 <fullyQualifiedTypeName name="com.lily.thread.GetName"/>
-<fullyQualifiedTypeName name="java.lang.Thread"/>
 <fullyQualifiedTypeName name="javax.print.attribute.standard.PrinterMessageFromOperator"/>
+<fullyQualifiedTypeName name="com.lily.thread.GetState"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver"/>
 </qualifiedTypeNameHistroy>

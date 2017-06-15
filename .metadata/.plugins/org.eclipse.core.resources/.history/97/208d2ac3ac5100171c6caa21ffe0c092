@@ -1,0 +1,17 @@
+package com.lily.thread;
+
+public class CurrentThreads extends Thread  {
+
+	public static void main(String[] args) {
+		CurrentThreads cth=new CurrentThreads();
+		cth.setName("Thread-1");
+		ThreadGroup thgroup=Thread.currentThread().getThreadGroup(); 
+		int thcount=thgroup.activeCount();
+		Thread[] th=new Thread[thcount];
+		for(int i=0;i<thcount;i++){
+			System.out.println("Ïß³ÌºÅ"+i+" "+th[i]);
+		}
+
+	}
+
+}

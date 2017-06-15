@@ -1,0 +1,32 @@
+package com.lily.thread;
+
+public class GetState extends Thread{
+	boolean waiting=true;
+	
+	public void run(){
+		String thName=Thread.currentThread().getName();
+		System.out.println("当前线程 "+thName+" starting");
+		try{
+			Thread.sleep(10000);
+		}catch(Exception e){
+			System.out.println(thName+" interrupted");
+		}
+		System.out.println(thName+" terminating");
+	}
+
+	public static void main(String[] args) throws InterruptedException {
+		GetState ge =new GetState();
+		ge.setName("Thread-1");
+		showThreadState(ge);//此时线程状态为New
+		ge.start();
+		Thread.sleep(50);
+		showThreadState(ge);
+		
+		
+
+	}
+	public static void showThreadState(Thread th){
+		System.out.println(th.getName()+" isAlive()="+th.isAlive()+" State="+th.getState());
+	}
+
+}
