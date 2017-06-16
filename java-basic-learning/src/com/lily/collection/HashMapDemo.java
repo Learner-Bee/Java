@@ -30,7 +30,7 @@ public class HashMapDemo {
 			System.out.println("key="+en.getKey()+" vale="+en.getValue());
 		}
 		
-		System.out.println("通过map.entrySet遍历map：");
+		System.out.println("通过map.entrySet遍历map：");//推荐使用，尤其容量大时
 		for(Map.Entry<String, String> entry:hamp.entrySet()){
 			System.out.println("key="+entry.getKey()+" value="+entry.getValue());
 		}
