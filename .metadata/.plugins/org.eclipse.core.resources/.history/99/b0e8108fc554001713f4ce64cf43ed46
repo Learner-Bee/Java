@@ -1,0 +1,10 @@
+package com.lily.arrays;
+
+public class Test1 extends Test {
+
+	public static void main(String[] args) {
+		public int method(int a,int b){return 0;};
+
+	}
+
+}
