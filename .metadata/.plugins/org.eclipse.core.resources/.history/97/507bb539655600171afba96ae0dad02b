@@ -4,7 +4,7 @@ import java.io.*;
 /**
  * 在指定文件中添加内容
  * 重点：FileWriter()的使用。FileWriter(String filename，boolean append)
- * 当FileWriter(文件名，true)时，表示设置流对文件的操作是续写,而不是覆盖
+ * 当FileWriter(文件名，true)时，表示设置流对文件的操作是否为续写
  * @author Administrator
  *
  */
