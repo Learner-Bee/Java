@@ -16,7 +16,7 @@ public class CreatFile {
 
 	public static void main(String[] args) {
 		String directory="E:/Learn/Java/";
-		String file="test3-2.txt";
+		String file="test3-1.txt";
 		File f=new File(directory,file);
 		if(f.exists()){
 			String path=f.getAbsolutePath();

@@ -25,7 +25,7 @@ public class CreatFile {
 			System.out.println("文件名："+name);
 		}else{
 			
-			f.getParentFile().mkdir();//创建文件所在目录
+			//f.getParentFile().mkdir();//创建文件所在目录
 			try{
 			if(f.createNewFile()){
 				System.out.println("文件创建成功");

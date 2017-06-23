@@ -13,7 +13,7 @@ public class InputStreamDemo {
 
 	public static void main(String[] args) {
 		try{
-		File f=new File("E:/Learn/Java/test1.txt");
+		File f=new File("test1.txt");
 		InputStream in=new FileInputStream(f);
 		byte[] b=new byte[(int)f.length()];
 		while(in.read(b)>0){

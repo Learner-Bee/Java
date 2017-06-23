@@ -7,7 +7,6 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.io.BufferedWriter"/>
 <fullyQualifiedTypeName name="java.io.InputStream"/>
-<fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.util.SynchronizedSymbolTable"/>
 <fullyQualifiedTypeName name="javax.sound.midi.SysexMessage"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
@@ -35,4 +34,5 @@
 <fullyQualifiedTypeName name="com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver"/>
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="java.util.Map.Entry"/>
+<fullyQualifiedTypeName name="java.io.File"/>
 </qualifiedTypeNameHistroy>
