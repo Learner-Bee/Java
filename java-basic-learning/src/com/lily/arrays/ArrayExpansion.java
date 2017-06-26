@@ -1,7 +1,7 @@
 package com.lily.arrays;
 
 /**
- * ÀûÓÃSystem.arraycopy()·½·¨À´À©³äÊı×é
+ * åˆ©ç”¨System.arraycopy()æ–¹æ³•æ¥æ‰©å……æ•°ç»„
  * @author Administrator
  *
  */
