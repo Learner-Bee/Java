@@ -1,4 +1,4 @@
-#1、Java Web开发需要学习什么？
+	#1、Java Web开发需要学习什么？
 
 ##TCP/IP协议
 ###客户端-服务器（Client-Server）模型
@@ -30,3 +30,42 @@
 基于java开发，只要关注第三步。我们的主要工作就是编写处理请求的java servlet代码
 #3、Servlet简介
 ##什么是Servlet？
+Servlet技术用来创建Web应用程序。本质上---Servlet是运行于服务器端的java程序。能够接受客户端发起的http请求，并动态的生成页面内容。  
+Serblet会应用在如下场景：
+
+* 处理从浏览器页面提交的html表单数据
+* 根据http请求信息，动态生成http响应数据。
+* 使用Cookie或URL重写技术在无状态的http协议之上，实现对客户端状态的管理。如，用户登录一次后，可以访问站点内的所有页面，而不用重复登录、电商网站的购物车功能
+##第一个Serlet程序
+程序体现几个要素：
+
+* 在程序实现角度，一个Servlet是继承了javax.servlet.http.HttpServlet的子类
+* doGet()方法中定义了处理http get请求的动作，
+* HttpServletRequest对象中封装了http请求信息。通过该对象可以访问http请求信息
+* HttpServletResponse可以生成http相应内容
+* @WebServlet("/HelloWorld")注释表明请求路径
+##Servlet容器
+Servlet容器是Web服务器和Servlet进行通信的主要构件，主要职责：
+
+* 管理Servlet程序的生命周期
+* 将URL映射到指定的Servlet进行处理
+* 与Servlet程序合作处理http请求————根据http请求生成HttpServletRequest对象并传递给Servlet进行处理，将Servlet中的HttpServletReponse对象生成的内容返回给浏览器
+* 并发请求的多线程处理，线程池管理
+* Session管理，http缓存等
+##通过HttpServletResponse生成返回内容
+四种处理相应的方法：
+
+* 直接返回html内容：使用PrinterWriter对象  
+ 例：response.getWriter().append("hello");  
+* 返回二进制数据（文件下载）：使用OutputStream对象   
+ 例：resopnse.getOutputStream().write();　  
+* 重定向到另一URL：使用sendRedirect方法   
+ 例：response.sendRedirect("index.html");
+* 返回错误信息：使用sendError方法  
+ 例：response.sendError(404,"Resource not found");
+##Servlet生命周期
+Servlet依托于Servlet容器运行，它包含三个方法，分别在特定的时机被容器调用
+
+* init()：当Servlet第一次被容器加载进入内存后调用，一般用于载入一些特定的资源和配置
+* service()：一旦有对应URL的http请求访问即被调用。它会根据http请求中的method信息将请求分发至相应的方法进行处理（doGet()/doPost()）,service()方法一般不需要开发重写
+* destory():Servlet被销毁时调用。一般用来释放、清理资源
