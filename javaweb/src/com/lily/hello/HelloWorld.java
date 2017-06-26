@@ -1,4 +1,4 @@
-package JavaWebProject;
+package com.lily.hello;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
