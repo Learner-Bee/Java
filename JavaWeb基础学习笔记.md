@@ -1,4 +1,4 @@
-	#1、Java Web开发需要学习什么？
+#1、Java Web开发需要学习什么？
 
 ##TCP/IP协议
 ###客户端-服务器（Client-Server）模型
@@ -69,3 +69,40 @@ Servlet依托于Servlet容器运行，它包含三个方法，分别在特定的
 * init()：当Servlet第一次被容器加载进入内存后调用，一般用于载入一些特定的资源和配置
 * service()：一旦有对应URL的http请求访问即被调用。它会根据http请求中的method信息将请求分发至相应的方法进行处理（doGet()/doPost()）,service()方法一般不需要开发重写
 * destory():Servlet被销毁时调用。一般用来释放、清理资源
+#4、处理请求数据
+##HTTP请求
+一个Servlet就是一段将HTTP请求信息转换为HTTP相应内容（一般为HTTP页面）的程序。
+##通过Requeat对象获取信息
+获取请求参数，使用getParameter()方法  
+如：浏览器输入地址https://www.tianmaying.com/search?key=jsp  
+后台：String key =request.getParameter("key")//拿到key后在后台搜索包含关键字的内容，然后返回  
+##获取http请求参数  
+如：访问localhost:8080/add?a=1&b=2
+Servlet代码：  
+int a=Integer.parseInt(request.getParameter("a"));  
+int b=Integer.parseInt(request.getPameter("b"));  
+response.getWriter().append(a+b);
+##Request对象  
+javax.servlet.HttpServletRequest类用于表示一个http请求。当一个http请求到达时，Servlet就会产生一个HttpServletResquest对象来描述请求  
+该类提供了一系列方法来获取http信息头  
+
+* Cookie[] getCookies()：返回客户端所有的cookie数据  
+* Enumeration getAttributeNames()：返回request对象的所有属性名称的集合 
+* Enumeration getHeaderNames()：返回所有http头的名称集合
+* Enumeration getParameterNames()：返回请求中所有参数聚合
+* HttpSession getSession()：返回request对应的session对象，如果没有，则创建一个
+* Locale getLocale()：返回当前页面的locale对象，可以在response中设置
+* Object getAttribute(String name)：返回名称为name的属性值，不存在返回null
+* ServletInputStream  getInputStream()：返回请求的输入流
+* String getAuthType()：返回认证方案的名称，用来保护servlet，如“BASIC”或“SSL”，null（JSP没有设置保护措施时）
+* String getCharacterEncoding()：返回request的字符编码集名称
+* String getContentPath()：返回request中致命的上下文路径
+* String getHeader(String name)：返回指定name的信息头
+* String getMethod()：返回request中的Http方法。如get、post、put
+* String getParameter（String name）：返回request中name的参数，没有返回null
+* String getRemoteAddr()：返回客户端的IP地址
+* String getRemoteHost()：返回客户端的完整名称
+* String getRequestURL()：返回request的url地址
+* String getServletPath()：返回所请求的servlet路径
+* boolean isSecure()：返回request是否使用了加密通道，如https
+* int getServerPort()：返回服务器端口号
