@@ -106,3 +106,7 @@ javax.servlet.HttpServletRequest类用于表示一个http请求。当一个http�
 * String getServletPath()：返回所请求的servlet路径
 * boolean isSecure()：返回request是否使用了加密通道，如https
 * int getServerPort()：返回服务器端口号
+#5、Post请求与表单处理
+##创建表单
+form class="creat-blog" action="./creat">
+其中重要的是action属性。它决定了表单数据交给服务器的哪一个URL进行处理（就是对应的Servlet）。同时表单包含type="submit"的button>,按下这个按钮的默认行为是提交表单，向指定的URL发出http请求
