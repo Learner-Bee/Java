@@ -108,5 +108,72 @@ javax.servlet.HttpServletRequest类用于表示一个http请求。当一个http�
 * int getServerPort()：返回服务器端口号
 #5、Post请求与表单处理
 ##创建表单
-form class="creat-blog" action="./creat">
-其中重要的是action属性。它决定了表单数据交给服务器的哪一个URL进行处理（就是对应的Servlet）。同时表单包含type="submit"的button>,按下这个按钮的默认行为是提交表单，向指定的URL发出http请求
+form class="creat-blog" action="./creat">  
+其中重要的是action属性。它决定了表单数据交给服务器的哪一个URL进行处理（就是对应的Servlet）。同时表单包含type="submit"的button>,按下这个按钮的默认行为是提交表单，向指定的URL发出http请求 
+##HTTP Post方法 
+默认提交表单发送http请求的方法是get。  
+对于get请求，数据会以name/value对的格式附加在URL之后  
+**注意：其中name由表单输入对象（如，标签input）的name属性决定的。**
+**参数的命名由name属性决定，而不是id属性**  
+一种更好的选择是使用POST：  
+
+* 虽然http协议没有对url的长度进行限制，但现代浏览器以及web服务器都会存在一定限制。如果太长的话就会超过浏览器的限制
+* 从安全性方面考虑，也应该使用post提交表单数据。如用户登录的表单，如果用get请求，密码就会以明文的形式附加到url上，不安全
+* 如果需要通过输入框上传文件到服务器，必须使用post方法  
+在表单中指定http请求的方法，在form表单中设置method="post"
+#6、常用表单控件处理
+##在servlet中获取表单控件的值
+* 单选按钮：与普通文本输入框在http请求中的编码方式一样。  
+<input type="radio" name="gender" value="male" checked>男  
+http请求中表单数据编码格式为name=value（都对应input标签属性的值）：gender=male    
+在Servlet中通过request.getParameter("gender")就可以获取表单数据
+* 复选框：会有多个被选中，所以name会有多个值（被选中的值才会被拿到）   
+<input type="checkbox" name="lang" value="java" checked >java  
+<input type="checkbox" name="lang" value="shell"  checked >shell  
+ 表单数据编码：lang=java&lang=shell  
+在servlet中获取：String [] values=request.getParameter("lang");
+* 下拉列表  
+与单选按钮处理相同
+#JSP简介（java server page）
+##JSP基本语法
+在jsp中嵌入java代码的三种形式：java表达式、java语句、java定义
+
+* java 表达式 <%= %>  
+语法标记对通常用于在页面中展示某一个变量，或者一个表达式的值
+* java语句  
+jsp支持任意执行任意多行java代码，使用语法标记对<% %>
+* java定义  
+在jsp中同样可以定义一些临时变量或函数，他们相当于局部变量/函数。仅仅在本jsp页面中可以被引用，通过语法标记对<%! %>定义   
+<%!   
+String makeStringUpper(String data){  
+return data.toUpperCase()  
+}  
+%>  
+<%= makeStringUpper("test")%> 
+##调用Java类 
+* 在JSP中调用类需要使用全名：  
+<%= com.lily.utils.toUpperCase("test")%>  
+* 可以通过引入包，然后调用其中的方法
+<%page import="com.lily.HelloWorld"%>
+##内置对象
+JSP内置的对象包括  
+
+* request：封装了http请求信息----header、form等
+* response：封装http响应信息，可以修改相应内容
+* out：输出jsp页面最终的html内容
+* session：当前请求对应的用户session信息
+* application：整个web应用对象，可以在所有用户之间共享数据
+* pageContext：页面上下文，保存当前页面的一些属性
+* config：提供一些配置信息，常用的方法有getInitParameter和getInitParameterNames，已获得servlet初始化时的参数
+* exception：JSP文件运行所产生的例外对象。只能在使用了<% 	@page isErroePage="true"%>的jsp文件中使用
+要实现空行，out.println("<br>")
+##JSP访问
+localhost/工程名/jsp文件名  
+jsp中引用action中的servlet路径：  
+1、相对路径：直接输入servlet名，如action=“TestTool”
+#编写JSP页面
+##让页面动起来
+拿到前端设计的html页面，转化为jsp：  
+
+* 直接将文件后缀名改为JSP，然后添加一些必要的代码，
+* 新建jsp文件，将html内容拷贝到jsp中

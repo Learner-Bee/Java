@@ -1,4 +1,0 @@
-Thread-1 isAlive()=false State=NEW
-当前线程 Thread-1 starting
-Thread-1 isAlive()=true State=TIMED_WAITING
-Thread-1 terminating

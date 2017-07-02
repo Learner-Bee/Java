@@ -113,7 +113,7 @@
 * String有length（）方法
 ##10、int和Integer区别
 
-* int是基本数据类型，Integer是int的包装类。二者可以自动装箱\拆箱机制，相互转换
+* int是基本数据类型，Integer是int的包装类型。二者可以自动装箱\拆箱机制，相互转换
 * java为每个基本类型提供了包装类型。boolean--Boolean、char--Character、byte--Byte、short--Short、int--Integer、long--Long、float--Float、double--Double
 ##11、String、StringBuffer、StringBuilder区别
 
