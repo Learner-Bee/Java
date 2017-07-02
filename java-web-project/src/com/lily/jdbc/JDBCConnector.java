@@ -8,7 +8,6 @@ public class JDBCConnector {
 
 	private Connection conn;
 
-	// 建立连接
 	public JDBCConnector(String ip, String port, String dbName, String userName, String pwd) {
 		try {
 			// 1、动态加载mysql驱动
