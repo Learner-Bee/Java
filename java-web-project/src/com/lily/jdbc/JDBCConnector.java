@@ -2,6 +2,7 @@ package com.lily.jdbc;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.SQLException;
 import java.sql.Statement;
 
 public class JDBCConnector {
@@ -21,14 +22,14 @@ public class JDBCConnector {
 	}
 
 	// 执行删除
-	public int executeUpdate(String updateURL) {
+	public int executeUpdate(String updateURL)  {
 		int updateCount = 0;
-		try {
+		try{
 			Statement stem = conn.createStatement();// 通过connection创建声明stem，通过声明调用exccute方法
 			if (!stem.execute(updateURL)) {
 				updateCount = stem.getUpdateCount();
 			}
-		} catch (Exception e) {
+		}catch (Exception e) {
 			System.err.println(e);
 		}
 		return updateCount;
