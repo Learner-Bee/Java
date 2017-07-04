@@ -1,6 +1,7 @@
 package com.lily.arrays;
 
 public class Test {
+	
 	protected int method(int a, int b) { return 0; }
 	public static String change(String str){
 		str="welcome";
