@@ -19,7 +19,10 @@
 
 * ==比较的是物理内存地址是否相等，相等返回true，不等返回false
 * equals先比较的是内存地址，相等返回true，不等，再比较值是否相等，相等返回true，不等返回false
+
+* 两个类的实例用equals比较的是内存地址
 ##4、什么情况下会内存溢出？为什么有内存回收机制，还会发生？
+
 理论上java有内存回收机制（GC）不会存在内存泄露。但是在实际开发中存在**无用但可达？？？？？？**的对象，这些对象不能被GC回收
 ##5、内存模型？
 ##6、为什么要重写hashcode和equals？
@@ -73,12 +76,23 @@ java反射机制是在运行状态中，对于任意一个类，都能够知道�
 * 加载数据库驱动：Class.forName("com.mysql.jdbc.Driver");
 * 建立连接：Connection conn = DriverManger.getConnection(connectionURL);  
 String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+pwd
-##16、如何自定义异常
+
 
 
 
 #数据库相关
 ##1、union和unionall的区别
+联合查询
+区别 
+
+* UNION：用于合并两个或多个select语句的结果集，并消去表中任意重复行
+* UNIONALL：查询的结果集，不消除重复行
+
+使用规范
+
+* UNION结果集中的列名总是等于第一个select语句中的列名
+* UNION内部的select语句必须拥有相同数量的列，且列的顺序必须相同
+
 ##2、常用关键字的使用
 
 * group by
@@ -87,8 +101,14 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 * like
 * left join/right join
 
-##3、having的使用
+##3、having的使用？和where的区别？
+
+* having用在聚合函数（max、min、count、avg、sum）查询时，聚合函数是对多条数据进行操作的，having子句限制的是组
+* group by是先排序后分组，所以一般与having组合使用
+* where关键字在聚合函数时不可使用，因为where子句限制的是行
+* having子句中的每一个元素都必须出现在select语句中
 ##4、索引的使用？
+
 ##5、数据库数据量大的查询，如何提高查询效率
 
 * 建立索引
