@@ -2,4 +2,5 @@
 .gitignore.swp
 .project
 .gitignore
+.settings
 /bin/
