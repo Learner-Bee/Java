@@ -18,14 +18,18 @@
 ##3、equals和==区别？两个类的实例用equals比较的是什么？
 
 * ==比较的是物理内存地址是否相等，相等返回true，不等返回false
-* equals先比较的是内存地址，相等返回true，不等，再比较值是否相等，相等返回true，不等返回false
+* Object类中的equals方法就等于==。判断两个实例的内存地址是否相等（是否指向同一个对象）
+* 而String类中的equals方法是重写后的方法。重写后的equals先比较内存地址是否相等，相等返回true，不等，再比较值是否相等，相等返回true，不等返回false
 
-* 两个类的实例用equals比较的是内存地址
-##4、什么情况下会内存溢出？为什么有内存回收机制，还会发生？
+##4、为什么要重写hashcode和equals？
+
+* 重写equals方法是为了重定义比较内容，否则都是继承Object类中的方法，相当于==（即只比较内存地址）
+* 重写equals一定要重写hashcode？？？
+##5、什么情况下会内存溢出？为什么有内存回收机制，还会发生？
 
 理论上java有内存回收机制（GC）不会存在内存泄露。但是在实际开发中存在**无用但可达？？？？？？**的对象，这些对象不能被GC回收
-##5、内存模型？
-##6、为什么要重写hashcode和equals？
+##6、内存模型？
+
 ##7、接口和抽象类的区别
 
 * 接口中的类必须都是抽象方法，抽象类中的可以有非抽象方法  
@@ -42,10 +46,9 @@
 * final是修饰符。修饰类：表示该类不能被继承；修饰方法：表示方法不能被重写；修饰变量：表示变量只能一次赋值以后不能被修改
 * finally是捕获异常时总会执行的语句块。且其会在try中的return前执行，如果返回值被修改，那么返回修改后的值
 * finaize是Object类中定义的方法。在GC回收对象之前，先调用该方法来完成一些清理工作
-##9、jdbc
-##10、什么是空间复杂度和时间复杂度
-##12、如何自定义异常
-##13、列出一些常见的运行时异常
+##9、什么是空间复杂度和时间复杂度
+##10、如何自定义异常
+##11、列出一些常见的运行时异常
 
 * ArithmeticException 算术异常：
 * ClassCastException 类转化异常：
@@ -54,7 +57,7 @@
 * NullPointerException 控制值异常：操作值为null的参数时
 * SecurityException 安全异常：
 
-##14、java反射？？
+##12、java反射？？
 
 ###什么是反射？
 java程序能够运行，就要让java类被java虚拟机加载。如果类不被虚拟机加载是不能正常运行的。所以我们运行的所有程序在编译时就知道了你所需要的类已经被加载了。  
@@ -71,7 +74,7 @@ java反射机制是在运行状态中，对于任意一个类，都能够知道�
 
 
 
-##15、JDBC操作数据库的步骤
+##13、JDBC操作数据库的步骤
 
 * 加载数据库驱动：Class.forName("com.mysql.jdbc.Driver");
 * 建立连接：Connection conn = DriverManger.getConnection(connectionURL);  
@@ -85,8 +88,8 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 联合查询
 区别 
 
-* UNION：用于合并两个或多个select语句的结果集，并消去表中任意重复行
-* UNIONALL：查询的结果集，不消除重复行
+* UNION：用于合并两个或多个select语句的结果集，并消去表中任意重复行、同时进行默认规则排序
+* UNIONALL：查询的结果集，不消除重复行，不排序
 
 使用规范
 
@@ -100,18 +103,70 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 * not in
 * like
 * left join/right join
+* having
+* union/unionall
 
 ##3、having的使用？和where的区别？
 
 * having用在聚合函数（max、min、count、avg、sum）查询时，聚合函数是对多条数据进行操作的，having子句限制的是组
 * group by是先排序后分组，所以一般与having组合使用
-* where关键字在聚合函数时不可使用，因为where子句限制的是行
 * having子句中的每一个元素都必须出现在select语句中
+* where关键字在聚合函数时不可使用，因为where子句限制的是行
+
 ##4、索引的使用？
+
+###创建索引的缺点
+
+* 增加了数据库的存储时间。因为索引需要占据物理空间
+* 在插入、修改和删除数据时索引也会随之变动，要花费较多的时间
+
+###创建索引的原则及优点
+
+* 在经常需要搜索的列上添加索引，可以加快搜索速度
+* 在作为主键的列上，强制该列的唯一性和组织表中数据的排列结构
+* 在经常用在连接的列上（主要是一些外键），可以加快连接速度
+* 在经常需要排序的列上创建索引，因为索引已经排序，在查询时可以利用索引的排序，加快排序查询时间
+* 在经常使用在where子句中的列上面创建索引，加快条件的判断速度
+
+###不创建索引的列
+
+* 在查询中很少使用或者参考的列不需要
+* 很少数据值的列不需要创建索引
+* 对于定义为text、image、bit数据类型的列不应增加索引，因为这些列的数据量要么相当大，要么取值很少
+
+###根据数据库的功能，可以在数据库设计器中创建三种索引
+
+* 唯一索引：不允许其中任何两行具有相同索引值。保证数据唯一性
+* 主键索引：在数据库关系图中为表定义主键将自动创建主键索引，主键索引是唯一索引的特定类型。
+* 聚集索引：表中行的物理顺序与键值的索引顺序相同，一个表只能包含一个聚集索引。聚集索引提供更快的数据访问速度
+
+索引结构利用的是B-Tree
+
+###索引操作
+**创建索引**
+
+1、 使用alter table：
+
+*  普通索引：alter table table_name add index index_name (column_list)
+*  唯一索引：alter table table_name add unique(column_list)
+*  主键索引：alter table table_name add primary key(column_list)  
+注：column_list指添加索引的列，多列时，可以用逗号隔开；index_name可以省略
+
+2、 使用cteate index:
+
+* create index index_name on table_name (column_list)
+注：不能用create index 创建primary key 索引 
+
+**删除索引**
+
+1、使用drop index：drop index index_name on table  
+2、使用 alter table：alter table table_name drop index index_name   
+alter table table_name drop primary key(因表只有一个主键索引，所以不用指定索引名)
+
 
 ##5、数据库数据量大的查询，如何提高查询效率
 
-* 建立索引
+* 建立索引（index）
 * 语句优化。select * 改为具体的参数
 * 分库／表。同时操作多个库去查找  
 
