@@ -1,5 +1,11 @@
 package com.lily.sequence;
 
+/**
+ * 冒泡排序（将最小的浮到最上面）
+ * 原理：先找出最大的，然后
+ * @author Administrator
+ *
+ */
 public class MaoPao {
 
 	public static void main(String[] args) {
@@ -12,11 +18,13 @@ public class MaoPao {
 					a[i]=a[j];
 					a[j]=b;
 				}
+				
 			}
 			for(int x:a){
-			System.out.print(x);
-			}
-			System.out.println();
+				System.out.print(x);
+				}
+				System.out.println();
+			
 		}
 		
 
