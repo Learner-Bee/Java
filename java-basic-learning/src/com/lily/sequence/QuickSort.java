@@ -14,7 +14,7 @@ public class QuickSort {
 		int i=start,j=end;
 		int key=b[0];
 		
-		while(i<j){	
+		//while(i<j){	
 		  while(i<j&&key<=b[j]){
 			j--;
 		 }
