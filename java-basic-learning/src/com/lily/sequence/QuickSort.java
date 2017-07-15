@@ -5,8 +5,8 @@ public class QuickSort {
 	public static void main(String[] args) {
 		int[] a = { 4, 3, 6, 2, 1, 5 };
 		int m = 0, n = a.length - 1;
-		// sort(a, m, n);
-		sort2(a, m, n);
+		 sort(a, m, n);
+//		sort2(a, m, n);
 		for (int x : a) {
 			System.out.print(x + " ");
 		}
@@ -15,22 +15,26 @@ public class QuickSort {
 	public static void sort(int[] b, int start, int end) {
 
 		int i = start, j = end;
-		int key = b[0];
-
-		// 从右向左前进，直到小于基准值，交换值
-		while (i < j && key <= b[j]) {
-			j--;
+		int key = b[i];
+		
+		while(i!=j){
+			
+			// 从右向左前进，直到小于基准值，交换值
+			while (i < j && key <= b[j]) {
+				j--;
+			}
+			
+			b[i] = b[j];
+			b[j] = key;
+			
+			// 从左向右前进，直到大于基准值，交换
+			while (i < j && key >= b[i + 1]) {
+				i++;
+			}
+			b[j] = b[i + 1];
+			b[i + 1] = key;
 		}
 
-		b[i] = b[j];
-		b[j] = key;
-
-		// 从左向右前进，直到大于基准值，交换
-		while (i < j && key >= b[i + 1]) {
-			i++;
-		}
-		b[j] = b[i + 1];
-		b[i + 1] = key;
 	}
 
 	public static void sort2(int[] b, int start, int end) {
