@@ -36,6 +36,12 @@
 * 通过jdbc执行sql命令时，要捕获SQLException
 
 
+常见异常：
+
+* 中断异常：InterruptedException
+* 下标越界异常：OutOfindexException
+
+
 ##3、equals和==区别？两个类的实例用equals比较的是什么？
 
 * ==比较的是物理内存地址是否相等，相等返回true，不等返回false
