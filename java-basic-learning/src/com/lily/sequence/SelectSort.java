@@ -15,8 +15,6 @@ public class SelectSort {
 	public static void main(String[] args) {
 		int[] a={5,2,1,5,3,0,4};
 		sort(a);
-		
-
 	}
 	public static void sort(int[] b){
 		int i,j;

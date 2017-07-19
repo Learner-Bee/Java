@@ -13,7 +13,7 @@
 步骤：     
   1、从第一个位置开始，将其前面的元素逐个与该位置元素比较，当大于该位置元素进行位置交换  
   2、每一轮循环得到第i个位置前的所有元素是有序的   
-  3、循环1、2直到比较的位置为最后一位，则所有元素排序成功    
+  3、循环1、2直到比较的位置为最后一位，则所有元 素排序成功    
 注：当出现交换顺序后，此时的a[i]就会更改
 ###插入排序
 
@@ -34,12 +34,17 @@
 * 操作文件时，捕获IOException
 * jdbc连接时，可能存在连接地址错误要捕获异常
 * 通过jdbc执行sql命令时，要捕获SQLException
+* 线程等待Thread.sleep(),捕获中断异常InterruptedException
 
 
 常见异常：
 
 * 中断异常：InterruptedException
-* 下标越界异常：OutOfindexException
+* 数组下标越界异常：IndexOutOfBoundsException
+* 空指针异常：NullPointerException
+* 字符串转化为数字异常：NumberFormatException
+* 指定类不存在异常:ClassNotFoundException
+* 方法参数异常：IllegalArgumentException
 
 
 ##3、equals和==区别？两个类的实例用equals比较的是什么？
@@ -57,7 +62,7 @@
 
 * 当两个新建的实例通过重写的equals方法比较时（如，String a=new String(“abc”)；String b=“abc”），由于内存地址不等，但是值相等，返回true。
 * 当在集合中操作该实例时（如，集合中添加a后，在添加b时），由于set集合和map中key的唯一性，会拿实例和集合中元素或key进行比较，首先会比较hashcode值是否相等，如果不重写hashcode方法，那么调用Object类中的hashcode方法，得到的hashcode值可能相等可能不等（不等几率很大）（因为Object类中的hashcode值跟内存地址有关），不等时，返回不等，所以添加b成功，那么集合中就会存在重复元素
-* 如果重写hashcode方法（一般都会跟重写的equals有关），调用重写的hashcode计算值得到a和b的hashcode值相等，然后再通过equals比较，首先比较内存地址不等，返回false，此时集合添加元素就不会成功
+* 如果重写hashcode方法（一般都会跟重写的equals有关），调用重写的hashcode计算值得到a和b的hashcode值相等，**然后再通过equals比较，首先比较内存地址不等，返回false，**此时集合添加元素就不会成功
 
 **注：**
 
@@ -73,9 +78,7 @@ hashcode值不等——内存地址一定不等
 
 ##5、什么情况下会内存溢出？为什么有内存回收机制，还会发生？
 
-
-
-理论上java有内存回收机制（GC）不会存在内存泄露。但是在实际开发中存在**无用但可达？？？？？？**的对象，这些对象不能被GC回收
+理论上java有内存回收机制（GC）不会存在内存泄露。但是在实际开发中存在**无用但可达**的对象，(即新建后占用内存空间但暂时没有被使用的对象)。这些对象不能被GC回收
 ##6、内存模型
 
 ##7、接口和抽象类的区别
@@ -96,8 +99,24 @@ hashcode值不等——内存地址一定不等
 * finaize是Object类中定义的方法。在GC回收对象之前，先调用该方法来完成一些清理工作 
 
 ##9、什么是空间复杂度和时间复杂度
+
+* 时间复杂度：就是程序循环次数
+* 空间复杂度：即程序执行过程中新建的内存地址数量
 ##10、如何自定义异常
-##11、列出一些常见的运行时异常
+
+？？？？？？
+##11、Java异常机制
+
+###Throwable
+Throwable类是所有异常类或错误的超类。其包含两个子类Error和Exception，分别表示错误和异常。  
+也称为不检查异常和检查异常（Checked Exception）
+###Error
+程序无法处理的错误。  
+一般指java虚拟机相关的问题。如内存溢出、系统崩溃、虚拟机出错、动态链接失败等。这种错误无法恢复或不可能捕获，将导致应用程序中断。通常应用程序无法处理这些错误。
+###Exception
+程序本身可以处理的异常  
+Exception分为运行时异常（RunTimeException）和非运行时异常。
+
 
 * ArithmeticException 算术异常：
 * ClassCastException 类转化异常：

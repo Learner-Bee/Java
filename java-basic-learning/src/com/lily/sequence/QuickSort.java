@@ -27,26 +27,19 @@ public class QuickSort {
 		if(start>=end){
 			return;
 		}
-
 		int i = start, j = end;
 		int key = b[i];
-
 		// 从右向左前进，直到小于基准值，交换值
 		while(i!=j){
 		  while (i < j && key <= b[j]) {
 			j--;
 		}
         swap(b,i,j);
-		//b[i] = b[j];
-		//b[j] = key;
-
 		// 从左向右前进，直到大于基准值，交换
 		while (i < j && key >= b[i]) {
 			i++;
 		}
 		swap(b,i,j);
-		//b[j] = b[i];
-		//b[i] = key;
 	}
 		sort(b,start,j-1);
 		sort(b,i+1,end);
