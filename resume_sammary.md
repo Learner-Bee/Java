@@ -101,7 +101,8 @@ hashcode值不等——内存地址一定不等
 ##9、什么是空间复杂度和时间复杂度
 
 * 时间复杂度：就是程序循环次数
-* 空间复杂度：即程序执行过程中新建的内存地址数量
+* 空间复杂度：即程序执行过程中新建的内存地址数量  
+
 ##10、如何自定义异常
 
 ？？？？？？
@@ -168,9 +169,12 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 * order by
 * not in
 * like
-* left join/right join
+* left join on 
+例：select A.* ,B.* from A left join B on a.name=B.name ：以左边表为基准，匹配两个表中的name
+* right join on 
 * having
 * union/unionall
+* inner  join：得到两个表的交集 
 
 ##3、having的使用？和where的区别？
 
@@ -218,14 +222,14 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 *  主键索引：alter table table_name add primary key(column_list)  
 注：column_list指添加索引的列，多列时，可以用逗号隔开；index_name可以省略
 
-2、 使用cteate index:
+2、 使用create index:
 
 * create index index_name on table_name (column_list)
 注：不能用create index 创建primary key 索引 
 
 **删除索引**
 
-1、使用drop index：drop index index_name on table  
+1、使用drop index：drop index index_name on table_name  
 2、使用 alter table：alter table table_name drop index index_name   
 alter table table_name drop primary key(因表只有一个主键索引，所以不用指定索引名)
 
@@ -241,9 +245,17 @@ alter table table_name drop primary key(因表只有一个主键索引，所以�
 学生成绩表（id、name、score、date）
 
 * 查询最大分数：select max(score) from table group by score
-* 查询每门成绩大于80的人：select name ,min(score) from table group by score having min(score)>=80
+* 查询每门成绩大于80的人：select name ,min(score) from table group by name having min(score)>=80
 * 查询有至少三个成绩想同的人：select name , count(name) from table group by score having count(name)>=3
 * 查询当天记录了10人以上的日期：select date ,count(name) from table group by date having count(name)>10
+
+学生表B（Tid，Sna，score）
+
+select B.*   
+from B  
+inner join (select max(score),Tid from B group by Tid)as A   
+on  B.score=A.score and B.Tid =A.Tid
+
  
 #Linux／Shell相关
 ##1、进程操作
@@ -272,7 +284,7 @@ PID TTY TIME CMD
 * ps -aux：列出目前所有的正在内存中的进程。包括无终端的（x），和针对用户（u）的进程
 * ps -aux >procces.txt :把所有进程显示出来，并输出到文件中
 * ps -ef：显示所有进程信息，连同命令行
-* ps -ef|grep  mysql：查找mysql进程的pid
+* ps -ef |grep  mysql：查找mysql进程的pid
 
 ###top 动态显示进程信息，对进程实时监控
 ###kill 杀死进程

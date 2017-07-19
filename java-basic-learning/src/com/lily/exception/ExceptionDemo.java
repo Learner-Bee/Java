@@ -10,8 +10,9 @@ import com.sun.org.apache.xml.internal.serializer.utils.SystemIDResolver;
  *
  */
 public class ExceptionDemo {
-
+	
 	public static void main(String[] args) {
+		
 		try{
 			throw new Exception("my exception");
 		}catch(Exception e){
