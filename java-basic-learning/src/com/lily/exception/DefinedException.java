@@ -20,7 +20,6 @@ public class DefinedException {
 
 	}
 	
-	
 	/**
 	 * 对异常的处理方式，要么catch、要么throw
 	 * @param age
@@ -37,17 +36,15 @@ public class DefinedException {
 			return 0;
 		}finally {
 			System.out.println("finally");
-			return 1;
+			//return 1;
 		}
 //		return age;
 		
 	}
 
 }
-
 //自定义异常，一般直接继承Exception
 class myException extends Exception {
-	
 	public myException(){
 		super("参数不合法，>100");
 	}

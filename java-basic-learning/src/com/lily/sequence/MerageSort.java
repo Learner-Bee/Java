@@ -19,36 +19,41 @@ public class MerageSort {
 		int[] a={2,3,6,7},b={0,1,2,5};
 		sort(a,b);
 	}
-	public static void sort(int[] m,int[] n){
-		int[] t=new int[m.length+n.length];
+	public static void sort(int[] a,int[] b){
+		int[] c=new int[a.length+b.length];
 		int i=0,j=0,s=0;
-		while(i<m.length&&j<n.length){
-			if(m[i]<n[j]){
-				t[s]=m[i];
+		while(i<a.length && j<b.length){
+			if(a[i]<b[j]){
+				c[s]=a[i];
 				i++;
 				s++;
 			}else{
-				t[s]=n[j];
+				c[s]=b[j];
 				j++;
 				s++;
 			}
 		}
-		if(i==m.length){
-			for(;s<t.length;s++){
-				t[s]=n[j];
+		if(i==a.length){
+			for(;s<c.length;s++){
+				c[s]=b[j];
 				j++;
 			}
-		}else if(j==n.length){
-			for(;s<t.length;s++){
-				t[s]=m[i];
+		}else if(j==b.length){
+			for(;s<c.length;s++){
+				c[s]=b[i];
 				i++;
 			}
 		}
-		 for(int x:t){
+		 for(int x:c){
 			 System.out.print(x+" ");
 		 } 
 		
 	}
-	//public static void print(int y,int[] s){}
+	//public static void sort2(int[] t ,int x,int y){
+	//	for(;x<t.length;x++){
+	//		t[x]=
+		//}
+	}
+	
 
-}
+
