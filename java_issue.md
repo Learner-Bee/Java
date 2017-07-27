@@ -119,9 +119,23 @@
 * 数组有length属性
 * String有length()方法
 
+###8种基本数据类型
+
+整型：  byte（1个字节）、 short（2个字节）、int（4个字节）、long（8个字节）    
+浮点型： float（4个字节）、 double（8个字节）（双精度）  
+逻辑型： boolean   
+字符型：char（2个字节）
+
+其他都是引用类型
+
+浮点型：float f=3.4是错误的  
+正确：float f= 3.4F或者float f= (float)3.4 
+
 ##10、int和Integer区别
 
-* int是基本数据类型，Integer是int的包装类型。二者可以自动装箱\拆箱机制，相互转换
+* int是基本数据类型
+* 为了能够将基本数据类型当对象操作，Java为每一个基本数据类型引入了包装类型。即Integer是int的包装类型。二者可以自动装箱\拆箱机制，相互转换
+* Integer整型字面量在-128到127间不会new新的Integer对象，而是直接引用常量池中的Integer对象。但是超过这个范围，Integer就会new一个新的对象
 * java为每个基本类型提供了包装类型。boolean--Boolean、char--Character、byte--Byte、short--Short、int--Integer、long--Long、float--Float、double--Double  
 
 ##11、String、StringBuffer、StringBuilder区别
@@ -160,3 +174,51 @@
 
 * throws使用在函数声明时。后面跟的是异常类。可以跟多个，用逗号隔开
 * throw使用在函数内。后面跟的是异常对象
+##17、二叉树
+**先、中、后都是针对根节点**
+
+* 先序遍历：先输出根节点，再输出左子树，最后输出右子数
+* 中序遍历：先输出左子树，再输出根节点，最后右子数
+* 后续遍历：先输出左子树，再输出右子数，最后输出根节点
+
+##18、面向对象的特征有哪些方面？
+
+* 抽象
+* 继承
+* 封装
+* 多态
+##19、类成员访问修饰符（即类中方法和变量的修饰符）
+
+* public :4。当前类；包内；子类；包外
+* protected:3
+* default:2
+* private:1
+
+**类的访问修饰符**
+
+* public：一个类中必须有且仅有一个public修饰的类
+* default：默认
+* abstract：抽象类
+* final：final类，即不能被继承
+
+##20、&和&&区别
+
+* &  是逻辑与
+* && 是短路与。只要运算符左侧为false就不进行后侧运算
+
+##21、内存中栈（stack）、堆（heap）和方法区（method area）的用法
+
+* 通常定义基本数据类型、对象的引用、函数调用的现场保存都使用JVM的栈空间
+* 通过new 关键字和构造器创建的对象放在堆中。堆是垃圾收集器管理的主要空间
+* 方法区和堆都是各个线程共享的内存区域，用于存储已经被JVM加载的类信息、常量、静态变量
+* 程序中的字面量（如直接赋值的100，“hello”和常量）都是放在常量池。常量池是方法区的一部分
+* 栈空间用光了会已发StackOverFlowError，堆和常量池不足会引发OutOfMemoryError
+
+例：String str =new String（“hello”）；  
+str放在栈中；new创建的字符串对象放在堆中；“hello”字面量放在方法区
+
+##22、math.round(f)  
+返回最接近参数的int型整数。即四舍五入  
+负数：可以想象是在坐标轴上，进行运算时，得到离负数最近的整数。math.round(-12.2)=-12；math.round(-12.6)=-13;math.round(-12.5)=-12
+
+

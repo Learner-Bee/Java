@@ -23,3 +23,6 @@ public class ArrayListReverse {
 	}
 
 }
+ class a{
+	
+}
