@@ -7,7 +7,6 @@ package com.lily.exception;
 public class DefinedException {
 
 	public static void main(String[] args) {
-		
 		System.out.println(test2(111));
 	}
 	
@@ -27,10 +26,10 @@ public class DefinedException {
 	 */
 	static int test2(int age){
 		try {
-			test1(age);
+			test1(age);//当age=111时，test1抛出异常，此处try后面的语句不会执行
 			System.out.println("没有异常，正常返回");
 			return age;
-		} catch (Exception e) {
+		} catch (Exception e) {  
 			System.out.println(e.getMessage());
 			System.out.println("发生了异常");
 			return 0;

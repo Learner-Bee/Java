@@ -18,7 +18,7 @@ public class Test {
 //		Integer n=3;
 //		int x=3;
 //		System.out.println(m==n);//false
-//		System.out.println(m==x);//true
+//		System.out.println(m==x);//true m自动拆箱成int型
 //		
 //		Integer a1=100,a2=100,b1=150,b2=150;
 //		System.out.println(a1==a2);//true.如果整型字面量在-128到127之间，不会new新的Integer对象，而是直接引用常量池中的Integer对象
