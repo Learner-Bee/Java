@@ -12,7 +12,7 @@ import java.io.FileWriter;
  * @author Administrator
  *
  */
-public class CopyFile {
+public class CopyFile_BufferReader {
 
 	public static void main(String[] args) {
 		File f1=new File("test1.txt");
@@ -21,16 +21,17 @@ public class CopyFile {
 		try{
 			
 			BufferedReader bf=new BufferedReader(new FileReader(f1));
+			BufferedWriter bw=new BufferedWriter(new FileWriter("test2.txt"));
 			while((s1=bf.readLine())!=null){
-				s2=s1;
+				bw.write(s1);
 			}
 			bf.close();
-			BufferedWriter bw=new BufferedWriter(new FileWriter("test2.txt"));
-			bw.write(s2);
 			bw.close();
 			System.out.println(f1.getName()+" 文件内容已经copy到test2.txt ");
 			
-		}catch(Exception e){}
+		}catch(Exception e){
+			System.out.println(e.getMessage());
+		}
 
 	}
 

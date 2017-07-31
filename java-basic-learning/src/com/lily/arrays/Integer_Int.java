@@ -1,5 +1,11 @@
 package com.lily.arrays;
 
+/**
+ * 自动拆箱装箱
+ * 字符串和基本数据类型的转换
+ * @author Administrator
+ *
+ */
 public class Integer_Int {
 	public static void main(String[] args){
 		Integer a=new Integer(3); //新建对象a放入3
@@ -27,14 +33,16 @@ public class Integer_Int {
 		Integer_Int it=new Integer_Int();
 		System.out.println(ii==it);//false
 		System.out.println(ii.equals(it));//false Object对象的equals就是和==判断的一样，都是内存地址
+		
 		//字符串和基本数据类型之间的转换
 		String a1="123";
 	    int i=Integer.parseInt(a1);
 	    int j=Integer.valueOf(a1).intValue();
 		System.out.println(i);
 		System.out.println(j);
-		
+		int m=111;
 		System.out.println(Integer.toString(c));
+		System.out.println(String.valueOf(m));
 		
 		
  	}
