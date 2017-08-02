@@ -369,7 +369,8 @@ length（）：返回字符串对象包含的字符数
 * public StringBuffer append(String s) ：将指定的字符追加到此字符序列
 * public StringBuffer reverse（）：将此字符序列用其反转形式取代
 * public delete（int start ，int end）：移除此序列的子字符串的字符
-* public insert（int offset，int i）：将int参数的字符串表式形式插入此序列中
+* public insert（int off
+* ，int i）：将int参数的字符串表式形式插入此序列中
 * replace （int start ，int end ，String str）：使用给定的String中的字符替换此序列的子字符串中的字符  
 
 下面方法和String类的方法类似  
