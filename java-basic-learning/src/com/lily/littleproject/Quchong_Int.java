@@ -7,7 +7,8 @@ import java.util.Set;
 
 /**
  * 数组去重
- * 利用set集合元素不重复的特点。将数据元素添加到set集合中，再将set集合转化为数组
+ * 1、利用set集合元素不重复的特点。将数据元素添加到set集合中，再将set集合转化为数组
+ * 2、利用list集合，将集合中不存在的元素添加进去
  * @author Administrator
  *
  */
