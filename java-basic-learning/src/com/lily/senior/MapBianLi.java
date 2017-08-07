@@ -24,7 +24,7 @@ public class MapBianLi {
 			System.out.println("key="+entry.getKey()+" value="+entry.getValue());
 		}
 		//第三种。推荐，特别是容量大时
-		System.out.println("通过Map.entrySet使用iterator遍历key和value：");
+		System.out.println("通过Map.entrySet遍历key和value：");
 		for(Map.Entry<String, String> entry:map.entrySet()){
 			System.out.println("key="+entry.getKey()+" value="+entry.getValue());
 		}

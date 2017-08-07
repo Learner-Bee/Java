@@ -8,7 +8,7 @@ package com.lily.littleproject;
 public class Reverse_Str {
 
 	public static void main(String[] args) {
-		String a="abcde";
+		String a="abcdefghijk";
         System.out.println(Reverse(a));
 	}
 	public static String  Reverse(String str){

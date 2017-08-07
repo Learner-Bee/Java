@@ -5,6 +5,10 @@ import java.util.Set;
 
 /**
  * 将字符串中第一个重复出现的字符输出
+ * 思路：
+ * 1、将字符串转化为字符集合char[] b=a.toCharArray();
+ * 2、利用set集合不可重复的特点，将字符逐个遍历添加到set集合中
+ * 3、当set.add(字符)==false时，说明已经存在该字符。此时break跳出循环。输出该字符
  * @author Administrator
  *
  */
