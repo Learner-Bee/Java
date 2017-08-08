@@ -17,7 +17,6 @@ public class MaoPao {
 		int[] a = { 3, 2, 9, 4, 3, 1, 0 };
 		for (int i = 1; i < a.length; i++) {
 			for (int j = 0; j < i; j++) { 
-				//内存循环只需比到i的前一位，因为第i为已经是最大的数了，所以没有必要再比较后面的数
 				if (a[i] < a[j]) {
 					int b = a[j];
 					a[j] = a[i];
