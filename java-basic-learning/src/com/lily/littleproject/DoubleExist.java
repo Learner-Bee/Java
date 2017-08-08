@@ -16,9 +16,10 @@ public class DoubleExist {
 
 	public static void main(String[] args) {
 		String a="helloh";
-		chongFu(a);
+		DoubleExist de=new DoubleExist();
+		de.chongFu(a);//静态方法不能直接引用非静态方法。静态方法要想访问非静态方法就要通过类的实例来引用
 	}
-	public static void chongFu(String a){
+	public  void chongFu(String a){
 		Set<Character> set=new HashSet<>();
 		char[] b=a.toCharArray();
 		for(char x:b){
