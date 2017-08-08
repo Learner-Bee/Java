@@ -141,11 +141,11 @@
 
 ###9.2 数据类型之间转换
 
-* 如何将字符串转化为基本数据类型?  
+* 如何将String为int?  
 1、 通过基本类型的包装类型调用parseInt(s)方法。（如 int i=Integer.parseInt("111"))  
 2、 通过基本类型的包装类型调用valueOf(s).intValue()返回基本数据类型（如：int i=Integer.valueOf(str).intValue()）
 
-* 如何将基本数据类型转化为字符串？  
+* 如何将int转化为String？  
 1、String a=Integer.toString(int i)  
 2、String.valueOf(int i)  
 3、String a=i+"";

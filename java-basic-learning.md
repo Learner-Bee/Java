@@ -369,7 +369,8 @@ length（）：返回字符串对象包含的字符数
 * public StringBuffer append(String s) ：将指定的字符追加到此字符序列
 * public StringBuffer reverse（）：将此字符序列用其反转形式取代
 * public delete（int start ，int end）：移除此序列的子字符串的字符
-* public insert（int offset，int i）：将int参数的字符串表式形式插入此序列中
+* public insert（int off
+* ，int i）：将int参数的字符串表式形式插入此序列中
 * replace （int start ，int end ，String str）：使用给定的String中的字符替换此序列的子字符串中的字符  
 
 下面方法和String类的方法类似  
@@ -1030,6 +1031,10 @@ Hashtable定义了四个构造方法:
    Hashtable（Map m）
 ###属性（Properties）
 Properties继承于Hashtable.Properties类，表示了一个持久的属性集，属性列表中每个键及其对应值都是一个字符串
+
+###链表
+链表包括单向链表、双向链表、有序链表、无序链表、循环链表  
+链表的顺序由各个对象里的指针决定。一般情况下，链表由节点（node）串联而成，而每个节点都有指向下一节点（next）或上一节点（previous）的指针（或引用）。对于特殊的两个节点，表头节点的上个节点，和表尾节点的下个节点均由null表示。除节点外，一个链表还应有一个表头指针（L.head）指向表头，表示遍历开始的地方。当表头指针指向null时，表示此链表为空
 ##Java集合框架
 集合框架被设计成要满足一下目标：
 
@@ -1074,26 +1079,34 @@ Java提供了一套实现Collection接口的标准集合类。其中一些是具
 标准集合类汇总表：  
 
 * AbstractCollection：实现了大部分的集合接口  
+
 **LIst:**
+
 * AbstractList：继承上一类，并且实现了大部分List接口
 * AbstractSequentialList： 继承上一类，提过了对数据元素链式访问而不是随机访问
 * LinkedList：该类实现了List接口，允许有null（空）元素，主要用于创建链表数据结构，该类没有同步方法。如果多个线程同时访问一个List，则必须自己实现访问同步，解决方法就是在创建List的时候构造一个同步的List。如:
   Listlist=Collection.synchronizedList(newLinkedList(...))  
   LinkedList查找效率低
-* ArrayList：该类也是实现了List接口，实现了可表大小的数组，随机访问和遍历元素时，提供更好的性能。该类也是非同步的，在多线程 的情况下不要使用。ArrayList增长当前长度的50%，插入删除效率低  
-**Set：**
+* ArrayList：该类也是实现了List接口，实现了可表大小的数组，随机访问和遍历元素时，提供更好的性能。该类也是非同步的，在多线程 的情况下不要使用。ArrayList增长当前长度的50%，插入删除效率低
+  
+**Set：**  
+
 * AbstractSet：继承于第一个类。并且实现了大部分Set接口
 * HashSet：该类实现了Set接口，不允许出现重复元素，不保证集合中元素的顺序，允许包含值为null的元素，但最多只能一个。
 * LinkedHashSet：具有可预知迭代顺序的Set接口的哈希表和链接列表实现
-* TreeSet：该类实现了Set接口，可以实现排序等功能   
+* TreeSet：该类实现了Set接口，可以实现排序等功能 
+  
 **Map：**  
+
 * AbstractMap：实现了大部分Map接口
 * HashMap:是一个散列表。它存储的内容是键值对（key-value）映射
   该类实现了Map接口，格局键的HashCode值存储数据，具有很快的访问速度，最多允许一条记录的键为null，不支持线程同步
 * TreeMap：继承AbstractMap，并且使用一颗树
 * WeakHashMap：使用弱秘钥的哈希表
 * LinkedHashMap:继承于HashMap，使用元素的自然顺序对元素进行排序
-* IdentityHashMap：继承于AbstractMap类，比较文档时使用引用相等  
+* IdentityHashMap：继承于AbstractMap类，比较文档时使用引用相等
+
+
 ###集合算法
 集合框架定义了几种算法，可用于集合和映射。这些算法被定义为集合类的静态方法  
 在尝试比较不兼容的类型时，一些方法能抛出ClassCastException异常，当试图修改一个不可修改的集合时，抛出UnspportedOpertionException异常。  
@@ -1160,3 +1173,11 @@ TCP是一个双向通信协议。因此数据可以通过两个数据流在同�
  * '0'：结果用0填充
  * ','：只是用于10进制，结果每3位用一个逗号隔开
  * '('：如参数是负数，则结果中不添加负号，而是用括号括起来
+
+##单链表LinkedList  
+基本概念  
+1、 链表进行循环遍历效率低，但是插入和删除时优势明显。  
+2、 单向链表是一种线性表，实际上是由节点node组成的。每个节点记录本节点的数据和下一个node。  
+3、 添加节点的顺序是从右向左。最先添加的节点的下一节点的引用为空。  
+4、 引用是引用下一节点的地址，而不是下一节点的对象，因为有着不断的引用，所有头结点就可以引用所有节点了  
+5、 节点拥有两个成员：存储的对象和下一节点的引用
