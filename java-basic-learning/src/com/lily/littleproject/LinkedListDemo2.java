@@ -114,10 +114,7 @@ public class LinkedListDemo2 {
 		// 创建一个新的链表，新链表的头就是原来链表的头，新链表的next为null
 		Node newHead = new Node(head.data);
 
-		// 原链表（外层循序）每次遍历时的当前节点
-		Node outterCurrent = head.next;
-
-		while (outterCurrent != null) {
+		while (head != null) {
 
 			// 新链表（内层循环）每次遍历时的当前节点
 			Node innerCurrent = newHead;
@@ -125,14 +122,14 @@ public class LinkedListDemo2 {
 			while (innerCurrent != null) {
 
 				// 当在新链表发现data相等时，说明重复，结束本次循环
-				if (outterCurrent.data == innerCurrent.data) {
+				if (head.data == innerCurrent.data) {
 					break;
 				}
 
 				// next为空，说明已经到新链表的最后一个元素，此时，将原链表的元素添加到新链表的末尾，并结束本次循环
 				if (innerCurrent.next == null) {
 
-					innerCurrent.next = new Node(outterCurrent.data);
+					innerCurrent.next = new Node(head.data);
 					break;
 				}
 
@@ -140,7 +137,7 @@ public class LinkedListDemo2 {
 
 			}
 
-			outterCurrent = outterCurrent.next;
+			head = head.next;
 		}
 
 		return newHead;
