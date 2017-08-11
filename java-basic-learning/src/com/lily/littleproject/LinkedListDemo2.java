@@ -6,7 +6,7 @@ public class LinkedListDemo2 {
 
 	public static void main(String[] args) {
 		LinkedListDemo2 link = new LinkedListDemo2();
-		for (int i = 0; i < 5; i++) {
+		for (int i = 0; i <4; i++) {
 			link.add(i);
 		}
 		link.add(1);
@@ -84,6 +84,7 @@ public class LinkedListDemo2 {
 	public void delDouble(Node head) {
 		if (head == null || head.next == null)
 			return;// 判断节点为空或者只有一个节点的时候，不进行排重
+		
 		while (head.next != null) {
 			Node p = head;
 			while (p.next != null) {
@@ -113,28 +114,26 @@ public class LinkedListDemo2 {
 
 		// 创建一个新的链表，新链表的头就是原来链表的头，新链表的next为null
 		Node newHead = new Node(head.data);
-
 		while (head != null) {
 
 			// 新链表（内层循环）每次遍历时的当前节点
-			Node innerCurrent = newHead;
+			Node innerCurrent = newHead;//为什么每次循环只操作了innerCurrent，但是newhead却是最新的链表呢？？？
 
 			while (innerCurrent != null) {
 
 				// 当在新链表发现data相等时，说明重复，结束本次循环
-				if (head.data == innerCurrent.data) {
+				if (head.data == innerCurrent.data) {//第一次执行肯定会相等？？？
 					break;
 				}
 
 				// next为空，说明已经到新链表的最后一个元素，此时，将原链表的元素添加到新链表的末尾，并结束本次循环
 				if (innerCurrent.next == null) {
 
-					innerCurrent.next = new Node(head.data);
+					innerCurrent.next =new Node( head.data);
 					break;
 				}
 
 				innerCurrent = innerCurrent.next;
-
 			}
 
 			head = head.next;
