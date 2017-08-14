@@ -111,7 +111,7 @@ public class LinkedListDemo2 {
 		if (head == null || head.next == null) {
 			return head;
 		}
-
+ 
 		// 创建一个新的链表，新链表的头就是原来链表的头，新链表的next为null
 		Node newHead = new Node(head.data);
 		while (head != null) {

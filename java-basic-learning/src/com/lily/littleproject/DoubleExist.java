@@ -15,7 +15,7 @@ import java.util.Set;
 public class DoubleExist {
 
 	public static void main(String[] args) {
-		String a="helloh";
+		String a="helloh,aabce";
 		DoubleExist de=new DoubleExist();
 		de.chongFu(a);//静态方法不能直接引用非静态方法。静态方法要想访问非静态方法就要通过类的实例来引用
 	}
@@ -23,7 +23,7 @@ public class DoubleExist {
 		Set<Character> set=new HashSet<>();
 		char[] b=a.toCharArray();
 		for(char x:b){
-			if(set.add(x)==false){
+			if(!set.add(x)){
 				System.out.println("第一个出现的重复字符为"+x);
 				//System.out.println("第一个只出现一次的字符："+x);
 				break;
