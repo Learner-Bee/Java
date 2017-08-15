@@ -12,15 +12,16 @@ import java.util.Set;
  * @author Administrator
  *
  */
-public class Quchong_Int {
-
-	public static void main(String[] args) {
-		String[] a={"a","b","c","a","b"};
-		System.out.println(quchong2(a));
-
+ public class Quchong_Int2 {
+	 static final int x=1;
+	 public static void main(String[] args) {
+	    	String[] a={"a","b","c","a","b"};
+			//Quchong_Int2 qu=new Quchong_Int2();
+			System.out.println(quchong2(a));	
 	}
+	
 	//Set集合特点是不能重复
-	public static String quchong1(String[] a){
+	public static String quchong1(String[] a){		
 		Set<String> set=new HashSet<>();
 		for(String i:a){
 			set.add(i);
@@ -39,3 +40,12 @@ public class Quchong_Int {
 	}
 
 }
+//class A{
+//	public static void main(String[] args) {
+	//	String[] a={"a","b","c","a","b"};
+		//Quchong_Int2 qu=new Quchong_Int2();
+//		System.out.println(Quchong_Int2.quchong2(a));
+	//	Quchong_Int2.x; 
+
+	//}
+//}
