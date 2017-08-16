@@ -35,6 +35,13 @@ public class Type_Conversion {
 	    int n1=Integer.valueOf(str5).intValue();//前面Integer.valueOf(str5)是将字符串转化为Integer对象。后面intValue指返回Integer对象的int值
 
 	    List<Integer> a=new ArrayList<>();
+	    
+	    StringBuffer s=new StringBuffer("abcdef");
+	    //StringBuilder s1=new StringBuilder("234rty8");
+	    //s.deleteCharAt(1);//删除某个位置的字符
+	    //s.delete(3, 5);//start位置包括在删除范围内，end位置不在删除范围内
+	    s.reverse();//将字符反转输出
+	    System.out.println(s);
 	}
 
 }

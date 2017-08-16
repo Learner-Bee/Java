@@ -14,7 +14,11 @@ public class Append {
 	        System.out.println(s1 == s6);//f
 	        System.out.println(s1 == s6.intern());//t
 	        System.out.println(s2 == s2.intern());//f
-
+	        
+	        double a=2.7834;
+	        int b=(int)a;
+	        System.out.println(b);//输出2.浮点型强制转换为整数型，是舍去小数部分，不是四舍五入
+ 
 	}
 
 }
