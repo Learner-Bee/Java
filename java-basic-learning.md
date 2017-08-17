@@ -18,7 +18,7 @@ java分为三个体系：
 * JavaEE（J2EE）：Java平台企业版
 * JavaME（J2ME）：Java平台微型版
 ###主要特性
-
+ 
 * Java语言是简单的
 * Java语言是面向对象的
 * 分布式的
@@ -361,10 +361,9 @@ length（）：返回字符串对象包含的字符数
 * trim()：删除字符串的头尾空白。用法：str.trim()
 
 ##Java StringBuffer类和StringBuilder类
-当对字符串进行修改时，会使用以上两个类  
-和String类不同，以上两个类的对象可以被多次修改，并且不产生新的未使用对象。  
-两个不同在于StringBulider的方法不是线程安全的（不能同步访问）  
-由于StringBuilder比StringBuffer有速度优势，所以大多数情况下建议使用StringBuilder类。  
+当对字符串进行修改时，会使用以上两个类。和String类不同，以上两个类的对象可以被多次修改，并且不产生新的未使用对象。  
+两个不同在于StringBulider的方法没有是异步的，而StringBuffer的方法都是用synchronized修饰的同步方法（即StringBuffer不允许多线程同时访问）    
+所以StringBuilder比StringBuffer有速度优势，大多数情况下建议使用StringBuilder类。  
 但是在程序要求线程安全的情况下，则必须使用StringBuffer类  
 ###StringBuffer方法 
 

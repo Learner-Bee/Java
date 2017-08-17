@@ -119,8 +119,29 @@
 
 ##8、Error和Exception区别
 
-* Error表示系统级的错误和程序不必处理的异常。如内存溢出
-* Exception表示需要捕捉或者需要程序处理的异常，是一种设计和实现问题。如果程序运行正常，从不会发生的
+###Throwable
+Throwable是所有异常和错误的超类。Error和Exception是它的子类。
+###Error（错误）
+包括VirtulMachineError（包括StackOverFlowError 栈溢出和OutOfMemeryError 内存溢出）  
+Error是程序无法处理的问题，是程序运行时出现的较严重的问题。大多是代码运行时，JVM出现的问题
+###Exception（异常）
+Exception是程序本身可以处理的异常。    
+包括RuntimeException和IOException
+  
+* RuntimeException： 
+NullPointerException（空指针异常）、  
+IllegalArgumentException（参数不合法异常）  
+ArrayIndexOutOfBoundsException （数组下标越界异常）  
+ClassNotFoundException （指定类不存在异常 ）  
+ArithmeticException（算术异常）  
+* 非运行时异常：运行时异常以外的异常  
+必须要进行处理的异常，如果不处理，编译不通过。如IOException、SQLException以及用户自定义的异常
+
+###Java的异常（包括Exception和Error）分为可查异常和不可查异常？
+
+* 可查异常：编译器要求必须处理的异常。 正确的程序在运行时很容易出现的、情理可容的异常。在一定程度上可以预知的，并且一旦发生就必须处理的异常。  
+除了运行时异常及其子类外，其他的Exception类及其子类都属于可查异常。这种异常在编译时会检查，当可能出现此类异常时，必须要进行处理，否则编译不通过  
+* 不可查异常：编译器不要求强制处理的异常。包括运行时异常及其子类与Error
 
 ##9、数组和String都有length（）方法吗？
 

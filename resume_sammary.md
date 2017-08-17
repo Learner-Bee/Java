@@ -41,11 +41,12 @@
 常见异常：
 
 * 中断异常：InterruptedException
-* 数组下标越界异常：IndexOutOfBoundsException
+* 数组下标越界异常：ArrayIndexOutOfBoundsException
 * 空指针异常：NullPointerException
 * 字符串转化为数字异常：NumberFormatException
 * 指定类不存在异常:ClassNotFoundException
 * 方法参数异常：IllegalArgumentException
+* 算术异常：ArithmeticException
 
 
 ##3、equals和==区别？两个类的实例用equals比较的是什么？
