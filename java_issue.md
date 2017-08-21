@@ -7,7 +7,7 @@
    * 基于字节流的stream：  
      DataOutputStream--DataInputStream  
      FileOutputStream--FileInputStream
-   * 基于字符流的stream
+   * 基于字符流的stream  
      FileWriter--FileReader
      StringWriter--StringReader
 3. 输出数据：  
@@ -62,6 +62,7 @@
 
 *  sleep()是线程Thread类的静态方法。调用该方法时线程会暂定执行指定时间，将CPU让给其他线程。但是对象的锁依然保持，其他线程不能访问该对象，休眠时间结束后会线程会自动恢复。
 *  wait()方法是Object()类的方法。调用对象的wait方法导致当前线程放弃对象的锁。进入该对象的等待池中，只有调用对象的notify或notifyall方法时才能唤醒等待池中的线程进入等锁池，如果线程重新获得对象的锁就可以进入就绪状态
+*  调用后都要抛出中断异常
 
 ###sleep()和yield()方法区别
 
@@ -128,7 +129,7 @@ Error是程序无法处理的问题，是程序运行时出现的较严重的问
 Exception是程序本身可以处理的异常。    
 包括RuntimeException和IOException
   
-* RuntimeException： 
+* RuntimeException：   
 NullPointerException（空指针异常）、  
 IllegalArgumentException（参数不合法异常）  
 ArrayIndexOutOfBoundsException （数组下标越界异常）  
@@ -194,7 +195,7 @@ integer类型会自动拆箱成int型，进行值的比较。
 
 * String是只读字符串，其引用的字符串是不可以修改的
 * StringBuffer/StringBulider表示的字符串对象可以直接修改
-* 后两个方法完全相同，区别在于StringBulider是在单线程环境下使用的，所以它的效率比StringBuffer高  
+* 后两个方法完全相同，区别在于StringBuffer是在单线程环境下使用的，所以它的效率比StringBuffer低  
 
 ##12、抽象类和接口的异同
 
@@ -214,7 +215,7 @@ integer类型会自动拆箱成int型，进行值的比较。
 
 * 静态变量是类变量，属于类，一个类不管创建多少个对象，静态变量在内存中只有一个拷贝
 * 实例变量依存于某个实例，需要先创建对象，然后通过对象访问  
-* 静态变量可是实现让多个对象共享内存
+* 静态变量可以实现让多个对象共享内存
 
 ##14、抽象的方法可以同时是静态方法吗？
 * 不可以。因为抽象方法需要子类重写，静态方法是不需要重写的
@@ -268,7 +269,7 @@ integer类型会自动拆箱成int型，进行值的比较。
 * 通过new 关键字和构造器创建的对象放在堆中。堆是垃圾收集器管理的主要空间
 * 方法区和堆都是各个线程共享的内存区域，用于存储已经被JVM加载的类信息、常量、静态变量
 * 程序中的字面量（如直接赋值的100，“hello”和常量）都是放在常量池。常量池是方法区的一部分
-* 栈空间用光了会已发StackOverFlowError，堆和常量池不足会引发OutOfMemoryError
+* 栈空间用光了会引发StackOverFlowError，堆和常量池不足会引发OutOfMemoryError
 
 例：String str =new String（“hello”）；  
 str放在栈中；new创建的字符串对象放在堆中；“hello”字面量放在方法区
@@ -301,10 +302,9 @@ str放在栈中；new创建的字符串对象放在堆中；“hello”字面量
 * 方法声明时使用  
  放在public之后返回值类型（void）之前。表示一次只能有一个线程进入该方法。其他线程只能等待当前线程执行完成后才能进入
 public synchronized void synMethod() {//  方法体}
-
 * 对某一代码块  
-synchronized后面跟括号，括号内为变量。也表示一次只能有一个进程进入该代码块
-*　后面是（对象），此时线程获得的是对象锁
+synchronized后面跟括号，括号内为变量。也表示一次只能有一个进程进入该代码块  
+* 后面是（对象），此时线程获得的是对象锁
 此时，别的线程在该类所有对象上的任何操作都不能进行
 synchronized（this|object）{}
 * 后面是类
@@ -328,7 +328,7 @@ synchronized（this|object）{}
 
 ##29、什么是线程池（thread pool）?
 
-在java面向对象编程中，创建和销毁对象是很费时间的，因为每次创建对象都要获取内存资源，而且JVM虚拟机也会试图跟踪每一个对象，一遍能够在对象销毁时进行垃圾回收。所以提高程序效率的一个手段就是减少创建和销毁对象的次数。   
+在java面向对象编程中，创建和销毁对象是很费时间的，因为每次创建对象都要获取内存资源，而且JVM虚拟机也会试图跟踪每一个对象，以便能够在对象销毁时进行垃圾回收。所以提高程序效率的一个手段就是减少创建和销毁对象的次数。   
 线程池顾名思义就是事先创建若干个可执行的线程放在一个池中，需要时直接获取池中的线程，无需创建，使用完后放回线程池，也不用每次销毁。从而减少每次创建和销毁对象的开销
 
 ##30、什么是DAO模式？

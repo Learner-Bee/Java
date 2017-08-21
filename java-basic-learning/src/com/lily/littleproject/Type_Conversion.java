@@ -9,14 +9,15 @@ import java.util.List;
 public class Type_Conversion {
 
 	public static void main(String[] args) {
-		// String-->char
+		// String-->char[]
 		String str1="hello";
 		char c1=str1.charAt(0);//获取字符串中指定index的字符
 		char[] ch=str1.toCharArray();//将字符串转化为字符数组
 		System.out.println(c1);
 		System.out.println(ch);
 		
-		//char-->String
+		 
+		//char[]-->String
 		String str2=Arrays.toString(ch); //将字符数组转为String.这是数组的方法。可以将任意类型的数组转为String类型
 		System.out.println(str2);
 	    System.out.println(c1+" ");//将字符转为String
@@ -44,6 +45,8 @@ public class Type_Conversion {
 	    //s.delete(3, 5);//start位置包括在删除范围内，end位置不在删除范围内
 	    s.reverse();//将字符反转输出
 	    System.out.println(s);
+	   
+	    System.out.println(Math.round(-3.5));
 	}
 
 }
