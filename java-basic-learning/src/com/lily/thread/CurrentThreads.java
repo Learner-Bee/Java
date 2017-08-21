@@ -15,9 +15,12 @@ public class CurrentThreads extends Thread  {
 	public void run(){
 		try {
 			Thread.sleep(50000);
+			wait();
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
+		
+		
 	}
 
 	public static void main(String[] args) {
