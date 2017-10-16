@@ -10,10 +10,11 @@ package com.lily.sequence;
  * @author Administrator
  *
  */
+
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] a = { 4, 3, 6, 2, 1, 5 };
+		int[] a = { 8, 3, 9, 2, 1, 10,6,5,12,4,16 };
 		int m = 0, n = a.length - 1;
 		 sort(a, m, n);
 		//sort2(a, m, n);

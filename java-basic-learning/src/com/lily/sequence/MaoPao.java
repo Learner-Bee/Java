@@ -24,7 +24,7 @@ public class MaoPao {
 				}
 			}
 			for (int x : a) {
-				System.out.print(x);
+				System.out.print(x+" ");
 			}
 			System.out.println();
 		}

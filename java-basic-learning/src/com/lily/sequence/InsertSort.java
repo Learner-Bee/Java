@@ -13,7 +13,7 @@ package com.lily.sequence;
  */
 public class InsertSort {
 	public static void main(String[] args){
-		int[] a={2,1,5,2,4,9};
+		int[] a={3, 2, 9, 4, 3, 1, 0 };
 		int key;
 		for(int j=1;j < a.length;j++){
 			key=a[j];
