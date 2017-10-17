@@ -14,15 +14,15 @@ package com.lily.sequence;
 public class QuickSort {
 
 	public static void main(String[] args) {
-		int[] a = { 8, 3, 9, 2, 1, 10,6,5,12,4,16 };
+		int[] a = { 5,3,1,6,4,7 };
 		int m = 0, n = a.length - 1;
-		 sort(a, m, n);
-		//sort2(a, m, n);
-		for (int x : a) {
-			System.out.print(x + " ");
-		}
+		 //sort(a, m, n);
+		sort2(a, m, n);
+		 for (int x : a) {
+				System.out.print(x + " ");
+			}
 	}
-    //sort方法自己思路
+    //sort方法自己思路。缺点：当i=j的时候，还会进行两次的自身交换，冗余
 	public static void sort(int[] b, int start, int end) {
 		//递归结束条件，防止下标越界
 		if(start>=end){
@@ -42,6 +42,7 @@ public class QuickSort {
 		}
 		swap(b,i,j);
 	}
+		
 		sort(b,start,j-1);
 		sort(b,i+1,end);
 		
@@ -54,9 +55,7 @@ public class QuickSort {
 			return;
 		}
 
-		int i = start;
-		int j = end;
-
+		int i = start, j = end;
 		// 基准值
 		int pivot = b[i];
 
@@ -77,7 +76,7 @@ public class QuickSort {
 					swap(b, i, j);
 					order = true;
 				} else {
-					i++;
+				i++;
 				}
 			}
 		}
