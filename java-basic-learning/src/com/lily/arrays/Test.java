@@ -26,14 +26,18 @@ public class Test {
 		
 		String a="abc",a3="abc";
 		String b=new String("abc");
+		Test t=new Test();
+		Test t1=new Test();
+		String d=new String("abc");
 		String c="a"+"bc";
-		System.out.println(a==c);//true
-		System.out.println(a==a.intern());//true
+//		System.out.println(a==c);//true
+//		System.out.println(a==a.intern());//true
 //		System.out.println(a==b);//false
 //		System.out.println(a.equals(b));//true
-//		System.out.println(a.equals(a1));//true
-//		System.out.println(a==a1);//true
-//		
+//		System.out.println(a.equals(c));//true
+		System.out.println(t==t1);//false
+		System.out.println(t.equals(t1));//false  Object里面的equals和==意义一样，都是比较内存地址
+		
 //		int i=1,j=1;
 //		//System.out.println(i==j);//equals是string的方法，其他数据类型不可以用该方法
 //		System.out.println();
