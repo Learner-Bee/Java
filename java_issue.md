@@ -434,6 +434,25 @@ static方法中不能使用this和super关键字，不能调用非静态方法�
 static块用于优化程序性能，可以置于类中的任何地方。形式：static{代码块}。  
 类中可以有多个static代码块。  
 在类被初次被加载的时候，就会按照static代码块的顺序来执行每个static块，并且只会执行一次。
+
+##36、进程常用操作
+
+###grep
+格式： grep [选项] “
+
+* grep -i abc：忽略大小写（ignore case）  
+* grep -v abc:反过来（invert）。只打印没有匹配abc的，匹配到abc的不打印  
+* grep -n abc:显示匹配的进程的行号
+* grep -c abc:只显示匹配行数 。-cv :显示有多少行没有被匹配
+* grep --color abc:高亮显示匹配字符abc
+####grep查找时过滤grep命令？
+查找进程时用到了grep命令，其也是一个进程，所以在要过滤掉该命令  
+grep -v grep
+
+
+###awk
+###sed
+
 # Java Web和Web Service相关  
 ##1、阐述Servlet和CGI区别  
 servlet处于服务器进程中，它通过多线程方式运行其service方法。一个实例可以服务于多个请求，并且实例不会销毁。而CGI对每个请求都产生新的进程，服务完成后就销毁，所以效率上低于Servlet
