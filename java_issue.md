@@ -437,20 +437,35 @@ static块用于优化程序性能，可以置于类中的任何地方。形式�
 
 ##36、进程常用操作
 
-###grep
-格式： grep [选项] “
+###grep 强大文本搜索工具（Global Regular Expression Print）  
+可以使用正则表达式搜索文本，并把匹配的行打印出来  
+格式： grep [选项]  abc  [文件]
 
 * grep -i abc：忽略大小写（ignore case）  
 * grep -v abc:反过来（invert）。只打印没有匹配abc的，匹配到abc的不打印  
 * grep -n abc:显示匹配的进程的行号
 * grep -c abc:只显示匹配行数 。-cv :显示有多少行没有被匹配
 * grep --color abc:高亮显示匹配字符abc
-####grep查找时过滤grep命令？
+* grep -E abc:开启扩展（extend）的正则表达式
+
+
+####1、grep查找时过滤grep命令？
 查找进程时用到了grep命令，其也是一个进程，所以在要过滤掉该命令  
 grep -v grep
+####2、匹配一下hello.c文件中printf的个数
+grep -c printf hello.c
+####3、显示所有以d开头的文件中匹配包含test的行
+grep test d*
+####4、匹配包含test或者tast的行，匹配既包含test又包含tast的行
+grep -E "test|tast"  文件名  **多个关键字时双引号和-E是必须的**  
+grep  test 文件名|grep tast
 
 
 ###awk
+awk是一个强大的文本分析工具。  
+格式：awk '{pattern +action }' {filenames}  
+action:在找到匹配内容时所执行的一系列命令
+
 ###sed
 
 # Java Web和Web Service相关  
