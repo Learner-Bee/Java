@@ -463,7 +463,7 @@ grep  test 文件名|grep tast
 
 ###awk
 awk是一个强大的文本分析工具。  
-格式：awk '{pattern +action }' {filenames}  
+格式：awk  '{pattern +action }'  {filenames}  
 action:在找到匹配内容时所执行的一系列命令
 
 ###sed
