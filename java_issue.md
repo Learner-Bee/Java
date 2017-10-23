@@ -462,9 +462,49 @@ grep  test 文件名|grep tast
 
 
 ###awk
-awk是一个强大的文本分析工具。  
-格式：awk  '{pattern +action }'  {filenames}  
+awk是一个强大的文本分析工具。是用来操作数据和产生报表的的一种编程语言。
+格式：awk  '{pattern +action }'  {filenames}  、
 action:在找到匹配内容时所执行的一系列命令
+awk基本用途
+
+* 基本输出：awk '{print  1，NF }'  
+例:  
+打印出第一列：ls -	l |awk '{print $1}'  
+打印前两列：ls -l |awk '{print $1,$2}'   
+**注：NF表示最后一列的意思**  
+打印最后一列：ls -l |awk '{print $NF}'  
+打印倒数第二列：ls -l | awk '{print $(NF-1)}'  
+**-F：改变awk的默认分隔符，可以支持正则表达式**    
+例：  
+ls -l |awk -F ":" '{print $NF}'
+####awk匹配打印  
+**匹配内容写在{}外面，用//来体现匹配**   
+   
+* 整行中匹配内容  
+ll|awk '/Feb/{print $1}'  匹配Feb的行，并且打印第列  
+ll|awk '!/Feb/{print $1}' 匹配不包含Feb行的第一列
+* 域匹配内容    
+匹配某个文件中以默认分隔符分隔的$1域中含有关键字Feb的行，然后打印出第一个域  
+ll |awk '$1~/Feb/{print $1}'
+* 改变awk中默认分隔符
+如，打印出password文件中，以冒号为分隔符的第一个域中的含有关键字Feb行的第一个域  
+cat password |awk -F":" '$1~/Feb/{print $1}'
+####awk判断打印 
+判断打印是每行读取后做的处理，所以if判断放在{}里面（与模式匹配不同）  
+例：ll|awk '{if($1=="-rw-------")print}'  
+如果第一个域==“-rw-------”，那么打印这一行
+ll|awk '{if($1=="-rw-------")print $1}'   
+满足条件后，打印这一行的第一个域
+####awk输出分隔符 
+当域中间加逗号时，输出结果用空格分开，如果改成别的字符(注意，要有双引号)，那么会以该字符作为分隔  
+ll|awk '{print $1";"$2}' 
+####通过awk批量修改扩展名
+ls |awk -F"." '{print "mv "$1"."$2" "$1".txt"}'|sh
+
+
+
+
+
 
 ###sed
 
