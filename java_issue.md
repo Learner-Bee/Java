@@ -437,7 +437,7 @@ static块用于优化程序性能，可以置于类中的任何地方。形式�
 
 ##36、进程常用操作
 
-###grep 强大文本搜索工具（Global Regular Expression Print）  
+###36.1 grep 强大文本搜索工具（Global Regular Expression Print）  
 可以使用正则表达式搜索文本，并把匹配的行打印出来  
 格式： grep [选项]  abc  [文件]
 
@@ -461,13 +461,16 @@ grep -E "test|tast"  文件名  **多个关键字时双引号和-E是必须的**
 grep  test 文件名|grep tast
 
 
-###awk
+###36.2 awk
 awk是一个强大的文本分析工具。是用来操作数据和产生报表的的一种编程语言。
+对文件的每行，awk都分为两个部分：  
+
+* 读取该行的内容，分配临时寄存器，分配域名等操作  
+* 对域做各种处理并输出      
+
 格式：awk  '{pattern +action }'  {filenames}  、
 action:在找到匹配内容时所执行的一系列命令
-awk基本用途
-
-* 基本输出：awk '{print  1，NF }'  
+awk基本用途  
 例:  
 打印出第一列：ls -	l |awk '{print $1}'  
 打印前两列：ls -l |awk '{print $1,$2}'   
@@ -501,12 +504,12 @@ ll|awk '{print $1";"$2}'
 ####通过awk批量修改扩展名
 ls |awk -F"." '{print "mv "$1"."$2" "$1".txt"}'|sh
 
+###xargs  kill -9   xargs表示把上一个操作的结果作为下一个命令的参数
 
 
 
 
-
-###sed
+###36.3 sed
 
 # Java Web和Web Service相关  
 ##1、阐述Servlet和CGI区别  

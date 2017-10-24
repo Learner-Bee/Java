@@ -270,9 +270,9 @@ on  B.score=A.score and B.Tid =A.Tid
 
  
 #Linux／Shell相关
-##1、进程操作
 
-### ps（process status）：查看系统当前运行的进程（非动态，是进程快照，执行ps时的进程状态爱）
+
+##1、 ps（process status）：查看系统当前运行的进程（非动态，是进程快照，执行ps时的进程状态爱）
 
 PID TTY TIME CMD
 
@@ -298,8 +298,8 @@ PID TTY TIME CMD
 * ps -ef：显示所有进程信息，连同命令行
 * ps -ef |grep  mysql：查找mysql进程的pid
 
-###top 动态显示进程信息，对进程实时监控
-###kill 杀死进程
+##2、top 动态显示进程信息，对进程实时监控
+##3、kill 杀死进程
 Linux上进程的5中状态  
 1、R ：（runnable）正在运行或在运行队列中等待  
 2、S：（sleeping）中断（休眠中、受阻）  
@@ -308,20 +308,22 @@ Linux上进程的5中状态
 5、T：进程收到sigstop、sigstp、sigtin、sigtou信号后停止运行  
 
 
-
 * kill <pid>：杀死指定进程
 * kill -9 <pid>：强制杀死指定进程
 * killall  -9  mysql：杀死所有以mysql命名的进程（在不知道进程pid时，通过名字杀死进程）
 **注：kill 后面可以使用进程号、进程名字**
 
-**杀死后缀名为sh的进程？？**
+**3.1 批量杀死后缀名为sh的进程**  
 
-killall  -9  
-**批量杀死进程**
+* shell命令形式   
+ps -ef|grep *.sh|grep -v grep |awk '{print "kill -9 " $2}' 
+* xargs
+ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 
 
 
 ##2、awk
+见java_issue
 #其他
 ##1、post和get的区别  
 ##2、url测试点
