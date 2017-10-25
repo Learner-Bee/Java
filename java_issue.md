@@ -437,7 +437,7 @@ static块用于优化程序性能，可以置于类中的任何地方。形式�
 
 ##36、进程常用操作
 
-###36.1 grep 强大文本搜索工具（Global Regular Expression Print）  
+###36.1 grep 强大文本搜索工具（Global Regular Expression Print）。可对文件内容、文件、进程进程查找操作
 可以使用正则表达式搜索文本，并把匹配的行打印出来  
 格式： grep [选项]  abc  [文件]
 
@@ -461,7 +461,7 @@ grep -E "test|tast"  文件名  **多个关键字时双引号和-E是必须的**
 grep  test 文件名|grep tast
 
 
-###36.2 awk
+###36.2 awk 主要对进程及文件属性等进行操作
 awk是一个强大的文本分析工具。是用来操作数据和产生报表的的一种编程语言。
 对文件的每行，awk都分为两个部分：  
 
@@ -509,7 +509,44 @@ ls |awk -F"." '{print "mv "$1"."$2" "$1".txt"}'|sh
 
 
 
-###36.3 sed
+###36.3 sed 很好的文件处理工具.处理文件内容
+主要以行为单位进行处理，可以将数据行进行替换、删除、新增、选取等操作  
+命令格式为：sed  [-nefri] 'command' 文件  
+常用选项： 
+
+* -n：使用安静（silent）模式。只列出经过sed特殊处理的那一行
+* -e：直接在指令列模式上进行sed动作编辑
+* -f：直接将sed的动作写在一个文档内。-f filename 则可执行filename文件中的sed命令
+* -i：直接修改读取的档案内容，而不是由屏幕输出
+
+
+常用command ：
+
+* a：新增（add）。a后跟字符串，a前不加数字，默认每行后面都增加新行。（但是并不保存到文件中）
+例：  
+sed '1a drink ' ab 在文件ab的第一行后面加增加一行字符串drink
+sed '1,3a test' ab 在文件中的第一行到第三行后加入字符串test
+sed '1a test1\ntest2' ab 在文件ab中第一行后增加多行
+* c：取代（replace）。
+sed '1c hi' ab 将文件中第一行用hi取代
+* d：删除（delete）。后面不接任何内容
+sed '1d' ab 删除第一行
+sed '2,$d' ab 删除文件从第2行到最后一行
+* i：插入。插入内容在目标行的上一行
+* p：列印。打印某一行，一般与-n一起使用
+sed  -n '1p' ab 显示第一行
+* s：取代      
+
+使用模式进行查询 ：sed -n '/test/p' file  
+替换一行中的某个部分格式：sed 's/要替换的字符串/新的字符串/g' (要替换的字符串可以用正则表达式)   
+**在文件的最后一行直接添加bye（而不是屏幕输出）：sed -i '$a bye' file** 
+####1、批量替换字符串（先匹配到行，再删除行中的匹配字符串） 
+sed -i '/test/s/test/go/g' file 将文件file中匹配的test行中的test字符串替换为go
+ 
+   
+ 
+####2、批量删除匹配行
+sed  -i '/test/d' abc (-i 是必须有的，表示修改文件，而不是显示在屏幕上)**   
 
 # Java Web和Web Service相关  
 ##1、阐述Servlet和CGI区别  
