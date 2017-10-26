@@ -6,7 +6,7 @@ package com.lily.arrays;
  * @author Administrator
  *
  */
-public class Integer_Int {
+public class IntToString {
 	public static void main(String[] args){
 		Integer a=new Integer(3); //新建对象a放入3
 		Integer d=new Integer(3);
@@ -29,8 +29,8 @@ public class Integer_Int {
 		System.out.println(a==d);
 		System.out.println(a.equals(d));//Integer类中重写了equal方法
 		
-		Integer_Int ii=new Integer_Int();
-		Integer_Int it=new Integer_Int();
+		IntToString ii=new IntToString();
+		IntToString it=new IntToString();
 		System.out.println(ii==it);//false
 		System.out.println(ii.equals(it));//false Object对象的equals就是和==判断的一样，都是内存地址
 		
@@ -38,6 +38,7 @@ public class Integer_Int {
 		String a1="123";
 	    int i=Integer.parseInt(a1);
 	    int j=Integer.valueOf(a1).intValue();
+	    //没有intValue()方法，前面得到的只是一个具有a1值的integer对象，intvalue方法是得到integer对象的int值
 		System.out.println(i);
 		System.out.println(j);
 		int m=111;
