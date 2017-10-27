@@ -6,8 +6,10 @@ package com.lily.string;
  *
  */
 public class CompareTo {
-
+	
+   
 	public static void main(String[] args) {
+		
 		String str="hello world";
 		String str1="HELLO WORLD";
 		Object objstr=str;
