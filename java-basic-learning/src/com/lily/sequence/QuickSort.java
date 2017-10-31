@@ -49,23 +49,18 @@ public class QuickSort {
 	}
     //sort2方法，Tmk思路
 	public static void sort2(int[] b, int start, int end) {
-
 		// 递归结束条件
 		if (start >= end) {
 			return;
 		}
-
 		int i = start, j = end;
 		// 基准值
 		int pivot = b[i];
-
 		// 比较顺序，从前往后时为false，从后往前时为true
 		boolean order = true;
-
 		while (i != j) {
 			if (order) {
 				if (pivot > b[j]) {
-
 					swap(b, i, j);
 					order = false;
 				} else {
