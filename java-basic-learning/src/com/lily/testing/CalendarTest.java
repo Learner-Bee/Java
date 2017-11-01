@@ -2,17 +2,17 @@ package com.lily.testing;
 
 import java.util.Calendar;
 
-public class £¤CalendarTest {
+public class CalendarTest {
 
 	public static void main(String[] args) {
 		Calendar c=Calendar.getInstance();
-		//System.out.println("µ±Ç°Ê±¼ä£º " +c);
+		//System.out.println("ï¿½ï¿½Ç°Ê±ï¿½ä£º " +c);
 		
 		Calendar c1=Calendar.getInstance();
 		c1.set(2017, 5,9);
-		//System.err.println("ÉèÖÃµÄÈÕÆÚÎª£º "+ c1);
+		//System.err.println("ï¿½ï¿½ï¿½Ãµï¿½ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½ "+ c1);
 		
-		//CalendarÀà¶ÔÏóĞÅÏ¢»ñÈ¡
+		//Calendarï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢ï¿½ï¿½È¡
 		int year=c.get(Calendar.YEAR);
 		int month=c.get(Calendar.MONTH);
 		int date=c.get(Calendar.DATE);
@@ -20,8 +20,8 @@ public class £¤CalendarTest {
 		int minute=c.get(Calendar.MINUTE);
 		int second=c.get(Calendar.SECOND);
 		int day=c.get(Calendar.DAY_OF_WEEK);
-		System.out.println("Í¨¹ıCalendarÀà¶ÔÏó»ñÈ¡µÄµ±Ç°ÈÕÆÚÎª£º"+year+" "+month+" "+date+" "+hour+" "+minute+" "+second+" "+day);
-		//´Ë´¦µÄday£¬1´ú±íĞÇÆÚÈÕ£¬2´ú±íĞÇÆÚÒ»£¬ÒÔ´ËÀàÍÆ
+		System.out.println("Í¨ï¿½ï¿½Calendarï¿½ï¿½ï¿½ï¿½ï¿½ï¿½È¡ï¿½Äµï¿½Ç°ï¿½ï¿½ï¿½ï¿½Îªï¿½ï¿½"+year+" "+month+" "+date+" "+hour+" "+minute+" "+second+" "+day);
+		//ï¿½Ë´ï¿½ï¿½ï¿½dayï¿½ï¿½1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Õ£ï¿½2ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½Ô´ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	}
 
