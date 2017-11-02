@@ -330,7 +330,7 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 
 ##2、awk
 见java_issue
-#其他
+#前端问题
 ##1、post和get的区别  
 ##2、url测试点
 ##3、如何判断问题属于前端问题还是后端问题?
@@ -341,6 +341,10 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 * 请求发送后，点开Network里的请求查看详细信息，Status Code表示后端接口处理结果，如果500开头，则确定接口出错。
 * 200或其他，再看Response结果，如果数据与预期或者条件不一致，说明接口问题，如果结果没问题，页面显示不对，那就是前端问题
 * 还有一种是前后端状态码不匹配，后端返回的状态码与前端显示信息不匹配
+##4、RadioButton相关操作 
+* 隐藏
+* 置灰(不可选、不可编辑状态)  input type="radio" disabled
+* 选中 checked
 
 #新一轮总结
 ##一、GD 2017-10-30
@@ -350,3 +354,9 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 ###4、Spring特性
 ###5、Java解析JSON、Java解析XML用到的方法及如何实现
 ###6、HttpClient使用，如何上传文件
+
+##二、Sina 2017-11-2
+###1、radiobutton相关属性
+###2、前端传入数据库的值是放在哪个参数下的？
+###3、将String str=“436bcs”存储到int[ ]数组中，并输出
+###4、关注流的测试要点

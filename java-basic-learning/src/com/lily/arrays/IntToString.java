@@ -35,7 +35,7 @@ public class IntToString {
 		System.out.println(ii.equals(it));//false Object对象的equals就是和==判断的一样，都是内存地址
 		
 		//字符串和基本数据类型之间的转换
-		String a1="123";
+		String a1="abc";
 	    int i=Integer.parseInt(a1);
 	    int j=Integer.valueOf(a1).intValue();
 	    //没有intValue()方法，前面得到的只是一个具有a1值的integer对象，intvalue方法是得到integer对象的int值
