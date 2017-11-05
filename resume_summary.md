@@ -281,7 +281,7 @@ on  B.score=A.score and B.Tid =A.Tid
 #Linux／Shell相关
 
 
-##1、 ps（process status）：查看系统当前运行的进程（非动态，是进程快照，执行ps时的进程状态爱）
+##1、 ps（process status）：查看系统当前运行的进程（非动态，是进程快照，执行ps时的进程状态）
 
 PID TTY TIME CMD
 
@@ -295,7 +295,7 @@ PID TTY TIME CMD
 
 * ps -A ：显示所有进程
 * ps a：显示现行终端机下的所有进程，包括其他用户进程
-* ps -a：显示同一终端下的所有异常
+* ps -a：显示同一终端下的所有进程
 * ps -t<终端机编号>：指定终端机编号，并列出属于该终端机的进程的状况
 * ps -u:以用户为主的格式显示进程状态
 * ps e :列出进程时，显示每个进程使用的环境变量
@@ -357,12 +357,17 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 ## IQY 11-3
 ###1、linux常用命令？
 
-* 查询文件内容中包含test的行？
-* 查询进程名为test的进程
+* 查询文件内容中包含test的行并显示行号？   
+cat |grep -n test 文件名   
+注：查询内容 test 、'test'、"test"都可以执行
+* 查询进程名为test的进程   
+ps -ef|grep  "test"|grep -v grep
 * 查看日志常用命令
-  * tail -n 100f 什么意思？
-  * cat 文件名(实时的滚动显示请求)  
-* grep -E的使用场景
+  * tail -f 文件名 
+  循环查看文件内容。
+  * cat 文件名(实时的滚动显示请求) （命令实现同上） 
+* grep -E的使用场景  
+开启正则表达式匹配模式（在查询内容和文件名中涉及到正则表达式匹配的时候要使用-E）
  
 ###2、数据库相关
 * 查询a表和b表id相关联的内容
@@ -383,8 +388,13 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 
 ## Meituan 11-3
 ###1、进程相关
+* 进程相关命令  
+ps 、top、kill、  
+nice（sudo nice 优先值 进程名 ）改变进程的优先级范围-20到19，值越低，优先值越高，进程以0启动
 * ps -ef 和ps -aux区别 
-* 查看cpu占用率最高的进程
+* 查看cpu占用率最高的进程   
+top 然后按下大写P，按照CPU排序 ；按下大写M，按内存排序
+
 
 ###2、性能测试相关
 * 性能测试如何开展？场景设计？
@@ -415,15 +425,37 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 * 在所有测试case开始前（不是某个case开始之前）进行一些操作（如清库等），怎么处理？
 
 ###6、linux相关
-* 常用linux命令
- less、more、head、tail、cat、pwd、ls、top、cp、grep、mv、kill
-* vim下常用命令，如查找关键字
-* 如何创建文件夹
+* 常用linux命令  
+ * 文件内容查看：  
+ head( -n 20 显示文件前20行)、tail、cat(显示整个文件)、more 文件名（显示文件的一页，按space键翻页）、less(比more多了向上查找？) 、grep
+ * 文件和目录管理：  
+ pwd、ls(显示文件和目录)、touch、mkdir（-p dir1/dir2 创建目录dir2时连同上级目录一起创建）、rmdir(-p 连同上级目录一起删除)、 cp、rm（-f 强制删除）、mv 原文件名 新文件名（修改文件名）、
+ * 磁盘查看：  
+ df 、du  、fdisk（磁盘分区）
+ * 进程相关
+ 
+* vim下常用命令，如查找关键字  
+／要查找的内容   回车定位查找的字符  
+ ？查找内容 从文件末尾网上搜   
+ 查找下一个字符按下小写n，上一个大写N  
+* 如何创建文件夹  
+mkdir 文件夹名
+* 查看磁盘使用情况  
+df  显示磁盘的使用情况  
+du  默认显示当前目录下的文件及目录所占的磁盘空间
 
 ###7、git相关
-* 常用命令
-* 如何处理冲突
-* 如何创建分枝
+* git常用命令  
+代码提交相关：  
+git status \git add \git commit -m\git push\git pull\
+git log (列出历史提交记录)  
+分支管理：   
+git branch (列出分支)\git checkout(切分支)\git merge(合并分支)\git branch -d dev(删除dev分支)
+
+* 如何处理冲突  
+git merge 合并分支
+* 如何创建分支  
+git branch 分支名
 
 
 ###8、协议相关
@@ -439,7 +471,11 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 ###10、Selenium相关
 * 常用识别页面控件的属性有哪些？
 * xpath如何拼接？
-* 
+
+###11、测试环境相关
+* 环境部署及要装的软件
+
+
 
 
 
