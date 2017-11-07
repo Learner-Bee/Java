@@ -357,12 +357,18 @@ ps -ef|awk '/*.sh/{print $2}'|xargs kill -9
 
 #新一轮总结
 ##一、GD 2017-10-30
-###1、Mysql索引类型有哪几种？对数值类型和字符串类型column分别加索引，哪种查找的效率更高？
-###2、MySQL存储过程
-###3、Java连接数据库做CURD是的步骤
-###4、Spring特性
-###5、Java解析JSON、Java解析XML用到的方法及如何实现
-###6、HttpClient使用，如何上传文件
+###1、数据库相关
+* Mysql索引类型有哪几种？
+一般索引、唯一索引、主键索引、聚集索引
+* 对int型和字符串类型column分别加索引，哪种查找的效率更高？ 
+* MySQL存储过程
+
+###2、java相关  
+
+* Java连接数据库做CURD是的步骤
+* Spring特性
+* Java解析JSON、Java解析XML用到的方法及如何实现
+* HttpClient使用，如何上传文件
 
 
 ##二、Sina 2017-11-2
@@ -415,6 +421,7 @@ nice（sudo nice 优先值 进程名 ）改变进程的优先级范围-20到19�
   
 * 查看cpu占用率最高的进程   
 top 然后按下大写P，按照CPU排序 ；按下大写M，按内存排序  
+
 ###2、性能测试相关
 * 性能测试如何开展？场景设计？
 * cpu占用率高的的原因有哪些？如何解决？
@@ -427,10 +434,27 @@ top 然后按下大写P，按照CPU排序 ；按下大写M，按内存排序
 * get和post区别
 
 ###4、数据库相关
-* 多表联查常用关键字
-* like模糊匹配
-* 得到查询结果的10条记录，Mysql和SqlServer分别如何实现
-* delete和drop的区别
+* 多表联查常用关键字  
+left join on \
+* like模糊匹配   
+% ：代表0个或多个任意字符  like ‘%ab’以ab结尾的任意长度的字符串   
+_ ：代表任意一个字符  like ‘a_b’ 匹配长度为3的头尾为ab的字符串    
+[0-9]或[abcd]: 表示匹配括号内任意一个字符  
+[^a]:匹配不是括号中内容的字符  
+
+* 得到查询结果的10条记录，Mysql和SqlServer分别如何实现  
+ * mysql：select * from table limit 10   
+ limit m,n (m是偏移量(从0开始)，n是返回的行数)    
+ limit 5，10 表示从第6行开始，输出10行  
+ limit 10，-1 表示输出第11行到结尾的数据
+ * sqlserver：select top 10 from table
+ 后10行：select top 10 from table order by id desc
+ * oracle：select * from table where rownum<=10;
+
+* delete和drop的区别  
+delete from 表名 删除表中的所有数据  
+drop table  表名 从数据库中删除该表
+
 
 ###5、java相关
 * interface和abstract类的应用场景
@@ -494,6 +518,7 @@ git branch 分支名
 
 ###10、Selenium相关
 * 常用识别页面控件的属性有哪些？
+* id和class属性识别上有啥区别
 * xpath如何拼接？
 
 ###11、测试环境相关
