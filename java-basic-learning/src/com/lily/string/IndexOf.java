@@ -10,7 +10,7 @@ public class IndexOf {
 
 	public static void main(String[] args) {
 		String str ="hello my name is lily";
-		String s="o";
+		String s="my";
 		if(str.indexOf(s)==-1){
 			System.out.println(str+" ×Ö·û´®ÖÐÃ»ÓÐ : "+s);
 		}else{
