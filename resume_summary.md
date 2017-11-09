@@ -379,6 +379,7 @@ string 是随机的，处理较慢
 * 隐藏 ：hide
 * 默认勾选 ：checked
 * 不可点击、输入 ：disabled
+
 ###2、前端传入数据库的值是放在哪个参数下的？
 通过jsp页面传的参数，都是以name--value 成对出现的，通过servlet中request.getparamater("name")得到页面的参数，是获取页面中name属性的value值。一般input输入框，value为输入内容。radiobutton的value是写死的。
 ###3、将String str=“436bcs”存储到int[ ]数组中，并输出
