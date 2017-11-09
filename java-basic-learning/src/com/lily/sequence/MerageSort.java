@@ -16,7 +16,7 @@ package com.lily.sequence;
 public class MerageSort {
 
 	public static void main(String[] args) {
-		int[] a={2,3,6,7},b={0,1,2,5};
+		int[] a={2,3,6,7,9,10},b={0,1,2,5};
 		sort(a,b);
 	}
 	public static void sort(int[] a,int[] b){
@@ -40,7 +40,7 @@ public class MerageSort {
 			}
 		}else if(j==b.length){
 			for(;s<c.length;s++){
-				c[s]=b[i];
+				c[s]=a[i];
 				i++;
 			}
 		}

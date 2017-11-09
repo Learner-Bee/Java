@@ -378,8 +378,9 @@ string 是随机的，处理较慢
 
 * 隐藏 ：hide
 * 默认勾选 ：checked
-* 不可点击 ：disabled
+* 不可点击、输入 ：disabled
 ###2、前端传入数据库的值是放在哪个参数下的？
+通过jsp页面传的参数，都是以name--value 成对出现的，通过servlet中request.getparamater("name")得到页面的参数，是获取页面中name属性的value值。一般input输入框，value为输入内容。radiobutton的value是写死的。
 ###3、将String str=“436bcs”存储到int[ ]数组中，并输出
 ###4、微博关注流的测试要点
 ###5、移动端兼容测试如何处理
@@ -400,7 +401,8 @@ ps -ef|grep  "test"|grep -v grep
 开启正则表达式匹配模式（在查询内容和文件名中涉及到正则表达式匹配的时候要使用-E）
  
 ###2、数据库相关
-* 查询a表和b表id相关联的内容
+* 查询a表和b表id相等的记录(内连接)  
+ select * from a inner join b on a.id=b.id
 
 ###3、归并的实现，以及该接口的测试case
 
@@ -440,8 +442,14 @@ top 然后按下大写P，按照CPU排序 ；按下大写M，按内存排序
 * get和post区别
 
 ###4、数据库相关
-* 多表联查常用关键字  
-left join on \
+* 多表联查常用关键字   
+**笛卡尔积：A=（a，b）B=（1,2,3） ，两个集合的笛卡尔积为（a，1）(a,2)(a,3)(b,1)(b,2)(b,3)** 
+ * 内连接（A inner join B on 连接条件）：返回连接表中符合连接条件和查询条件的数据行（连接表就是数据库在做查询时形成的中间表）  
+  隐式内连接：Select * from 表1，表2 where 表1.id=表2.id  
+  显示内连接：Select * from 表1 inner join 表2 on 表1.id=表2.id  
+  区别在于隐式的中间表显示的是两表的笛卡尔积，而内连接的中间表为on 条件过滤的笛卡尔积（结果是一样的）
+ * 左（外）连接(A left join on B on 连接条件 where 查询条件)：根据on连接条件过滤两个表的笛卡尔积，但是会以A中的连接条件列全部显示，不管B中有没有该记录
+ * 右（外）连接：与左连接相反。结果集以B中连接条件为主
 * like模糊匹配   
 % ：代表0个或多个任意字符  like ‘%ab’以ab结尾的任意长度的字符串   
 _ ：代表任意一个字符  like ‘a_b’ 匹配长度为3的头尾为ab的字符串    
@@ -516,6 +524,7 @@ git branch 分支名
 * 协议都有哪些层？http、tcp分别属于哪层？
 * tcp／ip和udp的区别？
 * http和hppts的区别？端口号分别是多少？
+* http1.1和http1.0有什么区别
 * https如何加密的？
 * 如何将抓取的请求指向本地？
 
@@ -533,9 +542,11 @@ git branch 分支名
 ##Didi 11-8
 
 ###1、Java相关
-* 代码实现字符串a是不是字符串b的循环子串
+* 代码实现字符串a是不是字符串b的循环子串  
+见String包-substring2类
 * 代码实现将字符串转换为int型，尽量多考虑情况，且不适用内函数
-* 快排的时间复杂度和实现
+* 快排的时间复杂度和实现  
+nlongn
 ###2、Linux进程相关
 * xargs什么意思
 * awk是否使用过？用在什么时候
