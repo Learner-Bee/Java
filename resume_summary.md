@@ -495,12 +495,14 @@ drop table  表名 从数据库中删除该表
 
 ###5、java相关
 * interface和abstract类的应用场景
+
 * list和Arraylist的区别
 * 单向链表如何反转
 * 5的阶乘
 * jdbc连接数据库过程（代码层面）
 * 数组和链表的区别及优缺点
 * TestNG和Junit的区别？Junit是否可以生成报告
+
 * TestNG中@test和@beforetest等的使用
 * 在所有测试case开始前（不是某个case开始之前）进行一些操作（如清库等），怎么处理？
 
