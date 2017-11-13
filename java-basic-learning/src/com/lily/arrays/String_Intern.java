@@ -1,6 +1,6 @@
 package com.lily.arrays;
 
-public class Append {
+public class String_Intern {
 
 	public static void main(String[] args) {
 		    String s1 = "Programming";

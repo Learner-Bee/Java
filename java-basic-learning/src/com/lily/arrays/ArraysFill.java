@@ -11,7 +11,7 @@ import java.util.Arrays;
  * @author Administrator
  *
  */
-public class ArrayFill {
+public class ArraysFill {
 
 	public static void main(String[] args) {
 		int[] array=new int[6];
