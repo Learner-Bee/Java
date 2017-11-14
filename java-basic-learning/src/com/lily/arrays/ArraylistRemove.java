@@ -1,6 +1,7 @@
 package com.lily.arrays;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 通过数组名.remove()删除数组中元素
@@ -9,17 +10,17 @@ import java.util.ArrayList;
  * @author Administrator
  *
  */
-public class ArrayRemove {
+public class ArraylistRemove {
 
 	public static void main(String[] args) {
-		ArrayList a=new ArrayList();
+		List<String> a=new ArrayList<String>();
 		a.add("a");
 		a.add("b");
 		System.out.println("删除前数组为："+a);
 		a.remove("b");
 		System.out.println("删除后数组为："+a);
 		
-		ArrayList b=new ArrayList();
+		List<String> b=new ArrayList<String>();
 		b.add(0, "lily");
 		b.add(1,"lucy");
 		System.out.println("删除前数组为："+b);

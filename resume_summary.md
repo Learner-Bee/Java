@@ -509,14 +509,12 @@ drop table  表名 从数据库中删除该表
 ###1、 interface和abstract类的应用场景
   * interface作为一个统一规范，用来定义一系列方法的规范，方便在不同类中实现同样的方法时，有一个统一的定义
   * abstract class 作为一个公共的模板，定义一系列公共方法的实现，以及一些抽象方法，来方便子类在继承后，不用再实现公共方法，而是重写抽象方法来实现自己的特性，提高效率
-###2、 list和Arraylist的区别
- * List是接口，不能实例化，定义了一些方法，ArrayList是实现了List接口的类
  
-###3、单向链表的一些列操作？
-###4、 5的阶乘（递归）
+###2、单向链表的一些列操作？
+###3、 5的阶乘（递归）
   首先判断参数是否==1，true return  
   实现递归调用：return  i*method(i-1) 
-###5、jdbc连接数据库过程（代码层面）  
+###4、jdbc连接数据库过程（代码层面）  
   * 加载驱动 Class.forName("");
   * 定义数据库地址，及用户名：  
     String url ="jdbc:mysql://10.0.11.224:3306/数据库名字；  
@@ -525,8 +523,15 @@ drop table  表名 从数据库中删除该表
   * 定义SQL语句：String sql=“”；
   * 创建容器：Statement stat=conn.createStatement();
   * 将sql放到容器中执行：state.excuet(sql)
+###5、 list和Arraylist的区别
+ * List（列表）是接口，不能实例化，定义了一些方法，ArrayList是实现了List接口的类
+ * ArrayList是数组列表，不是一种数据结构
+###Array和ArrayList（列表）区别
+ * Array在初始化时必须定义大小，后者则不需要，容量可动态增长
+ * Array只能存储类型相同的对象，如int[]只能存整型数据；ArrayList可以存放不同类型的数据（因为里面存放的是被装箱的Object对象）
+ * Array不提随便删除和增加其中的项，ArrayList可以利用arraylist.remove(“a”)方法删除数据 
  
-###6、数组和链表的区别及优缺点？  
+###6、数组Array和链表link的区别及优缺点？ （数组和链表都是一种数据结构）
   数组在内存中给出了连续的空间，链表在内存地址上可以是不连续的   
 
   * 内存利用率。  
@@ -696,7 +701,32 @@ ps -ef|grep 123|grep -v grep
 ##2、字符串和数组之间的转换，存储输出
 ##3、常见排序算法实现和时间复杂度
 ##4、链表的常见操作（增删改查等）
-##5、数组的常见操作（增删改查等）
+##5、数组Array的常见操作（增删改查等）
+###1、合并数组或者扩充数组
+System.arraycopy(str,strposition,dest,destposition,copylength)  
+ 数组扩充\拷贝原数组的部分内容到新数组的指定位置
+###2、Arrays.fill(数组名，fromindex，toindex，value)  
+ 填充数组，将数组值从开始位置到结束位置设置统一值（不修改结束位置的值）  
+  Arrays.fill(数组名，value)将数组所有值设置为统一value
+###3、判断数组中是否包含某个元素  
+ * 将数组转换为ArrayList：List<> list=Arrays.asList(array)，然后利用ArrayList的contains方法list.contains(targetValue)
+ * 循环遍历数组，与目标值比较x.equals(目标值)
+ * 使用Arrays.binarySearch()方法(前提数组是有序的)  
+  int a=Arrays.binarySearch(array,targetvalue)
+###4、将两个数组合并成一个有序数组  
+ * 两个有序数组合并为一个有序数组：归并
+ * 两个有序或者无需数组合并为一个为一个有序数组：先利用System.arraycopy()将连个数组复制到一个数组中，然后再利用Arrays.sort(新数组名)进行排序;Arrays.sort(array,fromindex,toindex),排序的数组不包括toindex
+###5、判断连个数组中的数据是否相等array1.equals(array2)
+##6、数组链表（ArrayList）常见操作List 《String》 arraylist=new ArrayList《String》();
+###1、 ArrayList反转，Collections.reverse(arraylist)。
+ 数组反转，可以先将数组转化为ArrayList，然后利用该方法进行反转
+###2、删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
+###3、Array和ArrayList之间的相互转换
+* Array->Arraylist  
+int[] a=new int[]{2,4,3};  List<int[]> arraylist=Arrays.asList(a);  
+* ArrayList-->Array  
+List<String> arraylist=new ArrayList<String>();  arraylist.add("bll");  
+String[] str=new String[arraylist.size()];  arraylist.toArray(str);
 ##6、递归阶乘
 ##7、字符串的常用方法和操作，如判断子串是否在字符串中，字符串反转
 ##8、连接数据库代码实现步骤

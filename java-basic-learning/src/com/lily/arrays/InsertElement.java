@@ -19,20 +19,20 @@ public class InsertElement {
 		//System.out.println(Arrays.binarySearch(a, 0));
 		//将数组转化成arraylist
 		List<Integer> aList = Arrays.asList(1,3,2,5,4);
-		Collections.reverse(aList);
+		//Collections.reverse(aList);
 		printArray(aList);
 		
-		insertElement(a,b);
-	    printArray(b);
-		Arrays.sort(b,0,3);
-		printArray(b);
+		//insertElement(a,b);
+	    //printArray(b);
+		//Arrays.sort(b,0,3);
+		//printArray(b);
 		
 
 	}
 	//插入元素方法。将数组复制给新数组。并定义插入的元素
 	public static int[] insertElement(int[] array1,int[] array2){
 		System.arraycopy(array1, 0, array2, 0, array1.length);
-		array2[array1.length]=0;
+		array2[array1.length]=9;
 		return array2;
 	}
 	//循环遍历输出数组
@@ -45,8 +45,11 @@ public class InsertElement {
 	}
 	//遍历输出arraylist
 	public static void printArray(List<Integer> array){
-		for(int i=0;i<array.size();i++){
-			System.out.print(array.get(i)+" ");
+		//for(int i=0;i<array.size();i++){
+		//	System.out.print(array.get(i)+" ");
+		//}
+		for(int m:array){
+			System.out.println(m);
 		}
 		System.out.println();
 		
