@@ -697,11 +697,9 @@ ps -ef|grep 123|grep -v grep
 
 
 #Java常见操作
-##1、字符串和int之间的转换
-##2、字符串和数组之间的转换，存储输出
-##3、常见排序算法实现和时间复杂度
-##4、链表的常见操作（增删改查等）
-##5、数组Array的常见操作（增删改查等）
+##1、常见排序算法实现和时间复杂度
+
+##2、数组Array的常见操作（增删改查等）
 ###1、合并数组或者扩充数组
 System.arraycopy(str,strposition,dest,destposition,copylength)  
  数组扩充\拷贝原数组的部分内容到新数组的指定位置
@@ -712,12 +710,15 @@ System.arraycopy(str,strposition,dest,destposition,copylength)
  * 将数组转换为ArrayList：List<> list=Arrays.asList(array)，然后利用ArrayList的contains方法list.contains(targetValue)
  * 循环遍历数组，与目标值比较x.equals(目标值)
  * 使用Arrays.binarySearch()方法(前提数组是有序的)  
-  int a=Arrays.binarySearch(array,targetvalue)
-###4、将两个数组合并成一个有序数组  
+  int a=Arrays.binarySearch(array,targetvalue)(查找数组中某个元素的index)
+ 
+###4、Arrays.sort()将两个有序、无序数组合并成一个有序数组  
  * 两个有序数组合并为一个有序数组：归并
  * 两个有序或者无需数组合并为一个为一个有序数组：先利用System.arraycopy()将连个数组复制到一个数组中，然后再利用Arrays.sort(新数组名)进行排序;Arrays.sort(array,fromindex,toindex),排序的数组不包括toindex
+ 
 ###5、判断连个数组中的数据是否相等array1.equals(array2)
-##6、数组链表（ArrayList）常见操作List 《String》 arraylist=new ArrayList《String》();
+##3、数组链表（ArrayList）常见操作  
+List 《String》 arraylist=new ArrayList《String》();
 ###1、 ArrayList反转，Collections.reverse(arraylist)。
  数组反转，可以先将数组转化为ArrayList，然后利用该方法进行反转
 ###2、删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
@@ -727,9 +728,15 @@ int[] a=new int[]{2,4,3};  List<int[]> arraylist=Arrays.asList(a);
 * ArrayList-->Array  
 List<String> arraylist=new ArrayList<String>();  arraylist.add("bll");  
 String[] str=new String[arraylist.size()];  arraylist.toArray(str);
+
+###4、Arraylist的sort()方法
+
+##4、字符串的常用方法和操作，如判断子串是否在字符串中，字符串反转
+###1、字符串和基本数据类型之间的转换
+###2、字符串、int型基本数据
+##5、链表的常见操作（增删改查等）
 ##6、递归阶乘
-##7、字符串的常用方法和操作，如判断子串是否在字符串中，字符串反转
-##8、连接数据库代码实现步骤
-##9、Httpclient使用
+##7、连接数据库代码实现步骤
+##8、Httpclient使用
 
 
