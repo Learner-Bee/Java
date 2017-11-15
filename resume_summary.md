@@ -726,10 +726,16 @@ List 《String》 arraylist=new ArrayList《String》();
 ###2、删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
 ###3、Array和ArrayList之间的相互转换
 * Array->Arraylist  
-int[] a=new int[]{2,4,3};  List<int[]> arraylist=Arrays.asList(a);  
+
+	int[] a=new int[]{2,4,3};  
+	List<int[]> arraylist=Arrays.asList(a);  
+	
 * ArrayList-->Array  
-List<String> arraylist=new ArrayList<String>();  arraylist.add("bll");  
-String[] str=new String[arraylist.size()];  arraylist.toArray(str);
+
+	List<String> arraylist=new ArrayList<String>();  
+	arraylist.add("bll");  
+	String[] str=new String[arraylist.size()]; 
+	arraylist.toArray(str);
 
 ###4、Arraylist的sort()方法
 
