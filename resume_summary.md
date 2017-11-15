@@ -694,7 +694,8 @@ ps -ef|grep 123|grep -v grep
 ##3、项目相关 
 ### 有review代码吗？主要关注点？出现频率比较高的问题有哪些？
  
-
+###栈和堆的区别
+###selenium中判断元素是否存在？
 
 #Java常见操作
 ##1、常见排序算法实现和时间复杂度
@@ -716,7 +717,8 @@ System.arraycopy(str,strposition,dest,destposition,copylength)
  * 两个有序数组合并为一个有序数组：归并
  * 两个有序或者无需数组合并为一个为一个有序数组：先利用System.arraycopy()将连个数组复制到一个数组中，然后再利用Arrays.sort(新数组名)进行排序;Arrays.sort(array,fromindex,toindex),排序的数组不包括toindex
  
-###5、判断连个数组中的数据是否相等array1.equals(array2)
+###5、判断两个数组中的数据是否相等  
+array1.equals(array2)
 ##3、数组链表（ArrayList）常见操作  
 List 《String》 arraylist=new ArrayList《String》();
 ###1、 ArrayList反转，Collections.reverse(arraylist)。
@@ -731,10 +733,23 @@ String[] str=new String[arraylist.size()];  arraylist.toArray(str);
 
 ###4、Arraylist的sort()方法
 
-##4、字符串的常用方法和操作，如判断子串是否在字符串中，字符串反转
+##4、字符串的常用方法和操作
 ###1、字符串和基本数据类型之间的转换
 ###2、字符串、int型基本数据
+###3、判断字符串反转（字符串倒序输出）
+###4、判断字符串A是否是B的子串，和子字符串最后出现的位置
+* B.indexOf(A)=-1说明不存在A子串
+* B.contains(A)	有返回true
+* B.lastIndexOf(A)=-1说明没有该子串，否则返回具体值
+
+###5、修改可变字符串（StringBuffer）
+StringBuffer sb=new StringBuffer（“hello”）；  
+
+* 字符串后面追加 ：sb.append（字符串、字符等）
+* 在字符串中间插入：sb.insert(index,内容)
+* 改变某个位置所在的字符：sb.setCharAt(index,'b')
 ##5、链表的常见操作（增删改查等）
+
 ##6、递归阶乘
 ##7、连接数据库代码实现步骤
 ##8、Httpclient使用
