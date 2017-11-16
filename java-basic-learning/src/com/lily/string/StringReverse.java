@@ -1,4 +1,4 @@
-package com.lily.arrays;
+package com.lily.string;
 
 public class StringReverse {
 

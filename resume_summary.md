@@ -695,11 +695,13 @@ ps -ef|grep 123|grep -v grep
 ##3、项目相关 
 ### 有review代码吗？主要关注点？出现频率比较高的问题有哪些？
  
+
 ##MT11-15
 ##1、Java相关
 ###1、数组奇数放在左面，偶数放在右面
 ###2、输入出生年月日，计算总天数
 ###3、如何判断链表是环
+###4、栈和堆的区别
 ##2、数据库相关
 ###1、事务
 ###2、delete和什么的区别
@@ -728,9 +730,12 @@ ps -ef|grep 123|grep -v grep
 ###1、xpath语法
 ###2、页面变动特别大的元素如何定位
 ###3、参数如何处理
+###4、selenium中判断元素是否存在？
 ##9、Jmeter相关
 ###1、如何连接数据库
 ###2、如何设置断言
+
+
 
 
 
@@ -754,7 +759,8 @@ System.arraycopy(str,strposition,dest,destposition,copylength)
  * 两个有序数组合并为一个有序数组：归并
  * 两个有序或者无需数组合并为一个为一个有序数组：先利用System.arraycopy()将连个数组复制到一个数组中，然后再利用Arrays.sort(新数组名)进行排序;Arrays.sort(array,fromindex,toindex),排序的数组不包括toindex
  
-###5、判断连个数组中的数据是否相等array1.equals(array2)
+###5、判断两个数组中的数据是否相等  
+array1.equals(array2)
 ##3、数组链表（ArrayList）常见操作  
 List 《String》 arraylist=new ArrayList《String》();
 ###1、 ArrayList反转，Collections.reverse(arraylist)。
@@ -762,12 +768,19 @@ List 《String》 arraylist=new ArrayList《String》();
 ###2、删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
 ###3、Array和ArrayList之间的相互转换
 * Array->Arraylist  
-int[] a=new int[]{2,4,3};  List<int[]> arraylist=Arrays.asList(a);  
+
+	int[] a=new int[]{2,4,3};  
+	List<int[]> arraylist=Arrays.asList(a);  
+	
 * ArrayList-->Array  
-List<String> arraylist=new ArrayList<String>();  arraylist.add("bll");  
-String[] str=new String[arraylist.size()];  arraylist.toArray(str);
+
+	List<String> arraylist=new ArrayList<String>();  
+	arraylist.add("bll");  
+	String[] str=new String[arraylist.size()]; 
+	arraylist.toArray(str);
 
 ###4、Arraylist的sort()方法
+
 
 ##4、字符串的常用方法和操作，
 ###1、字符串和基本数据类型之间的转换
@@ -786,7 +799,25 @@ String str2=Integer.toString(m);
 * 先判断字符串是否是一个，一个则不用反转， if (str.length()<=1) return str;  
 * 否则，进行递归 return reverse(str.subString(1))+str.charAt(0)
 
+
+##4、字符串的常用方法和操作
+###1、字符串和基本数据类型之间的转换
+###2、字符串、int型基本数据
+###3、判断字符串反转（字符串倒序输出）
+###4、判断字符串A是否是B的子串，和子字符串最后出现的位置
+* B.indexOf(A)=-1说明不存在A子串
+* B.contains(A)	有返回true
+* B.lastIndexOf(A)=-1说明没有该子串，否则返回具体值
+
+###5、修改可变字符串（StringBuffer）
+StringBuffer sb=new StringBuffer（“hello”）；  
+
+* 字符串后面追加 ：sb.append（字符串、字符等）
+* 在字符串中间插入：sb.insert(index,内容)
+* 改变某个位置所在的字符：sb.setCharAt(index,'b')
+
 ##5、链表的常见操作（增删改查等）
+
 ##6、递归阶乘
 ##7、连接数据库代码实现步骤
 ##8、Httpclient使用
