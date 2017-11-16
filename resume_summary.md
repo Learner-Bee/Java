@@ -673,6 +673,48 @@ git branch 分支名
 ###2、id和class属性识别上有啥区别
 class定位元素没有id精准
 ###3、 xpath如何拼接？
+
+Xpath使用路径表达式来选取XML文档中的节点。Xpath中有七种节点：元素，属性，文本，命名空间，处理指令，注释，以及文档节点（根节点）
+
+* nodename:选取此节点的所有子节点
+* /：从根节点选取
+* //：从匹配选择的当前节点选择文档中的节点，不考虑它们的位置
+* . ：选取当前节点
+* ..：选取当前节点的父节点
+* @ ：选取属性  
+
+例子：
+<bookstore>
+
+<book>
+  <title lang="eng">Harry Potter</title>
+  <price>29.99</price>
+</book>
+
+<book>
+  <title lang="eng">Learning XML</title>
+  <price>39.95</price>
+</book>
+
+</bookstore>
+
+* bookstore：选取bookstore的所有子节点
+* /bookstore：选取根元素bookstore
+* bookstore/book：选取bookstore下的所有book元素
+* //book：选取book元素，不管其位置
+* bookstore//book：选取输入bookstore后代的所有book元素，不考虑其位置
+* //@lang：选取名为lang的所有属性
+####谓语 用来查找某个特定的节点或者包含某个指定值的节点
+* /bookstore/book[1]：选取bookstore子元素的第一个book元素
+* /bookstore/book[last()]:最后一个book [last()-1]倒数第二个元素
+* /bookstore/book[position()<3]：选取前两个book元素
+* //title[@lang]：选取所有属性名为lang的title元素；[@lang='eng']所有属性值=eng的title元素
+####选取未知节点
+
+* *：匹配任何元素节点。/bookstore/* 选取bookstore所有子节点
+* @*：匹配任何属性  //title[@*]选择所有带有属性的title元素
+* node()：匹配任何类型节点
+* //book/title | //book/price ：选取book元素的所有title和price节点
 ##11、测试环境相关
 * 环境部署及要装的软件
 
@@ -702,35 +744,74 @@ ps -ef|grep 123|grep -v grep
 ###2、输入出生年月日，计算总天数
 ###3、如何判断链表是环
 ###4、栈和堆的区别
+
 ##2、数据库相关
 ###1、事务
 ###2、delete和什么的区别
 ###3、什么是索引？在哪些地方添加索引
 ###4、慢查询的原因
+
 ##3、进程相关
 ###1、让进程在后台操作
 
 ##4、Shell相关
 ###1、关闭循环的操作是什么
+done
 ###2、Vim和vi的区别
-##5、Web相关
-###1、Css中selctor的使用语法
-###2、JS的node框架？
-###3、Web主要测试点
+vim是从vi发展出来的一个文本编辑器。编程功能比较丰富，被广泛应用  
+vi是老式的字处理器
+###3、Shell常用基本操作
+####变量名直接定义 yourname="lily" 
 
+* 首个字符必须为字符（a-z,A-Z）
+* 中间不能有空格，可以使用下划线
+* 不能使用标点符号
+* 不能使用bash里的关键字  
+变量使用
+
+* 使用变量，只要在变量名前加$
+* 只读变量 readonly yournmae
+* 删除变量 unset yourname
+
+##5、Web相关
+###Css中selctor的使用语法
+CSS基础语法：selector{属性：值；属性：值；。。。}  
+选择器分组：h1,h2,h3{声明}
+
+* 派生选择器：依据元素在其上下文的关系来定义样式   
+li strong{color:red} 只有li元素中的strong元素的样式变为红色
+* id选择器（以#来定）：可以为标有特定id的html元素指定特别的样式  
+ #side{color：red}将id=side的元素显示为红色
+* 类选择器（以点号来定义类选择器）
+ .center{text-align:center} 所有拥有class=center的元素定义为居中
+* 属性选择器[属性]
+ [title]为带有title属性的元素
+
+###JS的node 框架？
+###Web主要测试点
+
+* 界面检查：title，页面排版、字段、文字格式是否统一、浏览器窗口大小对页面样式的影响
+* 输入框校验：必填、位数以及安全性校验（输入特殊字符）等
+* 页面操作提交：操作后的页面指向，页面数据是否刷新
+* 不同控件间的相互关系：点击某个按钮，其他按钮置灰等
+* 搜索功能及数据增删改的一系列操作
 ##6、协议相关
 ###1、在浏览器中输入URL，请求主页，到页面展示，这中间的内部实现是怎样的
+###2、如何判断是分配到哪个服务器上
+###3、常见返回code
 
 ##7、测试相关
-###1、线上常见或典型的问题
+###线上常见或典型的问题
 清缓存操作，线下是一台服务器，所以可以清除；但是线上是多个服务器，每次请求随机分配到不同服务器上，所以清缓存的操作，会有的成功有的失败，没有将其他的服务器加入到清缓存的目录里
-###2、扫码支付的测试点
-###3、页面刷新加载时间很慢的原因？
+###扫码支付的测试点
+###页面刷新加载时间很慢的原因？
+
 ##8、Selenium相关
 ###1、xpath语法
 ###2、页面变动特别大的元素如何定位
 ###3、参数如何处理
 ###4、selenium中判断元素是否存在？
+
 ##9、Jmeter相关
 ###1、如何连接数据库
 ###2、如何设置断言
@@ -776,7 +857,7 @@ List 《String》 arraylist=new ArrayList《String》();
 
 	List<String> arraylist=new ArrayList<String>();  
 	arraylist.add("bll");  
-	String[] str=new String[arraylist.size()]; 
+	String[] str=new String[arraylist.size()];   
 	arraylist.toArray(str);
 
 ###4、Arraylist的sort()方法
@@ -793,21 +874,14 @@ String str2=Integer.toString(m);
 ###2、字符串和数组之间的转换
 * String str="hello"; char[] array=str.toCharArray();
 * String str2=Arrays.toString(array)
-###3、判断子串是否在字符串中
-###4、字符串反转(递归)
-* 定义方法reverse（String str）
-* 先判断字符串是否是一个，一个则不用反转， if (str.length()<=1) return str;  
-* 否则，进行递归 return reverse(str.subString(1))+str.charAt(0)
-
-
-##4、字符串的常用方法和操作
-###1、字符串和基本数据类型之间的转换
-###2、字符串、int型基本数据
-###3、判断字符串反转（字符串倒序输出）
-###4、判断字符串A是否是B的子串，和子字符串最后出现的位置
+###3、判断子串是否在字符串中,和子字符串最后出现的位置
 * B.indexOf(A)=-1说明不存在A子串
 * B.contains(A)	有返回true
 * B.lastIndexOf(A)=-1说明没有该子串，否则返回具体值
+###4、字符串反转(递归)（字符串倒序输出）
+* 定义方法reverse（String str）
+* 先判断字符串是否是一个，一个则不用反转， if (str.length()<=1) return str;  
+* 否则，进行递归 return reverse(str.subString(1))+str.charAt(0)
 
 ###5、修改可变字符串（StringBuffer）
 StringBuffer sb=new StringBuffer（“hello”）；  
