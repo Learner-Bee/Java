@@ -10,8 +10,8 @@ package com.lily.string;
 public class SubString2 {
 
 	public static void main(String[] args) {
-		String sou="ABCC";
-		String dest="CC";
+		String sou="ABCAC";
+		String dest="CA";
 		System.out.println(subStr(sou,dest));
 	}
 	public static String  subStr(String a ,String b){
@@ -22,7 +22,7 @@ public class SubString2 {
 		while(i<a.length()-1){
 			a=a.substring(1)+a.charAt(0);
 			if(a.indexOf(b)>=0){
-				return "yes";
+				return "yes";//return的意思就是结束整个方法体，返回结果
 			}
 			i++;
 		}

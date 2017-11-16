@@ -220,7 +220,7 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
    show index from stu
 ####2、添加索引(括号内为列名)
  
-* 普通索引：alter table stu add index name1(name);  
+* 普通索引：alter table stu add index indexname(column—name);  
  添加多个普通索引：alter table stu add index (name,sco);
 * 唯一索引：alter table stu add unique(sco);//给sco列加唯一索引，索引名默认为列名
  添加多个唯一索引：alter table stu add unique(name,sco);
@@ -399,7 +399,7 @@ string 是随机的，处理较慢
      1. TPS(每秒事务数)
      2. HPS（每秒点击数）
      3. Throught/s（每秒系统处理的用户请求数量）
- * 系统资源（CPU、、内存、网络、磁盘）
+ * 系统资源（CPU、内存、网络、磁盘）
    1. CPU使用率：报告中显示
    2. 内存使用率：报告中显示可用内存，用（测试服务器的总物理内存-可用内存）/总内存=内存使用率
   
@@ -493,7 +493,8 @@ top 然后按下大写P，按照CPU排序 ；按下大写M，按内存排序
 * [^a]:匹配不是括号中内容的字符  
 
 ###3、 得到查询结果的10条记录，Mysql和SqlServer分别如何实现  
- * mysql：select * from table limit 10   
+ * mysql：查询表中id前三大的数据  
+ select * from table order by id desc limit 3   
  limit m,n (m是偏移量(从0开始)，n是返回的行数)    
  limit 5，10 表示从第6行开始，输出10行  
  limit 10，-1 表示输出第11行到结尾的数据
@@ -529,7 +530,7 @@ drop table  表名 从数据库中删除该表
 ###Array和ArrayList（列表）区别
  * Array在初始化时必须定义大小，后者则不需要，容量可动态增长
  * Array只能存储类型相同的对象，如int[]只能存整型数据；ArrayList可以存放不同类型的数据（因为里面存放的是被装箱的Object对象）
- * Array不提随便删除和增加其中的项，ArrayList可以利用arraylist.remove(“a”)方法删除数据 
+ * Array不能随便删除和增加其中的项，ArrayList可以利用arraylist.remove(“a”)方法删除数据 
  
 ###6、数组Array和链表link的区别及优缺点？ （数组和链表都是一种数据结构）
   数组在内存中给出了连续的空间，链表在内存地址上可以是不连续的   
@@ -694,6 +695,43 @@ ps -ef|grep 123|grep -v grep
 ##3、项目相关 
 ### 有review代码吗？主要关注点？出现频率比较高的问题有哪些？
  
+##MT11-15
+##1、Java相关
+###1、数组奇数放在左面，偶数放在右面
+###2、输入出生年月日，计算总天数
+###3、如何判断链表是环
+##2、数据库相关
+###1、事务
+###2、delete和什么的区别
+###3、什么是索引？在哪些地方添加索引
+###4、慢查询的原因
+##3、进程相关
+###1、让进程在后台操作
+
+##4、Shell相关
+###1、关闭循环的操作是什么
+###2、Vim和vi的区别
+##5、Web相关
+###1、Css中selctor的使用语法
+###2、JS的node框架？
+###3、Web主要测试点
+
+##6、协议相关
+###1、在浏览器中输入URL，请求主页，到页面展示，这中间的内部实现是怎样的
+
+##7、测试相关
+###1、线上常见或典型的问题
+清缓存操作，线下是一台服务器，所以可以清除；但是线上是多个服务器，每次请求随机分配到不同服务器上，所以清缓存的操作，会有的成功有的失败，没有将其他的服务器加入到清缓存的目录里
+###2、扫码支付的测试点
+###3、页面刷新加载时间很慢的原因？
+##8、Selenium相关
+###1、xpath语法
+###2、页面变动特别大的元素如何定位
+###3、参数如何处理
+##9、Jmeter相关
+###1、如何连接数据库
+###2、如何设置断言
+
 
 
 #Java常见操作
@@ -731,9 +769,23 @@ String[] str=new String[arraylist.size()];  arraylist.toArray(str);
 
 ###4、Arraylist的sort()方法
 
-##4、字符串的常用方法和操作，如判断子串是否在字符串中，字符串反转
+##4、字符串的常用方法和操作，
 ###1、字符串和基本数据类型之间的转换
-###2、字符串、int型基本数据
+* String->int String str="123";  
+int a=Integer.valueOf(str).intValue();   
+int b=Integer.parseInt(str)
+* int->String int m=34;  
+String str1=String.valueOf(m);  
+String str2=Integer.toString(m);	
+###2、字符串和数组之间的转换
+* String str="hello"; char[] array=str.toCharArray();
+* String str2=Arrays.toString(array)
+###3、判断子串是否在字符串中
+###4、字符串反转(递归)
+* 定义方法reverse（String str）
+* 先判断字符串是否是一个，一个则不用反转， if (str.length()<=1) return str;  
+* 否则，进行递归 return reverse(str.subString(1))+str.charAt(0)
+
 ##5、链表的常见操作（增删改查等）
 ##6、递归阶乘
 ##7、连接数据库代码实现步骤

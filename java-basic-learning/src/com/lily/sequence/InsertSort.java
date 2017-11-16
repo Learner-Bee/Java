@@ -14,9 +14,9 @@ package com.lily.sequence;
 public class InsertSort {
 	public static void main(String[] args){
 		int[] a={3, 2, 9, 4, 3, 1, 0 };
-		int key;
+		
 		for(int j=1;j < a.length;j++){
-			key=a[j];
+			int key=a[j];
 			for(int i=j-1;i>=0;i--){
 				if(key<a[i]){
 					a[i+1]=a[i];

@@ -49,10 +49,6 @@ public class MerageSort {
 		 } 
 		
 	}
-	//public static void sort2(int[] t ,int x,int y){
-	//	for(;x<t.length;x++){
-	//		t[x]=
-		//}
 	}
 	
 
