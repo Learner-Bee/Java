@@ -12,8 +12,24 @@ public class ListAndSet {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		SetPrint();
-		ListPrint();
+		//SetPrint();
+		//ListPrint();
+		Set<String> set=new HashSet<String>();
+		set.add("lily");
+		set.add("love");
+		set.add("mk");
+		set.add("mk");//重复数据添加失败
+		
+		System.out.println(set.contains("abc"));
+
+		//foreach遍历set
+		for(int i=0;i<=10;i++){
+		//System.out.println("foreach遍历set:");
+		for(String a:set){
+			System.out.print(a+" ");
+		}
+		System.out.println();
+		}
 
 	}
 	public static void SetPrint(){

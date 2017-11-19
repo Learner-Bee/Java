@@ -663,16 +663,16 @@ git branch 分支名
 ### jmeter可以处理那种类型的协议？ftp？tcp/ip?可以处理吗
 
 ##10、Selenium相关
-###1、常用识别页面控件的属性有哪些？
+###常用识别页面控件的属性有哪些？
  * id：dom元素首选
  * name：表单（input）定位首选
  * class：代表某种样式属性，很可能重复、不能精准定位
  * xpath：元素的一个相对地址
  * LinkText：连接内容定位
  * css：
-###2、id和class属性识别上有啥区别
+###id和class属性识别上有啥区别
 class定位元素没有id精准
-###3、 xpath如何拼接？
+### path如何拼接？
 
 Xpath使用路径表达式来选取XML文档中的节点。Xpath中有七种节点：元素，属性，文本，命名空间，处理指令，注释，以及文档节点（根节点）
 
@@ -715,6 +715,7 @@ Xpath使用路径表达式来选取XML文档中的节点。Xpath中有七种节�
 * @*：匹配任何属性  //title[@*]选择所有带有属性的title元素
 * node()：匹配任何类型节点
 * //book/title | //book/price ：选取book元素的所有title和price节点
+
 ##11、测试环境相关
 * 环境部署及要装的软件
 
@@ -755,6 +756,12 @@ ps -ef|grep 123|grep -v grep
 
 ##3、进程相关
 ###让进程在后台运行
+通过远程连接到服务器时，如果网络中断或关闭连接时，执行的进程会中断，如果想让进程不受连接中断影响继续执行，则要让进程在后台执行  
+
+* nohup：让提交的命令忽略hangup（中断）信号。由于连接的中断已经关闭，所以一些输出到屏幕上的内容和一些日志会保存到nohup.out文件中。一般在末尾加上&来将命令放在后台执行  
+nohup ping 10.1.1.23 &
+* setsid：如果进程不属于接收hup信号终端的子进程，自然不会收到hup信号影响。此时用setsid  
+setsid ping 10.1.1.23 
 
 ##4、Shell相关
 ###关闭循环的操作是什么
@@ -853,10 +860,28 @@ li strong{color:red} 只有li元素中的strong元素的样式变为红色
 ###线上常见或典型的问题
 清缓存操作，线下是一台服务器，所以可以清除；但是线上是多个服务器，每次请求随机分配到不同服务器上，所以清缓存的操作，会有的成功有的失败，没有将其他的服务器加入到清缓存的目录里
 ###扫码支付的测试点
+###移动端兼容性测试怎么做
+
+* 在以后的设备中去覆盖
+* 引入移动端兼容性测试工具Spider
+
 ##8、Selenium相关
 ###页面变动特别大的元素如何定位
 ###参数如何处理
 ###selenium中判断元素是否存在？
+
+* 添加验证函数isExist  
+public boolean isExist(WebDriver driver ,By locator) {  
+  
+  try  {  
+  driver.findElemnt(locator);  
+  return true;}  
+  catch(Exception e)  
+  return false;  
+  }
+* 判断页面是否有某个元素（如判断是否登录成功，可以判断登录后的某个元素是否显示）
+WebElement a=driver.findElement(By.);  
+a.isDisplayed();true,说明存在，false说明不存在
 
 ##9、Jmeter相关
 ###1、如何连接数据库
@@ -869,6 +894,9 @@ li strong{color:red} 只有li元素中的strong元素的样式变为红色
 ##2、测试相关
 ###登录功能的测试用例设计
 ###如何做Web兼容测试
+目前有很多浏览器兼容的软件，可供选择  
+
+* Browsershots：免费开源的在线WEB应用程序。可以提供网页在不同操作系统和浏览器中的显示的屏幕截图 
 
 ##DD11-17
 ##1、协议相关
@@ -902,7 +930,18 @@ SYN（synchronization）：在连接建立时用来同步序号。当SYN=1，ACK
 
 ##4、Java相关
 ###如何提高tomact的性能？
-###jdbc连接数据库过程？写的工具是多线程吗？支持并发吗？	
+###jdbc连接数据库过程？写的工具是多线程吗？支持并发吗？
+单线程，因为代码中每次都是new一个对象，不支持并发
+**创建线程的方法**
+###HashMap和HashSet的区别
+**HashMap：**   
+实现了Map接口，是以键值对的形式存储。Map中不允许有重复的Key。HaspMap允许key和value为null。  
+put（Object key，Object value）方法添加元素
+
+**HashSet：**  
+HashSet实现了Set接口，Set中不允许有重复的值,且无序（每次输出的顺序会不一样）。  
+add(Object o)方法添加元素，元素存在返回false，添加成功返回true
+
 
 ##5、Linux相关
 ###将文件夹下所有子文件中出现的abc替换成xyz
@@ -920,75 +959,103 @@ grep lily -rl /root/test2
 ##1、常见排序算法实现和时间复杂度
 
 ##2、数组Array的常见操作（增删改查等）
-###1、合并数组或者扩充数组
+###合并数组或者扩充数组
 System.arraycopy(str,strposition,dest,destposition,copylength)  
  数组扩充\拷贝原数组的部分内容到新数组的指定位置
-###2、Arrays.fill(数组名，fromindex，toindex，value)  
+###Arrays.fill(数组名，fromindex，toindex，value)  
  填充数组，将数组值从开始位置到结束位置设置统一值（不修改结束位置的值）  
   Arrays.fill(数组名，value)将数组所有值设置为统一value
-###3、判断数组中是否包含某个元素  
+###判断数组中是否包含某个元素  
  * 将数组转换为ArrayList：List<> list=Arrays.asList(array)，然后利用ArrayList的contains方法list.contains(targetValue)
  * 循环遍历数组，与目标值比较x.equals(目标值)
  * 使用Arrays.binarySearch()方法(前提数组是有序的)  
   int a=Arrays.binarySearch(array,targetvalue)(查找数组中某个元素的index)
  
-###4、Arrays.sort()将两个有序、无序数组合并成一个有序数组  
+###Arrays.sort()将两个有序、无序数组合并成一个有序数组  
  * 两个有序数组合并为一个有序数组：归并
  * 两个有序或者无需数组合并为一个为一个有序数组：先利用System.arraycopy()将连个数组复制到一个数组中，然后再利用Arrays.sort(新数组名)进行排序;Arrays.sort(array,fromindex,toindex),排序的数组不包括toindex
  
-###5、判断两个数组中的数据是否相等  
+###判断两个数组中的数据是否相等  
 array1.equals(array2)
 ##3、数组列表（ArrayList）常见操作  
 List 《String》 arraylist=new ArrayList《String》();
-###1、 ArrayList反转，Collections.reverse(arraylist)。
+### ArrayList反转，Collections.reverse(arraylist)。
  数组反转，可以先将数组转化为ArrayList，然后利用该方法进行反转
-###2、删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
-###3、Array和ArrayList之间的相互转换
+###删除元素	arraylist.remove(targetvalue)；arraylist.remove(index)删除某个位置的元素
+###Array和ArrayList之间的相互转换
 * Array->Arraylist  
 
 	int[] a=new int[]{2,4,3};  
 	List<int[]> arraylist=Arrays.asList(a);  
 	
 * ArrayList-->Array  
-
-	List<String> arraylist=new ArrayList<String>();  
+    
+	List《String》 arraylist=new ArrayList《String》();  
 	arraylist.add("bll");  
+	
 	String[] str=new String[arraylist.size()];   
-	arraylist.toArray(str);
+	arraylist.toArray(str);  
+	OR  
+	String[] str=(String[])arraylist.toArray();
+	
 
-###4、Arraylist的sort()方法
-
+###Arraylist的sort()方法
+通过定义比较器
 
 ##4、字符串的常用方法和操作，
-###1、字符串和基本数据类型之间的转换
+###字符串和基本数据类型之间的转换
 * String->int String str="123";  
 int a=Integer.valueOf(str).intValue();   
 int b=Integer.parseInt(str)
 * int->String int m=34;  
 String str1=String.valueOf(m);  
 String str2=Integer.toString(m);	
-###2、字符串和数组之间的转换
+
+###字符串和数组之间的转换
 * String str="hello"; char[] array=str.toCharArray();
-* String str2=Arrays.toString(array)
-###3、判断子串是否在字符串中,和子字符串最后出现的位置
+* String str2=Arrays.toString(array) 
+
+###判断子串是否在字符串中,和子字符串最后出现的位置
 * B.indexOf(A)=-1说明不存在A子串
 * B.contains(A)	有返回true
 * B.lastIndexOf(A)=-1说明没有该子串，否则返回具体值
-###4、字符串反转(递归)（字符串倒序输出）
+
+###字符串反转（字符串倒序输出）
+1、利用subString()+charAt()方法，实现递归
+
 * 定义方法reverse（String str）
 * 先判断字符串是否是一个，一个则不用反转， if (str.length()<=1) return str;  
 * 否则，进行递归 return reverse(str.subString(1))+str.charAt(0)
 
-###5、修改可变字符串（StringBuffer）
+2、将String转换成StringBuffer，然后利用StringBuffer的reverse()方法
+
+String a="hello";  
+StringBuffer sb=new StringBuffer(a);  
+system.out.print(sb.reverse().toString());
+###修改可变字符串（StringBuffer）
 StringBuffer sb=new StringBuffer（“hello”）；  
 
 * 字符串后面追加 ：sb.append（字符串、字符等）
 * 在字符串中间插入：sb.insert(index,内容)
 * 改变某个位置所在的字符：sb.setCharAt(index,'b')
 
-##5、链表的常见操作（增删改查等）
+##集合HashMap和HashSet常用操作
+###定义与添加值
+```
+Map<String,String> map=new HashMap<String,String>();  
+map.put("name1","lily");  
 
-##6、递归阶乘
+Set<String>set=new HashSet<String>˙();  
+set.add("mk");
+```
+
+###判断set集合中是否有某个值  
+set.contains(“abc”)；有返回true，没有false
+##5、链表(Linked List)的常见操作（增删改查等）
+单链表每个节点包含两个域：值域和指针域
+###单链表反转
+###单链表
+
 ##7、连接数据库代码实现步骤
 ##8、Httpclient使用
 
