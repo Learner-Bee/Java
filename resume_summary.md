@@ -962,16 +962,22 @@ grep lily -rl /root/test2
 
 * name属性，用来确认cookie的唯一值
 * domain属性：用来确定在什么域名下可以取得cookie。如domin为.baidu.com。那么www.baidu.com和m.baidu.com都能取得cookie
-* maxage属性：确定cookie的有效时间，单位为秒。默认为-1，负数表示客户端不会把cookie存储在本地硬盘中，而是存在内存中  
+* maxage属性：确定cookie的有效时间，单位为秒。  
+  * 默认为-1，负数表示客户端不会把cookie存储在本地硬盘中，而是存在浏览器内存中，关闭浏览器 后cookie失效，为临时cookie；  
+  * 正数。浏览器会将maxage正数的cookie持久化，即写到对应的cookie文件中，无论关闭电脑或浏览器，在maxage之前，cookie都有效
+  * 0。表示删除cookie。cookie机制没有提供删除方法。通过设置maxage0即使失效实现删除cookie。失效的cookie会被浏览器从cookie文件或内存中删除
 
 **session**  
+客户端访问浏览器时，服务器把客户端信息以某种形式记录在服务器上，这就是session。Seeeion机制决定了当前客户只会获取自己的session。session使用比cookie方便，但是过多的session存储在服务器内存中，会对服务器造成压力。只有访问JSp，servelet等程序时才会创建session，只访问html等静态页面并不会创建	
 
 **区别**
 
 * cookie创建于服务器，但是存储在客户端，session存储在服务器上
+* seeeion因为存储在服务器上，所以会增加服务器压力
 * cookie是明文存储在客户端上，所以安全性较低
 * cookie会传递消息给服务器，session本身存在服务器上，不会有传送量
 * cookie为多个用户浏览器共享，session是一个用户浏览器独享
+
 ##Linux相关
 ###查看网络状态的命令
 netstat
@@ -1000,7 +1006,8 @@ netstat
 ###HashMap可以同时存取和读取吗
 ###Static关键字的使用？以及为什么Static修饰的变量等可以直接调用呢？
 ###接口和抽象类的区别？为什么设计这两个呢？
-###
+###final和finally区别
+
 
 
 
