@@ -12,9 +12,9 @@ public class HashtableDemo {
 		String str;
 		double v;
 		//object put(object key,object value)将指定key映射到哈希表中的指定value
-		ht.put("zara", 3433.44);
-		ht.put("hm", 2000.33);
-		ht.put("gap", 3000.3);
+		ht.put("zara", 3433);
+		ht.put("hm", 2000);
+		ht.put("gap", 3000);
 		
 		//显示所有hashtable映射
 		//将哈希表的keys赋给枚举类型names
