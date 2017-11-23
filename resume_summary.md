@@ -742,6 +742,7 @@ ps -ef|grep 123|grep -v grep
 ##MT11-15
 ##1、Java相关
 ###数组奇数放在左面，偶数放在右面
+参照arrays-Ji_OuArray
 ###输入出生年月日，计算总天数
 ###如何判断链表是环
 ###栈和堆的区别
@@ -1024,9 +1025,67 @@ array.add("a");//是可以的
 ###接口和抽象类的区别？为什么设计这两个呢？
 ###final和finally区别
 ###Java的三大特性？
-* 继承
-* 多态
-* 封装
+* 继承:是一种行为动作
+* 多态：是一种表现形式。通过继承和实现接口的方式来达到多态效果 
+
+```java
+public class Animal{
+
+ int age = 1;
+ 
+ void eat(){
+  // blah blah blah
+ }
+}
+
+class Horse extends Animal{
+ 
+ int age = 2;
+
+ @override
+ void eat(){
+  //grass
+ }
+}
+
+class Tiger extends Animal{
+
+ int age = 3;
+
+ @override
+ void eat(){
+  //meat
+ }
+}
+
+
+ // 不具备多态特性
+Animal a  = new Animal();
+Horse h = new Horse();
+Tiger t = new Tiger();
+
+//
+
+void eat(String animalName){
+
+ Animal animal1 = null;
+
+ if(animalName.equals("Horse")){
+  animal1 = new Horse();
+ }else if (animalName.equals("Tiger")) {
+  animal1 = new Tiger();
+ }
+ animal1.age;
+ animal1.eat();
+}
+
+```
+
+* 封装：是一种编码的思想  
+即信息隐藏。将不想暴露给别的类的方法和变量设成private，将内部实现隐藏起来，只提供给别的类一些公共方法。  
+ 因为：避免耦合性，减少多个类之间相互调用，因为修改其中一个部分，就要涉及牵扯的所有类的修改。实现自己使用的部分自己定义，将属于自己的方法和变量独立起来 ；缺点，代码复用性低
+
+
 ###重写和重载的区别
 
 
