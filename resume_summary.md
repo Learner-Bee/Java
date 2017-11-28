@@ -887,9 +887,30 @@ WebElement a=driver.findElement(By.);
 a.isDisplayed();true,说明存在，false说明不存在
 
 ##9、Jmeter相关
-###1、如何连接数据库
-###2、如何设置断言
+###参数如何参数化管理
+添加配置原件：CSV 数据集配置文件。   
 
+* 参数过多或者需要参数化时，在BodyData添加参数如：shopname=${shopname}&name=${_Random(1,10,name)}
+* 大括号内的参数为CSV数据集中定义的参数名
+* CSV文件中按设置的参数顺序编写参数值
+
+**随机数和图片的上传**
+
+* 将参数设成随机数：name=${_Random(1,10,name)}
+* 图片上传时，在csv文件中输入图片的地址（网络图片的地址可以）
+
+**执行CSV文件中的多条用例**  
+在CSV数据集设置中。
+
+* 将Recycle on EOF?(end of file)：到了文件末尾是否循环读取参数 false
+* Stop thread on EOF：到了文件尾是否停止进程 true
+###如何设置断言
+添加相应断言。
+
+* 选择要测试的响应字段，如相应文本、相应代码、response header
+* 选择模式匹配规则。如包括、equals、substring
+###如何将上一个请求的结果作为下一个请求的参数
+###如何连接数据库
 ##SG11-16
 ##1、Java相关
 ###数组中奇数放在左面，偶数放在右面，并且将奇偶分别排序
@@ -1003,7 +1024,7 @@ netstat
 * 判定表法：适合与逻辑判断复杂的场景。（类似于创元时的用例设计）
 * 正交实验法
 
-##BD 11-21
+##BD 11-20
 ##Java相关
 ###什么是线程安全？HashMap和ArrayList等数据结构是线程安全的吗？
 
