@@ -29,9 +29,10 @@ public class ArraysAsList {
 		list1.add("love");
 		list1.add("mk");
 		
-		String[] newarray=new String[list1.size()];
-		list1.toArray(newarray);
-		//String[] b=(String[]) list1.toArray();
+		//String[] newarray=new String[list1.size()];
+		//list1.toArray(newarray);
+		//方法二。toArray()后返回的是Object，所以得强制转换
+		String[] b=(String[]) list1.toArray();
 		System.out.print("集合转化为数组：");
 		for(String i:list1){
 			System.out.print(i+" ");

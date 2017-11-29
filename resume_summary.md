@@ -659,9 +659,9 @@ git branch 分支名
  * get的执行效率更高。get产生一个tcp数据包（httpheader 和data一起发送出去），post产生另个，浏览器先发送httpheader ，服务器相应100 continue,浏览器再发送data，服务器返回200。
 
 
-##9、jmeter相关
-### jmeter可以处理那种类型的协议？ftp？tcp/ip?可以处理吗
-
+##9、Jmeter相关
+### Jmeter可以处理那种类型的协议？ftp？tcp/ip?可以处理吗
+Jmeter可以对HTTP和FTP服务器、也可以对数据库进行测试（通过JDBC）、Java协议
 ##10、Selenium相关
 ###常用识别页面控件的属性有哪些？
  * id：dom元素首选
@@ -909,8 +909,24 @@ a.isDisplayed();true,说明存在，false说明不存在
 
 * 选择要测试的响应字段，如相应文本、相应代码、response header
 * 选择模式匹配规则。如包括、equals、substring
-###如何将上一个请求的结果作为下一个请求的参数
+###如何将上一个请求的结果作为下一个请求的参数（正则表达式提取器）
+添加后置处理器--正则表达式提取器  
+
+* 引用名称：第二个请求中用到的引用名称
+* 正则表达式："shop_id":"(.+?)"
+  * () ：括号内的部分是要提取的
+  * .  ：点表示匹配任何字符串
+  * +  ：一次或多次
+  * ？ ：在找到第一个匹配项后停止
+* 模板：用$$引用起来。$1$表示解析到的第一个值
+* 匹配数字：0代表随机取值，1代表全部取值
+ 
 ###如何连接数据库
+
+* 添加Sampler--JDBCRequest  ：添加要执行的SQL语句
+* 添加配置原件--JDBC Connection Configuration
+  * 将Variavle name变量名设置和JDBC Request一样。
+  * 最下面的数据库链接配置，输入数据库地址；JDBC驱动名；数据库账号和密码（同java链接JDBC）
 ##SG11-16
 ##1、Java相关
 ###数组中奇数放在左面，偶数放在右面，并且将奇偶分别排序
@@ -1122,8 +1138,10 @@ System.arraycopy(str,strposition,dest,destposition,copylength)
  填充数组，将数组值从开始位置到结束位置设置统一值（不修改结束位置的值）  
   Arrays.fill(数组名，value)将数组所有值设置为统一value
 ###判断数组中是否包含某个元素  
- * 将数组转换为ArrayList：List<> list=Arrays.asList(array)，然后利用ArrayList的contains方法list.contains(targetValue)
+**注：数组只有equals()、toString()方法和length属性。没有indexOf方法**
+
  * 循环遍历数组，与目标值比较x.equals(目标值)
+ * 将数组转换为ArrayList：List<> list=Arrays.asList(array)，然后利用ArrayList的contains方法list.contains(targetValue)
  * 使用Arrays.binarySearch()方法(前提数组是有序的)  
   int a=Arrays.binarySearch(array,targetvalue)(查找数组中某个元素的index)
  
@@ -1141,8 +1159,8 @@ List 《String》 arraylist=new ArrayList《String》();
 ###Array和ArrayList之间的相互转换
 * Array->Arraylist  
 
-	int[] a=new int[]{2,4,3};  
-	List<int[]> arraylist=Arrays.asList(a);  
+	Integer[] a=new Integer[]{2,4,3};  
+	List<Integer> arraylist=Arrays.asList(a);  
 	
 * ArrayList-->Array  
     
@@ -1197,16 +1215,19 @@ StringBuffer sb=new StringBuffer（“hello”）；
 
 ##集合HashMap和HashSet常用操作
 ###定义与添加值
-```
+
+```  
 Map<String,String> map=new HashMap<String,String>();  
 map.put("name1","lily");  
 
 Set<String>set=new HashSet<String>˙();  
 set.add("mk");
+
 ```
 
 ###判断set集合中是否有某个值  
-set.contains(“abc”)；有返回true，没有false
+set.contains(“abc”)；有返回true，没有false  
+**注：Set因为是无需的，不可重复的，所以每次遍历Set时输出结果的顺序不一定**
 ##5、链表(Linked List)的常见操作（增删改查等）
 单链表每个节点包含两个域：值域和指针域
 ###单链表反转

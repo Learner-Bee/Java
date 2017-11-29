@@ -1,6 +1,11 @@
 package com.lily.string;
 
-public class StringReverse {
+/**
+ * 递归实现字符串的反转
+ * @author Administrator
+ *
+ */
+public class StringDiGui_Reverse {
 
 	public static void main(String[] args) {
 		String a="abc";

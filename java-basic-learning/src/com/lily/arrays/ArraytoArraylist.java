@@ -3,7 +3,13 @@ package com.lily.arrays;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+		
 
+/**
+ * ½«Array×ª»»ÎªArrayList
+ * @author Administrator
+ *
+ */
 public class ArraytoArraylist {
 
 	public static void main(String[] args) {
