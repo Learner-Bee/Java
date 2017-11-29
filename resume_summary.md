@@ -18,6 +18,7 @@
   2、每一轮循环得到第i个位置前的所有元素是有序的   
   3、循环1、2直到比较的位置为最后一位，则所有元 素排序成功    
 注：当出现交换顺序后，此时的a[i]就会更改
+
 ###插入排序
 
 * 时间复杂度:n*n  
@@ -196,7 +197,7 @@ String connectionURL="jdbc:mysql//"+ip+":"+"port"+"/"+dbName+"?user="+userName+p
 
 * having用在聚合函数（max、min、count、avg、sum）查询时，聚合函数是对多条数据进行操作的，having子句限制的是组
 * group by是先排序后分组，所以一般与having组合使用
-* having子句中的每一个元素都必须出现在s	elect语句中
+* having子句中的每一个元素都必须出现在select语句中
 * where关键字在聚合函数时不可使用，因为where子句限制的是行
 
 ##4、索引的使用？	

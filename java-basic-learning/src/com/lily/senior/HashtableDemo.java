@@ -7,7 +7,7 @@ public class HashtableDemo {
 
 	public static void main(String[] args) {
 		//创建hashtable对象，声明枚举names
-		Hashtable ht=new Hashtable();
+		Hashtable<String, Integer> ht=new Hashtable<String,Integer>();
 		Enumeration names;
 		String str;
 		double v;
